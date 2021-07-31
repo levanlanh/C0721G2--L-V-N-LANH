@@ -1,7 +1,0 @@
-echo "# C0721G2--L-V-N-LANH" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/levanlanh/C0721G2--L-V-N-LANH.git
-git push -u origin main
