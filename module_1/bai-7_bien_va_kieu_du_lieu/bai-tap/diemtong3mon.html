@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function tong() {
+        let ly = document.getElementById("cuDo").value;
+        let hoa = document.getElementById("cuDoSo").value;
+        let sinh = document.getElementById("cuDoSoMo").value;
+        let tong = ( Number(ly) + Number(hoa) + Number(sinh))
+        document.write("tổng điểm 3 môn : " + tong)
+        let trung_binh_tong = (tong/3);
+        document.write("trung bình tổng 3 môn : "+ trung_binh_tong)
+    }
+</script>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Vật Lý</th>
+        <th>Hóa Học</th>
+        <th>Sinh Học</th>
+    </tr>
+
+    <tr>
+        <td><input type="number" id="cuDo" value="number" width="200px"></td>
+        <td><input type="number" id="cuDoSo" value="number" width="200px"></td>
+        <td><input type="number" id="cuDoSoMo" value="number" width="200px"></td>
+        <td><button onclick="tong()" type="button"> kiểm tra </button></td>
+    </tr>
+
+</table>
+
+</body>
+</html>

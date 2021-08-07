@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let uesrName = prompt("nguoi dung nhap mat khau");
+    if (uesrName == "admin") {
+        alert("nhập mật khẩu")
+        let pass = prompt("password", "")
+        if (pass == "theMaster") {
+            alert("welcom");
+        } else if (pass == "null") {
+            alert("Canceled.")
+        } else {
+            alert("Wrong password")
+        }
+    } else if (uesrName == "null") {
+        alert("canceld")
+    } else {
+        alert("I don’t know you")
+    }
+
+
+</script>
+</body>
+</html>

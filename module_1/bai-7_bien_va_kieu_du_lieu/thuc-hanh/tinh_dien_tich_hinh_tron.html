@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>diện tích hình tròn</th>
+    </tr>
+    <tr>
+        <td><input type="number" id="ban_kinh"> bán kính R </td>
+        <td> <button onclick="dien_tich()" type="button">tính_toán</button></td>
+    </tr>
+</table>
+<script>
+    function dien_tich() {
+     let R = document.getElementById("ban_kinh").value;
+     let dien_tich_hinh_tron = (R*2*3,14)
+        document.write(dien_tich_hinh_tron)
+    }
+</script>
+</body>
+</html>
