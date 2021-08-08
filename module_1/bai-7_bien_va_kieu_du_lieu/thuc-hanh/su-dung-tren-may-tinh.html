@@ -6,9 +6,61 @@
 </head>
 <body>
 <form>
-    <h2><b>Caculator</b></h2>
-    <input type="number" width="100px"> <input type="number" width="100px">
+    <table>
+        <h2><b>Caculator</b></h2>
+        <input type="number" width="100px" id="number1">
+        <input type="number" width="100px" id="number2">
+        <tr>
+            <td>
+                <button type="button" onclick="phepcong()">Addition(+)</button>
+            </td>
+            <td>
+                <button type="button" onclick="pheptru()">Addition(-)</button>
+            </td>
+            <td>
+                <button type="button" onclick="phepnhan()">Addition(*)</button>
+            </td>
+            <td>
+                <button type="button" onclick="phepchia()">Addition(/)</button>
+            </td>
+        </tr>
+    </table>
 </form>
+<span>result: </span>
+<p id="result"></p>
+<script>
 
+    function phepcong() {
+        let sothu_1 = document.getElementById("number1").value;
+        let sothu_2 = document.getElementById("number2").value;
+        let ketqua1 = parseInt(sothu_1)
+        let ketqua2 = parseInt(sothu_2)
+        document.getElementById("result").innerText = ketqua1 + ketqua2;
+    }
+
+    function pheptru() {
+        let sothu_3 = document.getElementById("number1").value;
+        let sothu_4 = document.getElementById("number2").value;
+        let ketqua3 = parseInt(sothu_3)
+        let ketqua4 = parseInt(sothu_4)
+        document.getElementById("result").innerText = ketqua3 - ketqua4;
+    }
+
+    function phepnhan() {
+        let sothu_5 = document.getElementById("number1").value;
+        let sothu_6 = document.getElementById("number2").value;
+        let ketqua5 = parseInt(sothu_5)
+        let ketqua6 = parseInt(sothu_6)
+        document.getElementById("result").innerText = ketqua5 + ketqua6;
+    }
+
+    function phepchia() {
+        let sothu_7 = document.getElementById("number1").value;
+        let sothu_8 = document.getElementById("number2").value;
+        let ketqua7 = parseInt(sothu_7)
+        let ketqua8 = parseInt(sothu_8)
+        document.getElementById("result").innerText = ketqua7 / ketqua8;
+    }
+</script>
 </body>
 </html>
