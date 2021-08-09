@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Điểm Kiểm tra : <input type="number" id="diem1">
+<br>
+Điểm kiểm tra giữa kỳ : <input type="number" id="diem2">
+<br>
+Điểm kiểm tra học kỳ : <input type="number" id="diem3">
+<br>
+<button type="button" onclick="kiemtra()">Xếp loại học lực</button>
+<script>
+    function kiemtra() {
+        let kiem_tra = parseInt(document.getElementById("diem1").value)
+        let giua_ki = parseInt(document.getElementById("diem2").value)
+        let hoc_ky = parseInt(document.getElementById("diem3").value)
+
+        let trungbinh = (kiem_tra + giua_ki * 2 + hoc_ky * 3) / 6
+
+        if (trungbinh >= 9) {
+            alert("giỏi")
+        } else if (trungbinh >= 7) {
+            alert("khá")
+        } else if (trungbinh >= 5) {
+            alert("trung bình")
+        } else {
+            alert("yếu")
+        }
+    }
+</script>
+</form>
+</body>
+</html>

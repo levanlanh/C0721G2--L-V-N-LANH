@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ độ C sang độ F.</title>
+</head>
+<body>
+<input type="number" id="num">
+    <button onclick="nhietdo()"> kết quả </button>
+<script>
+    function nhietdo() {
+      let C = parseFloat(document.getElementById("num").value);
+      let F = parseFloat(C * 9/5 +32);
+        document.write(F)
+    }
+</script>
+</body>
+</html>

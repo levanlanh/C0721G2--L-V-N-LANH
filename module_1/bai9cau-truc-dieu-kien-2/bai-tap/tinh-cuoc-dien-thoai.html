@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính cước điện thoại</title>
+</head>
+<body>
+<h2> TÍNH CƯỚC ĐIỆN THOẠI HỘ GIA ĐÌNH</h2>
+<ul>
+    <li>Nếu gọi tới 10 phút giá cước là 5 ngàn trên phút</li>
+    <li>Nếu gọi tới 20 phút giá cước là 3 ngàn trên phút</li>
+    <li>Nếu gọi tới 30 phút giá cước là 2 ngàn trên phút</li>
+</ul>
+<input type="number" id="result">
+<button onclick="phut()">kết quả</button>
+<p id="time"></p>
+<script>
+    function phut() {
+        let sophut = parseInt(document.getElementById("result").value);
+        if (sophut > 0 && sophut < 20) {
+            document.getElementById("time").innerText = "số tiền điện thoại là " + sophut * 5
+        } else if (sophut > 20 && sophut < 30) {
+            document.getElementById("time").innerText = "số tiền điện thoại là " + sophut * 3
+        } else if (sophut >= 30) {
+            document.getElementById("time").innerText = "số tiền điện thoại là " + sophut * 2
+        }
+    }
+</script>
+</body>
+</html>

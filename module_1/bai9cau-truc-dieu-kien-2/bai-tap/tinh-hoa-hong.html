@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính hoa hồng</title>
+</head>
+<body>
+<h2>Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng</h2>
+<ul>
+    <li>Doanh số 0 đến 50 triệu, sẽ nhận được mức hoa hồng 2% doanh số đạt được</li>
+    <li>Doanh số 50 đến 150 triệu, sẽ nhận được mức hoa hồng 5% doanh số đạt được</li>
+    <li>Doanh số 150 đến 400 triệu, sẽ nhận được mức hoa hồng 10% doanh số đạt được</li>
+</ul>
+<input type="number" id="number">
+<button onclick="ketqua()">kết quả</button>
+<p id="be"></p>
+<script>
+    function ketqua() {
+        let doanhso = parseInt(document.getElementById("number").value);
+        if (doanhso > 0 && doanhso <= 50) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.02 + "triệu"
+        } else if (doanhso > 50 && doanhso <= 150) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.05 + "triệu"
+        } else if (doanhso > 150 && doanhso < 400) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.1 + "triệu"
+        } else {
+            alert("không phải là số dương")
+        }
+    }
+</script>
+</body>
+</html>

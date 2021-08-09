@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>chiều cao</th>
+            <th>cân nặng</th>
+        </tr>
+        <tr>
+            <td><input type="text" id="height"></td>
+            <td><input type="text" id="weight"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="result" onclick="kiemtra()" value="click" width="30px"></td>
+        </tr>
+    </table>
+</form>
+<script>
+    function kiemtra() {
+        let chieucao = document.getElementById("height").value;
+        let cannang = document.getElementById("weight").value;
+        let cao = parseInt(chieucao)
+        let nang = parseInt(cannang)
+        let bmi = parseInt(nang / (cao ^ 2))
+        if (bmi < 18)
+            document.write("Underweight ( thiếu cân)");
+        else if (bmi < 25.0)
+            document.write("Normal (bình thường");
+        else if (bmi < 30.0)
+            document.write("Overweight (thừa cân)");
+        else
+            document.write("Obese (béo phì)");
+    }
+
+</script>
+</body>
+</html>

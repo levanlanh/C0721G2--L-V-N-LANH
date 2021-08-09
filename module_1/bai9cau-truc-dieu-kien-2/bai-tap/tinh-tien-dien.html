@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tính tiền điện</title>
+</head>
+<body>
+<h1> tính tiền điện</h1>
+<ul>
+    <li>Nếu sài điện 20 chữ trở lại thì giá 5 ngàn.</li>
+    <li>Nếu sài điện 40 chữ trở lại thì giá 4 ngàn</li>
+    <li>Nếu sài điện lớn hơn 40 thì giá 3 ngàn</li>
+</ul>
+<input type="number" id="sochu">
+<button onclick="tiendien()">kết quả</button>
+<p id="result"></p>
+<script>
+function tiendien() {
+ let dien = parseInt(document.getElementById("sochu").value)
+    if(dien<20){
+        document.getElementById("result").innerText = "số tiền điện là" + dien*5
+    }else if(dien<40){
+        document.getElementById("result").innerText = "số tiền điện là" + dien*4
+    }else if (dien>40){
+        document.getElementById("result").innerText = "số tiền điện là" + dien*3
+    }
+
+}
+</script>
+</body>
+</html>
