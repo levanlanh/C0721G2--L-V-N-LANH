@@ -22,11 +22,11 @@
 </form>
 <script>
     function kiemtra() {
-        let chieucao = document.getElementById("height").value;
-        let cannang = document.getElementById("weight").value;
-        let cao = parseInt(chieucao)
-        let nang = parseInt(cannang)
-        let bmi = parseInt(nang / (cao ^ 2))
+        let chieuCao = document.getElementById("height").value;
+        let canNang = document.getElementById("weight").value;
+        let cao = parseFloat(chieuCao)
+        let nang = parseFloat(canNang)
+        let bmi = parseFloat(nang / (cao ^ 2))
         if (bmi < 18)
             document.write("Underweight ( thiếu cân)");
         else if (bmi < 25.0)

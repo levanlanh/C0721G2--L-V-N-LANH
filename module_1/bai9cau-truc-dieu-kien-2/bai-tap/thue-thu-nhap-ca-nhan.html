@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuế thu nhập cá nhân</title>
+</head>
+<body>
+<table border="1">
+    <caption>THUẾ SUẤT THU NHẬP CÁ NHÂN</caption>
+    <tr>
+        <th>Bậc thuế</th>
+        <th>Phần thu nhập tính thuế / tháng (triệu đồng )</th>
+        <th>Thuế suất(%)</th>
+
+
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>Dưới 10 triệu/tháng</td>
+        <td>5</td>
+
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>Trên 10 đến 20 triệu</td>
+        <td>10</td>
+
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Trên 20 đến 30</td>
+        <td>15</td>
+
+    </tr>
+
+</table>
+<h2>Tiền lương trước thuế TNCN của bạn là</h2>
+<input type="number" id="demo1">
+<button onclick="salaryNET()">Submit</button>
+
+<h4>Thu nhập sau thuế</h4>
+<p id="demo2"></p>
+
+
+<script>
+    function salaryNET() {
+        let salaryGross = parseInt(document.getElementById("demo1").value);
+        let salaryNet;
+        if (salaryGross < 10000000) {
+            salaryNet = document.getElementById("demo2").innerText = salaryGross / 100 * 95 + "VND";
+        } else if (salaryGross >= 10000000 && salaryGross < 20000000) {
+            salaryNet = document.getElementById("demo2").innerText = salaryGross / 100 * 90 + "VND";
+        } else (salaryGross > 30000000)
+        salaryNet = document.getElementById("demo2").innerText = salaryGross / 100 * 85 + "VND";
+    }
+</script>
+</body>
+</html>

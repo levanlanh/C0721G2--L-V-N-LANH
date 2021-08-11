@@ -12,16 +12,16 @@
         <input type="number" width="100px" id="number2">
         <tr>
             <td>
-                <button type="button" onclick="phepcong()">Addition(+)</button>
+                <button type="button" onclick="phepCong()">Addition(+)</button>
             </td>
             <td>
-                <button type="button" onclick="pheptru()">Addition(-)</button>
+                <button type="button" onclick="phepTru()">Addition(-)</button>
             </td>
             <td>
-                <button type="button" onclick="phepnhan()">Addition(*)</button>
+                <button type="button" onclick="phepNhan()">Addition(*)</button>
             </td>
             <td>
-                <button type="button" onclick="phepchia()">Addition(/)</button>
+                <button type="button" onclick="phepChia()">Addition(/)</button>
             </td>
         </tr>
     </table>
@@ -30,7 +30,7 @@
 <p id="result"></p>
 <script>
 
-    function phepcong() {
+    function phepCong() {
         let sothu_1 = document.getElementById("number1").value;
         let sothu_2 = document.getElementById("number2").value;
         let ketqua1 = parseInt(sothu_1)
@@ -38,7 +38,7 @@
         document.getElementById("result").innerText = ketqua1 + ketqua2;
     }
 
-    function pheptru() {
+    function phepTru() {
         let sothu_3 = document.getElementById("number1").value;
         let sothu_4 = document.getElementById("number2").value;
         let ketqua3 = parseInt(sothu_3)
@@ -46,15 +46,15 @@
         document.getElementById("result").innerText = ketqua3 - ketqua4;
     }
 
-    function phepnhan() {
+    function phepNhan() {
         let sothu_5 = document.getElementById("number1").value;
         let sothu_6 = document.getElementById("number2").value;
         let ketqua5 = parseInt(sothu_5)
         let ketqua6 = parseInt(sothu_6)
-        document.getElementById("result").innerText = ketqua5 + ketqua6;
+        document.getElementById("result").innerText = ketqua5 * ketqua6;
     }
 
-    function phepchia() {
+    function phepChia() {
         let sothu_7 = document.getElementById("number1").value;
         let sothu_8 = document.getElementById("number2").value;
         let ketqua7 = parseInt(sothu_7)

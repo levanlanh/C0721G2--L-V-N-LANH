@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SINH BẢNG CỮU CHƯƠNG</title>
+</head>
+<body>
+<h1 STYLE="color: #d61b06"> SINH BẢNG CỮU CHƯƠNG</h1>
+<script>
+    let sout, i, j;
+    sout = "<table border='1' width='300' cellspacing='5' cellpadding='3'>";
+    i = j = 1;
+    while (i <= 9) {
+        sout = sout + "<tr>"
+        while (j <= 9) {
+            let r = i*j
+            sout = sout + "<td>" + i + "x" + j + "=" + r + "</td>"
+            j++;
+        }
+        sout = sout + "</tr>"
+        j = 1;
+        i++;
+    }
+    sout = sout + "</table>";
+    document.write(sout)
+
+</script>
+</body>
+</html>
