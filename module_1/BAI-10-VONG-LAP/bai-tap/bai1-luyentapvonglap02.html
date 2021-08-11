@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In dãy Finonaci</title>
+</head>
+<body>
+<script>
+let number1 = 1;
+let number2 = 1;
+document.write(number1 + "<br>")
+document.write(number2 +"<br>")
+count = 2;
+    while (count<30){
+        let number = number1 + number2 ;
+        document.write(number +"<br>")
+        number1 = number2;
+        number2 = number ;
+        count++;
+    }
+
+</script>
+</body>
+</html>

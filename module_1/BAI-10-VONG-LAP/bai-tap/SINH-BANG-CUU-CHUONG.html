@@ -9,16 +9,16 @@
 <script>
     let sout, i, j;
     sout = "<table border='1' width='900' cellspacing='5' cellpadding='3'>";
-    i = j = 1;
+    i = 1 ; j = 2;
     while (i <= 9) {
         sout = sout + "<tr>"
         while (j <= 9) {
             let r = i*j
-            sout = sout + "<td>" + i + "x" + j + "=" + r + "</td>"
+            sout = sout + "<td>" + j + "x" + i+ "=" + r + "</td>"
             j++;
         }
         sout = sout + "</tr>"
-        j = 1;
+        j = 2;
         i++;
     }
     sout = sout + "</table>";

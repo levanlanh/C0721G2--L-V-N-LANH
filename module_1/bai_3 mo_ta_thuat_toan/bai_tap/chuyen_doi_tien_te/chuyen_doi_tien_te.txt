@@ -1,5 +1,5 @@
 Begin
-    input dolamy = 1;
+    input dolamy ;
     viet_nam = dolamy*23.000;
     display viet_nam;
 end.

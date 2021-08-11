@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 4 luyện tập vòng lặp 01</title>
+</head>
+<body>
+<script>
+    let number1 = 1;
+    let number2 = 1;
+    let count = 2;
+    while (count < 20) {
+        let number3 = number1 + number2;
+        number1 = number2
+        number2 = number3
+        if (number3 % 5 == 0) {
+            alert(number3)
+            break
+        }
+        count++;
+    }
+</script>
+</body>
+</html>

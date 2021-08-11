@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Tạo form lấy survey khách hàng</title>
+</head>
+<body>
+<body>
+<Form acction="http://google.com" method="get">
+
+    <h2>Market Reseach Servey</h2>
+    <p>Please take a few moments to complete this satisfaction survey.</p>
+    <hr>
+    <h4>What is your age range?</h4>
+    <select name="ageRange" style="width: 700px">
+        <option name="" value="18-24">18 -24</option>
+        <option name="" value="25-34">25-34</option>
+        <option name="" value="35-50">35-50</option>
+        <option name="" value="50+">50+</option>
+    </select>
+    <h4>What is your yearly income range?</h4>
+    <select name="yearlyincome" style="width: 700px" >
+        <option name="" value="$">$0-$25,000</option>
+        <option name="" value="$">$25,001-$50,000</option>
+        <option name="" value="$">$50,001-$100,000</option>
+        <option name="" value="$">$100,000+</option>
+    </select>
+    <h4>Gender indenity</h4>
+    <input type="radio" name="Gender">Male</input><br/>
+    <input type="radio" name="Gender">Female</input><br/>
+    <input type="radio" name="Gender">Nonbinary</input><br/>
+    <input type="radio" name="Gender">Other</input><br>
+    <textarea Style="Margin-left: 20px" row="2" col="1"></textarea><br> <p Style="Margin-left: 20px">Maximum of 250 characters. Currently Used: 0 characters.</p>
+    <h4>Which of the following products have your purchased in the last 2 months. Please check all that apply.</h4>
+    <input type="checkbox" name="product" value="1">Product 1</input><br/>
+    <input type="checkbox" name="product" value="1">Product 2</input><br/>
+    <input type="checkbox" name="product" value="1">Product 3</input>
+    <h4>How often would you use our new product?</h4>
+    <input type="radio" name="how">Daily</input><br/>
+    <input type="radio" name="how">Weekly</input><br/>
+    <input type="radio" name="how">Monthly</input><br/>
+    <h4>What would you pay for the new product?</h4>
+    <textarea style="width:100px"></textarea>.<textarea style="width:20px"></textarea><br>
+    <pre>Dollar        Cents</pre>
+
+    <h4>What feuture would you liketo see the new product.</h4>
+    <textarea style="width:1000px; height: 100px"></textarea>.
+    <h4>Please rate your level of agremment with the fllowing statments. </h4>
+    <table width="1000" height="200">
+        <tr>
+            <td height="40px" width="400px" bgcolor="#808080"></td>
+            <td height="40" width="150" bgcolor="#808080"></td>
+            <td height="40" width="150" bgcolor="#808080"></td>
+            <td height="40" width="150" bgcolor="#808080"></td>
+            <td height="40" width="150" bgcolor="#808080"></td>
+        </tr>
+        <tr>
+            <td><b>Our products are farly</b></td>
+            <td height="40" align="center"><input type="radio"><br/><p>1</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>2</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>3</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>4</p></td>
+        </tr>
+        <tr>
+            <td bgcolor="#a9a9a9"><b>Our products are high quality</b></td>
+            <td height="40" bgcolor="#a9a9a9" align="center"><input type="radio"><br/><p>1</p></td>
+            <td height="40" bgcolor="#a9a9a9" align="center"><input type="radio"><br/><p>2</p></td>
+            <td height="40" bgcolor="#a9a9a9" align="center"><input type="radio"><br/><p>3</p></td>
+            <td height="40" bgcolor="#a9a9a9" align="center"><input type="radio"><br/><p>4</p></td>
+        </tr>
+        <tr>
+            <td><b>You would recommend our product to a frien or coworker.</b></td>
+            <td height="40" align="center"><input type="radio"><br/><p>1</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>2</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>3</p></td>
+            <td height="40" align="center"><input type="radio"><br/><p>4</p></td>
+        </tr>
+    </table>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
