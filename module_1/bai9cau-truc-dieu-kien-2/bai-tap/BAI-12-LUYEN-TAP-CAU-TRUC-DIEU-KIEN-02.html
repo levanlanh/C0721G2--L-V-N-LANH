@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết chương trình tính lãi ngân hàng</title>
+</head>
+<body>
+<!--FV = PV x (1 + i)^n-->
+
+<!--Trong công thức lãi kép:-->
+
+<!--FV: giá trị của tương lai ở năm thứ n-->
+
+<!--PV: giá trị của số vốn tại thời điểm hiện tại-->
+
+<!--n: số năm-->
+
+<!--i : là lãi suất-->
+<script>
+    let PV = parseFloat(prompt("nhập giá vốn tại thời điểm"))
+    let  n = parseInt(prompt("số năm"))
+    let i = parseFloat(prompt("lãi xuất"))
+    let FV = PV * (1+i)^n
+    if(PV > 0 && i > 0 && n > 0){
+        alert("tổng tiền là : " + FV)
+    }else {
+        alert("không nhập số âm.")
+    }
+</script>
+</body>
+</html>
