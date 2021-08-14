@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<input type="text" id="all">
+<button type="button" onclick="tuDien()">kiểm tra</button>
+<script>
+    function tuDien() {
+        var voCa = document.getElementById("all").value;
+        let englishVoca = ["hello", "bye", "good"]
+        let vietNamVoca = ["xin chào", "tạm biệt", "giỏi"]
+     for(let i = 0 ; i<=voCa.length-1;i++){
+         if(englishVoca[i] == voCa){
+             document.write(vietNamVoca[i]+ " vị trí : " + i )
+         }
+     }
+    }
+</script>
+</body>
+</html>

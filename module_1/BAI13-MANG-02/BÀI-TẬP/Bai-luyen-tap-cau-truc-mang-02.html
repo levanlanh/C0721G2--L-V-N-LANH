@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>
+    Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+</h4>
+<script>
+    let num = [2,4,3,5,6,88,77,8,9,7]
+    let max = num[0]
+    let index = 0
+    for(let i = 0 ;i <= num.length-1; i++){
+        if(num[i]>max){
+             max=num[i] ;
+            index = i;
+        }
+    }
+    document.write("số lớn nhất của mảng là " + max + " " + "vị trí phần tử là : " + index )
+    //
+</script>
+</body>
+</html>

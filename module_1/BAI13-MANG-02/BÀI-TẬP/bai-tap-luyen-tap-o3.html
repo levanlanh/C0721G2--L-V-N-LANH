@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = [5,6,4,7,8,9,3,2,1,22]
+    let sum = 0;
+    let trungBinh;
+    let index = 0
+    let max = number[0];
+    for (let i = 0; i<= number.length-1;i++){
+        if(number[i]>max){
+            max = number[i]
+            index = i
+        }
+        sum +=number[i]
+    }
+    trungBinh = sum/number.length
+    document.write( "Giá trị lớn nhất là : " + max + " " + "Vị trí là : " + index + "<br>" + " Giá trị trung bình là : " + trungBinh +  index)
+
+</script>
+</body>
+</html>

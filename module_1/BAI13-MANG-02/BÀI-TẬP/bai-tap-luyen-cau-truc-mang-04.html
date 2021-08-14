@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đảo ngược các phần tử trong mảng</title>
+</head>
+<body>
+<h4>
+    Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+</h4>
+<script>
+    let num = [3, 4, 6, 7, 5, 8, 2]
+    let first = 0
+    let last = num.length - 1
+    while (first < last) {
+            let a = num[first];
+            num[first] = num[last];
+            num[last] = a;
+            first++;
+            last--;
+    }document.write(num)
+
+
+
+
+</script>
+</body>
+</html>

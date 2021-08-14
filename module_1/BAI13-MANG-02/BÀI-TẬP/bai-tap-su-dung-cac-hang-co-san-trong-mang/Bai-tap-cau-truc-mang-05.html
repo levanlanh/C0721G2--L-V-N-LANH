@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Viết chương trình đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<h4>
+    Viết chương trình đếm số nguyên âm trong một chuỗi
+</h4>
+<script>
+    let num = [3,5,6,4,2,-7,-3]
+    let index = 0
+    for(let i = 0; i<= num.length-1;i++){
+        if(num[i] < 0){
+            index = i;
+            document.write("số nguyên âm trong chuỗi là : " + num[i] + " " + "chỉ số " + index + "<br>  " );
+        }
+    }
+</script>
+</body>
+</html>

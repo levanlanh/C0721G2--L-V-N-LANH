@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = [4, 5, 7, 3, 6, 2, 8, 9, 1, 33]
+    let flag;
+    let v = parseInt(prompt("nhập tại đây"));
+    for (let i = 0; i <= num.length - 1; i++) {
+        if (num[i] == v) {
+            flag = true;
+        }
+    }
+    if (flag) {
+        alert("V is in the array")
+    } else {
+        alert("V is not in the array")
+    }
+
+</script>
+</body>
+</html>
