@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h4>
+<script>
+    function number(a,b,c) {
+        let arr = [a,b,c]
+        let min = arr[0];
+        for(let i=0;i<arr.length;i++){
+           if(arr[i]<min){
+               min = arr[i];
+           }
+        }
+        return min;
+    }
+   document.write(number(3,5,1))
+
+
+
+</script>
+</body>
+</html>

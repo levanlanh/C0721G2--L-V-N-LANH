@@ -12,10 +12,10 @@
     <li>Nếu sài điện lớn hơn 40 thì giá 3 ngàn</li>
 </ul>
 <input type="number" id="sochu">
-<button onclick="tiendien()">kết quả</button>
+<button onclick="tienDien()">kết quả</button>
 <p id="result"></p>
 <script>
-function tiendien() {
+function tienDien() {
  let dien = parseInt(document.getElementById("sochu").value)
     if(dien<20){
         document.getElementById("result").innerText = "số tiền điện là" + dien*5

@@ -12,17 +12,17 @@
     <li>Doanh số 150 đến 400 triệu, sẽ nhận được mức hoa hồng 10% doanh số đạt được</li>
 </ul>
 <input type="number" id="number">
-<button onclick="ketqua()">kết quả</button>
+<button onclick="ketQua()">kết quả</button>
 <p id="be"></p>
 <script>
-    function ketqua() {
-        let doanhso = parseInt(document.getElementById("number").value);
-        if (doanhso > 0 && doanhso <= 50) {
-            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.02 + "triệu"
-        } else if (doanhso > 50 && doanhso <= 150) {
-            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.05 + "triệu"
-        } else if (doanhso > 150 && doanhso < 400) {
-            document.getElementById("be").innerText = "hoa hồng là " + doanhso * 0.1 + "triệu"
+    function ketQua() {
+        let doanhSo = parseInt(document.getElementById("number").value);
+        if (doanhSo > 0 && doanhSo <= 50) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhSo * 0.02 + "triệu"
+        } else if (doanhSo > 50 && doanhSo <= 150) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhSo * 0.05 + "triệu"
+        } else if (doanhSo > 150 && doanhSo < 400) {
+            document.getElementById("be").innerText = "hoa hồng là " + doanhSo * 0.1 + "triệu"
         } else {
             alert("không phải là số dương")
         }
