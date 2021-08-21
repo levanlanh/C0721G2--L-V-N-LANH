@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+            }
+    getWeight(){
+        return this.weight;
+    }
+    }
+    class Human{
+        constructor(name,gender,weightPerson) {
+            this.name=name;
+            this.gender=gender;
+            this.weightPerson = weightPerson;
+        }
+        setGender(){
+            if(this.gender == "nam"){
+                return this.gender = 'nam';
+            } else {
+                return this.gender ='nữ'
+            }
+        }
+        eat(Apple){
+            if(Apple.weight > 0){
+                Apple.weight--;
+                this.weightPerson++;
+            }else {
+                alert("đã ăn hêt táo")
+            }
+        }
+        getName(){
+            return this.name;
+        }
+        getWeight(){
+            return this.weightPerson;
+        }
+    }
+    let benNam = new Human ("huy", "Nam", 70);
+    document.write ("Tôi tên là " + benNam.getName() + " và giới tính của tôi là " + benNam.setGender() + ". Tôi có cân năng " + benNam.getWeight() );
+    document.write("<br>");
+    let benNu = new Human("hanh", "Nữ", 65);
+    document.write ("Tôi tên là " + benNu.getName() + " và giới tính của tôi là " + benNu.setGender() + ". Tôi có cân nặng " + benNu.getWeight());
+
+    document.write("<br>");
+
+    let eating = new Apple(5);
+    document.write("Số lần cắn của táo là " + eating.getWeight());
+
+    document.write("<br>");
+
+    benNam.eat(eating);
+    benNu.eat(eating);
+    benNu.eat(eating);
+    benNu.eat(eating);
+    benNu.eat(eating);
+    benNu.eat(eating);
+    document.write ("Cân nặng của huy sau khi ăn táo " + benNam.getWeight() + " và số lần cắn táo còn lại là " + eating.getWeight() );
+    document.write("<br>");
+    document.write(("Cân nặng của hanh sau khi ăn táo " + benNu.getWeight() + " và số lần cắn táo còn lại là " + eating.getWeight() ))
+</script>
+</body>
+</html>

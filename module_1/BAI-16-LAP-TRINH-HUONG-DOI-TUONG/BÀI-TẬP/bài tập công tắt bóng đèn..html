@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SwitchButton {
+        constructor(status,lamp) {
+            this.status = status;
+            this.lamp = lamp;
+        }
+        getstatus(){
+            if(this.status == true){
+                alert("bat den")
+            }else {
+                alert("tat den")
+            }
+        }
+        getlamp(){
+            if(this.lamp == true){
+                alert("den sang")
+            }else {
+                alert("den tat")
+            }
+        }
+        getconnectToLamp(){
+            if(this.status == true){
+                alert("den sang")
+            }else {
+                alert("den tat")
+            }
+        }
+    }
+    class Electriclamp{
+        constructor(statur) {
+            this.statur= statur;
+        }
+        getstatur(){
+            return this.statur;
+        }
+    }
+    var congtac = new SwitchButton(true)
+    var bongden = new Electriclamp(true)
+    alert(congtac)
+    alert(bongden)
+
+</script>
+</body>
+</html>

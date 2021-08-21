@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(degree) { // mô tả các thuộc tính của class.
+            this.degree = degree;
+        }
+        // get việc nhận và in ra hành động
+        // set thay đổi giá trị.
+        getf() {
+            return (this.degree * 9 / 5 + 32);
+        }
+
+        getKenvin() {
+            return (this.degree * 9 / 5 + 32 + 273.15)
+        }
+
+    }
+
+    let conver = new Temperature(prompt("Nhập độ C vào đây để chuyển sang độ F và độ K")) // new tạo ra đối tượng
+    let f = conver.getf();
+    let Kenvin = conver.getKenvin()
+    document.write("Độ F là " + f + "<br>" + " Độ K là " + Kenvin)
+</script>
+</body>
+</html>

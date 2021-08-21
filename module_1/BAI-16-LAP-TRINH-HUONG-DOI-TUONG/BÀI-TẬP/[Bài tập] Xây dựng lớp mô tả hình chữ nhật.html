@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="can" width="500px" height="500px"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+        getArea() {
+            return this.width*this.height;
+        }
+        getPerimeter() {
+            return (this.width+this.height)*2;
+        }
+        crawCanvas() {
+            let canvas = document.getElementById("can");
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.fillRect(30,0,this.width,this.height); // vẽ hình chữ nhật
+            // ctx.arc(50,50,30,(1/2)*Math.PI,(3/2)*Math.PI) // vẽ hình tròn
+            ctx.stroke()
+        }
+    }
+    let rectangle = new Rectangle(500,300);
+    alert(rectangle.getArea());
+    alert(rectangle.getPerimeter())
+    rectangle.crawCanvas();
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  class Ngay {
+      constructor(day,month,year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+      }
+      getday(){
+          return this.day;
+      }
+      getmonth(){
+          return this.month;
+      }
+      getyear(){
+          return this.year;
+      }
+      setday(newday){
+          this.day = newday;
+      }
+      setmonth(newmonth){
+          this.month = newmonth ;
+      }
+      setyear(newyear){
+          this.year = newyear;
+      }
+   toString(){
+          return(day + "/" + month + "/" + year)
+   }
+  }
+  let date = new Ngay(19,2,1999)
+  day = date.getday(); //thêm
+  month = date.getmonth();
+  year = date.getyear();
+
+  document.write(day + "/" +month +"/" + year);
+
+  document.write("<br>")
+
+  date.setday(2); //sửa
+  date.setmonth(10);
+  date.setyear(2009);
+  day = date.getday();
+  month = date.getmonth();
+  year = date.getyear();
+  document.write(date.toString()) // gọi hàm trực tiếp
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(first, last, age, gender, interests) {
+        this.name = first + last
+
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.bio = function() {
+            alert(this.name + ' '  + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        };
+        this.greeting = function() {
+            alert('Hi! I\'m ' + this.name + '.');
+        };
+    };
+     let person1 = new Person("lanh"," lê",21,"male",["đá bóng","gym"])
+    person1.bio();
+</script>
+</body>
+</html>
