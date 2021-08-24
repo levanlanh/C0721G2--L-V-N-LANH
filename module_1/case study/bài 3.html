@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5</title>
+</head>
+<body>
+<h2>Bài 3: Vẽ tam giác cân đặc có chiều cao h. Ví dụ: h = 5</h2>
+<script>
+    let h = parseInt(prompt("nhập chiều cao tại đây"))
+    for (let i = 1; i <= h; i++) {
+        for (let k = h; k > i; k--) {
+            document.write("&nbsp&nbsp")
+        }
+        for (let j = 1; j <= i * 2 - 1; j++) {
+            document.write("*")
+        }
+        document.write("<br>")
+    }
+</script>
+</body>
+</html>

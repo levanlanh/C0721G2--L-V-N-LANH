@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = prompt("nhập vào số phần tử bạn muốn tạo mảng");
+    let arrA = [];
+    let arrB = [];
+    let sum =0;
+    for(let j= 0; j<number;j++){
+        arrA[j]=prompt("nhập vào vị trí phần tử thứ " + j );
+        sum+=j;
+        arrB[j]=[sum];
+    }
+    document.write(arrA)
+    document.write(arrB)
+
+
+</script>
+</body>
+</html>

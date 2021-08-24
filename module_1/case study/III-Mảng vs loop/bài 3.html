@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tuSoA=[3,5,7]
+    let mauSoB = [2,4,6]
+    let maxFraction = [];
+    let max = 0;
+    let index;
+    for(let i = 0 ; i< tuSoA.length;i++){
+        if(tuSoA[i]/mauSoB[i]>max){
+             max  = tuSoA[i] / mauSoB[i] ;
+            index = [i]
+            maxFraction.push(max)
+        }
+    }
+    document.write(maxFraction + " là phân số lớn nhất " +"<br>"+ "vị trí "+ index )
+
+
+</script>
+</body>
+</html>

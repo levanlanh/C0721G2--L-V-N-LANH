@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" id="1" onclick="conver('caffe')"> caffe</button>
+<button type="button" id="2" onclick="conver('cam vắt')">cam vắt</button>
+<button type="button" id="3" onclick="conver('nước mía')"> nước mía</button>
+<button type="button" id="4" onclick="conver('bia')"> bia</button>
+<button type="button" id="5" onclick="conver('soda')"> soda</button>
+<button type="button" id="6" onclick="conver('nước dừa')"> nước dừa</button>
+<button type="button" id="7" onclick="conver('nước lọc')"> nước lọc</button>
+<p id ="8">Tổng tiền </p>
+<button onclick="result('kết thúc')">Đã xong</button>
+
+<script>
+    function conver(price) {
+        switch (price) {
+            case'caffe' :
+                productPrice = 10000;
+                break;
+            case 'nước dừa':
+            case 'cam vắt':
+                productPrice = 20000;
+                break;
+            case 'nước lọc':
+            case 'nước mía':
+                productPrice = 5000;
+                break;
+            case 'soda':
+            case 'bia':
+                productPrice = 15000
+                break;
+        }
+     alert( "đơn giá sản phẩm là " + productPrice)
+        let number = parseInt(prompt("số lượng oder"))
+        document.getElementById("8").innerText = "tổng số tiền là : " + number*productPrice;
+
+    }
+    function result(exit) {
+     if(exit == "kết thúc"){
+         alert('đã gọi xong món.')
+     }
+
+    }
+</script>
+
+</body>
+</html>

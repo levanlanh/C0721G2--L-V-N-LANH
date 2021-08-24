@@ -5,8 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Vẽ tam giác vuông cân có chiều cao h2</h2>
 <script>
-
+for(let i = 0 ;i<=5;i++){
+    for(let j = 0;i>j;j++){
+        if((i==3 && j == 1)|| ( i==4 && j==1)||(i==4 &&j==2)){
+            document.write("&nbsp&nbsp")
+        }else
+        document.write("*" )
+    }
+document.write("<br>")
+}
 </script>
 </body>
 </html>

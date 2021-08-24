@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2> tính thuế lương</h2>
+<script>
+    let thue=""
+    let tienLuong = parseInt(prompt("nhập só tiền lương."))
+    if(tienLuong==15000000){
+       thue = tienLuong*0.2
+    }else if(tienLuong>=7000000 && tienLuong<15000000){
+        thue = tienLuong*0.1
+    }else if(tienLuong<7000000){
+        thue = tienLuong*0.05
+    } else {
+        alert("đây không phải là số.")
+    }
+    document.write(thue)
+</script>
+</body>
+</html>
