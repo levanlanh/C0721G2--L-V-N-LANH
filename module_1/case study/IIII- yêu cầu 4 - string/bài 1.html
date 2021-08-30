@@ -6,29 +6,20 @@
 </head>
 <body>
 <script>
-    let str = "tRuong    TaN   HAI ";
-
-    let arr = str.split(" ");
-    let newArr = Array();
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] !== "") {
-            newArr.push(arr[i])
+    let str = "tRuong    TaN   HAI  ";
+    let array = str.toLowerCase().split(" ") ; // là một mảng con .
+     let newString = ""; // duyệt mảng .
+    for(let i =0; i< array.length;i++){
+        if(array[i] !== ""){
+            let first = array[i].substr(0,1);
+            let result = first.toUpperCase() + array[i].substr(1,array[i].length);
+          newString += result + " ";
         }
     }
-    console.log(newArr);
-    let array = new Array(newArr.length);
-    for (let i = 0; i < newArr.length; i++) {
-        array[i] = Array()
-        newArr[i] = newArr[i].toLocaleLowerCase()
-        array[i].push(newArr[i][0].toLocaleUpperCase());
-        for (let j = 1; j < newArr[i].length; j++)
-            array[i].push(newArr[i][j]);
-    }
-    for (let i = 0; i < newArr.length; i++){
-        array[i]=array[i].join("")
-    }
-    let newStr = array.join(" ")
-    document.write(newStr)
+    document.write(newString);
+
+
+
 
 </script>
 </body>

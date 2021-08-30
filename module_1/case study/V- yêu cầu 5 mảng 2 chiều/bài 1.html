@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.-->
+<script>
+    let array = [
+        [2, 6, 4, 4, 2],
+        [2, 4, 2, 6, 4]
+    ];
+        sum = 0;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                if (array[i][j] % 2 == 0) {
+                    sum += array[i][j];
+                }
+            }
+        }
+       document.write(sum)
+
+
+</script>
+</body>
+</html>

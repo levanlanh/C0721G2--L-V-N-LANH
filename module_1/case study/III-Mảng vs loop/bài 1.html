@@ -6,17 +6,20 @@
 </head>
 <body>
 <script>
-    let number = prompt("nhập vào số phần tử bạn muốn tạo mảng");
-    let arrA = [];
-    let arrB = [];
-    let sum =0;
-    for(let j= 0; j<number;j++){
-        arrA[j]=prompt("nhập vào vị trí phần tử thứ " + j );
-        sum+=j;
-        arrB[j]=[sum];
+    let arrA = [1, 2, 3, 4, 5, 6, 7, 8];
+    let arrB = new Array(arrA.length);
+
+    function sum(array,index) {
+        let sum= 0;
+        for (let i = 0; i <= index; i++){
+            sum+=array[i];
+        }
+        return sum;
     }
-    document.write(arrA)
-    document.write(arrB)
+    for (let i = 0; i < arrA.length; i++) {
+        arrB[i] = sum(arrA,i)
+    }
+    console.log(arrB)
 
 
 </script>

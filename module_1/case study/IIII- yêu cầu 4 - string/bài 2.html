@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó-->
+<!--Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.-->
+<!--	Có 3 kí tự khác nhau là a, b và c.-->
+<script>
+    let kyTu = prompt("nhâp vào mảng")
+    let newKyTu = [];
+    newKyTu.push(kyTu[0])
+    for (let i = 1; i < kyTu.length; i++) {
+        let flag = false;
+        for (let j = 0; j < newKyTu.length; j++) {
+            if (kyTu[i] == newKyTu[j]) {
+                flag = true;
+            }
+        }
+        if (!flag) {
+            newKyTu.push(kyTu[i])
+        }
+    }
+    document.write(newKyTu)
+
+
+</script>
+</body>
+</html>

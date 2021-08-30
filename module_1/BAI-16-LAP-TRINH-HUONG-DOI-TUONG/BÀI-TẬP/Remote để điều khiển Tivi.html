@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class TV {
+        constructor(name, chanel, volume, status) {
+            this.name = name;
+            this.chanel = chanel;
+            this.volume = volume;
+            this.status = status
+        }
+        alertStatus() {
+            if (this.status) {
+                alert(" Bật TV")
+            }
+            else {
+                alert(" Tắt TV ")
+            }
+        }
+        changeChanelTV (n){
+            this.chanel = n
+        }
+
+        checkVolume() {
+            alert("This volume is: " + this.volume)
+        }
+        checkChanel() {
+            alert('This chanel is: ' +this.chanel)
+        }
+    }
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
+        changeChanel (tv) {
+            let chl = prompt('Vui lòng nhập số kênh bạn muốn xem')
+            return tv.chanel = chl
+        }
+        changeVolume (tv) {
+            let vol = prompt("Vui lòng nhập số vol bạn muốn")
+            return tv.volume = vol
+
+        }
+        turnOn(tv) {
+            tv.status = true
+        }
+        turnOff(tv) {
+            tv.status =false
+        }
+    }
+    let remote = new Remote(12);
+    let tv = new TV("Sam sung", 1, 5, false)
+    remote.turnOn(tv);
+    tv.alertStatus();
+    tv.changeChanelTV (7);
+    tv.checkChanel();
+     remote.changeChanel(tv);
+     tv.checkChanel();
+     remote.changeVolume(tv);
+     tv.checkVolume();
+     remote.turnOff(tv);
+     tv.alertStatus()
+
+
+</script>
+</body>
+</html>

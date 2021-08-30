@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let newArray = [
+        [9, 2, 3, 4, 5, 6],
+        [5, 6, 7, 8, 9, 3]
+    ];
+
+    let max = newArray[0][0];
+    for (let i = 0; i < newArray.length; i++) {
+        for (let j = 0; j < newArray[i].length; j++) {
+            if (newArray[i][j] > max) {
+                max = newArray[i][j];
+            }
+        }
+    }
+    document.write("giá trị mảng 2 chiều lớn nhất là : " + max)
+
+    document.write("<br>")
+
+    let min = newArray[0][0]
+    for (let i = 0; i < newArray.length; i++) {
+        for (let j = 0; j < newArray[i].length; j++) {
+            if (newArray[i][j] < min) {
+                min = newArray[i][j];
+            }
+        }
+    }
+    document.write("giá trị mảng 2 chiều nhỏ nhất là : " + min)
+
+
+
+</script>
+</body>
+</html>
