@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+// var arr= [1,8,4,6,9,12,10,66]
+//    arr.sort(function sapXeptangDan(a,b) {
+//         if (a>b) {
+//             return 1 ;
+//        } ;
+//         if( a<b) {
+//             return -1;
+//         } ;
+//     })
+//
+//     document.writeln("sắp xếp " + arr )
+let arr = [19,25,66,98,434,56,87,544,43 ];
+document.writeln(checkSoNguyenTo(arr));
+
+
+function checkSoNguyenTo(num) {
+    let primeNumber = [];
+    let uniquePrime = [];
+    let a, b;
+
+    for (let j = 0; j < num.length; j++) {
+        if (checkPrime(num[j])) {
+            primeNumber.push(num[j])
+        }
+    }
+
+    for (let i = 0; i < primeNumber.length; i++) {
+
+        if (!uniquePrime.includes(primeNumber[i])) {
+            uniquePrime.push(primeNumber[i])
+        }
+    }
+    // sap xep lai mang tang dan
+    uniquePrime.sort(function (a, b) {
+        return a - b;
+    });
+
+    return uniquePrime;
+}
+
+// check snt
+function checkPrime(element) {
+    if (element < 2) {
+        return false;
+    } else {
+        for (let i = 2; i < element; i++) {
+            if (element % i == 0) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+</script>
+</body>
+</html>

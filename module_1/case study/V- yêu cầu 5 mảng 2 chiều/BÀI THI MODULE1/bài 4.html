@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(code,name,manufacturer,price) {
+            this.code = code;
+            this.name = name;
+            this.manufacturer = manufacturer;
+            this.price = price;
+        }
+        getcode(){
+           return this.code;
+        }
+        getname(){
+            return this.name;
+        }
+        getmanufacturer(){
+            return this.manufacturer;
+        }
+        getprice(){
+            return this.price;
+        }
+        setcode(newcode){
+            this.code = newcode;
+        }
+        setname(newname){
+            this.name = newname;
+        }
+        setmanufacturer(newmanufacturer){
+            this.manufacturer = newmanufacturer
+        }
+        setprice(newprice){
+            this.price = newprice;
+        }
+        toString(){
+            return ( code,Name,manufacturer,price)
+        }
+    }
+    let Phone1 = new Phone(12,"nokia","nokia",12000);
+    code = Phone1.getcode();
+    Name = Phone1.getname();
+    manufacturer = Phone1.getmanufacturer();
+    price = Phone1.getprice();
+    document.writeln("Mã điện thoại là  " + code + '<br>',"Tên điện thoại  "+ Name + '<br>', "Hãng sản xuất  " + manufacturer + '<br>',"Giá tiền  " + price)
+    document.writeln("<br>");
+
+    Phone1.setcode(13);
+    Phone1.setname("Samsung");
+    Phone1.setmanufacturer("Samsung");
+    Phone1.setprice(1500000);
+
+    code = Phone1.getcode();
+    Name = Phone1.getname();
+    manufacturer = Phone1.getmanufacturer();
+    price = Phone1.getprice();
+
+    document.writeln(Phone1.toString())
+
+</script>
+</body>
+</html>
