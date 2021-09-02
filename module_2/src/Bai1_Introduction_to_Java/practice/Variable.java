@@ -1,4 +1,4 @@
-package Bai1_Introduction_to_Java.thuc_hanh;
+package bai1_introduction_to_java.practice;
 
 public class Variable {
     public static void main(String[] args) {

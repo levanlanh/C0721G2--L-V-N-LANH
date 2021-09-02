@@ -1,4 +1,4 @@
-package Bai1_Introduction_to_Java.bai_tap;
+package bai1_introduction_to_java.exercise;
 
 import java.util.Scanner;
 
@@ -7,52 +7,53 @@ public class NumbersIntoLetters {
         Scanner scanner = new Scanner(System.in);
         System.out.println("nhập số cần đọc : ");
         int number = scanner.nextInt();
+        String result = "";
 
 
         if (number <= 10 && number >= 0) {
             switch (number) {
                 case 0:
-                    System.out.println("zero");
+                    result += "zero";
                     break;
 
                 case 1:
-                    System.out.println("One");
+                    result += "One";
                     break;
 
                 case 2:
-                    System.out.println("Two");
+                    result += "Two";
                     break;
 
                 case 3:
-                    System.out.println("Three");
+                    result += "Three";
                     break;
 
                 case 4:
-                    System.out.println("Four");
+                    result += "Four";
                     break;
 
                 case 5:
-                    System.out.println("Five");
+                    result += "Five";
                     break;
 
                 case 6:
-                    System.out.println("Six");
+                    result += "Six";
                     break;
 
                 case 7:
-                    System.out.println("Seven");
+                    result += "Seven";
                     break;
 
                 case 8:
-                    System.out.println("Eight");
+                    result += "Eight";
                     break;
 
                 case 9:
-                    System.out.println("Nine");
+                    result += "Nine";
                     break;
 
                 case 10:
-                    System.out.println("ten");
+                    result += "ten";
                     break;
 
 
@@ -61,98 +62,124 @@ public class NumbersIntoLetters {
         if (number < 20 && number > 10) {
             switch (number) {
                 case 11:
-                    System.out.println("eleven");
+                    result += "eleven";
                     break;
                 case 12:
-                    System.out.println("twelve");
+                    result += "twelve";
                     break;
                 case 13:
-                    System.out.println("thirteen");
+                    result += "thirteen";
                     break;
                 case 14:
-                    System.out.println("fourteen");
+                    result += "fourteen";
                     break;
                 case 15:
-                    System.out.println("fifteen");
+                    result += "fifteen";
                     break;
                 case 16:
-                    System.out.println("sixteen");
+                    result += "sixteen";
                     break;
                 case 17:
-                    System.out.println("seventeen");
+                    result += "seventeen";
                     break;
                 case 18:
-                    System.out.println("eighteen");
+                    result += "eighteen";
                     break;
                 case 19:
-                    System.out.println("nineteen");
+                    result += "nineteen";
                     break;
 
             }
         }
-        if(number <100 && number>20) {
-            int unit = number % 10;
-            number /= 10;
-            switch (number) {
+        if(number <1000 && number >100){
+            int dozen = number%100/10;
+            int unit = (number%100)%10;
+            number/=100;
+
+            switch (number){
+                case 1:
+                    result += "onehundreds";break;
                 case 2:
-                    System.out.println("twenty");
+                    result += "twohundreds";break;
+                case 3:
+                    result += "threehundreds";break;
+                case 4:
+                    result += "fourhundreds";break;
+                case 5:
+                    result += "fivehundreds";break;
+                case 6:
+                    result += "sixhundreds";break;
+                case 7:
+                    result += "sevenhundreds";break;
+                case 8:
+                    result += "eighthundreds";break;
+                case 9:
+                    result += "ninehundreds";break;
+            }
+            switch (dozen) {
+                case 2:
+                    result += "twenty";
                     break;
                 case 3:
-                    System.out.println("thirty");
+                    result += "thirty";
                     break;
                 case 4:
-                    System.out.println("fourty");
+                    result += "fourty";
                     break;
                 case 5:
-                    System.out.println("fifty");
+                    result += "fifty";
                     break;
                 case 6:
-                    System.out.println("sixty");
+                    result += "sixty";
                     break;
                 case 7:
-                    System.out.println("seventy");
+                    result += "seventy";
                     break;
                 case 8:
-                    System.out.println("eighty");
+                    result += "eighty";
                     break;
                 case 9:
-                    System.out.println("ninety");
+                    result += "ninety";
                     break;
 
             }
             switch (unit) {
                 case 1:
-                    System.out.println(" one");
+                    result += " one";
                     break;
 
                 case 2:
-                    System.out.println("two");
+                    result += "two";
                     break;
                 case 3:
-                    System.out.println("three");
+                    result += "three";
                     break;
                 case 4:
-                    System.out.println("four");
+                    result += "four";
                     break;
                 case 5:
-                    System.out.println("five");
+                    result += "five";
                     break;
                 case 6:
-                    System.out.println("six");
+                    result += "six";
                     break;
                 case 7:
 
-                    System.out.println("seven");
+                    result += "seven";
                     break;
                 case 8:
-                    System.out.println("eight");
+                    result += "eight";
                     break;
                 case 9:
-                    System.out.println("nine");
+                    result += "nine";
                     break;
             }
+        System.out.println(result);
+        }
 
-        }}}
+    }
+
+}
 
 
 

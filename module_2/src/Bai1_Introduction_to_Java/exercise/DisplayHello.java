@@ -1,4 +1,4 @@
-package Bai1_Introduction_to_Java.bai_tap;
+package bai1_introduction_to_java.exercise;
 import java.util.Scanner;
 class DisplayHello {
     public static void main(String[] args) {

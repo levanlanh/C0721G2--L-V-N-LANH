@@ -1,4 +1,4 @@
-package Bai1_Introduction_to_Java.practice;
+package bai1_introduction_to_java.exercise;
 import java.util.Scanner;
 public class CovertMoney {
     public static void main(String[] args) {
