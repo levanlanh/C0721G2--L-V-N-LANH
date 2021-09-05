@@ -1,7 +1,7 @@
 package bai3_array_java.exercise;
 
 import java.util.Scanner;
-/// TÍNH TỔNG SỐ CỘT . 
+/// TÍNH TỔNG SỐ CỘT .
 public class SumOfNumbersInAColumn {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
