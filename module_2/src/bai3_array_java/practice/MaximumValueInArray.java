@@ -5,8 +5,6 @@ import java.util.Scanner;
 public class MaximumValueInArray {
     public static void main(String[] args) {
 
-
-
         int size;
         int[] array;
         Scanner scanner = new Scanner(System.in);
