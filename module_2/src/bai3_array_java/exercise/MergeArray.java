@@ -15,6 +15,6 @@ public class MergeArray {
         for( int j = 0;j<arr2.length;j++){
             arr2[j]= scanner.nextInt();
         }
-        System.out.println();
+        System.out.println(sdsas);
     }
 }
