@@ -1,31 +1,32 @@
 package bai3_array_java.exercise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DeleteArrayOfElements {
     public static void main(String[] args) {
-        int[] number = {4, 5, 7, 8, 6, 9};
+        // C2: array 1 (len) -> array 2 (len - 1)
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập vị trí cần xóa :");
-        int x = scanner.nextInt();
-        int add = number.length;
-        System.out.println("trước khi xóa.");
-        for( int element : number){
-            System.out.print(element + " ");
-        }
+        int[] a = {5, 4, 9, 8, 8, 8};
 
-        System.out.println(" ");
+        System.out.println("Input value: ");
+        int value = scanner.nextInt();
 
-        for (int i = x; i < number.length-1; i++) {
-            number[i] = number[i + 1];
+        int count = 0;
+        // 5, 4, 9, 12, 8
+        // a.length = 6, count = 1
+        for (int i = 0; i < a.length - count; i++) {
+            if (a[i] == value) {
+                int pos = i;
+
+                // pos = 3, a.length = 6, count = 0
+                for (int j = pos; j < a.length - count - 1; j++) {
+                    a[j] = a[j + 1];
+                }
+                count++;
+            }
         }
-        System.out.println("sau khi xóa.");
-//        for( int element : number){
-//            System.out.print(element + " ");
-//        }
-      add--;
-        for (int i = 0; i < add; i++) {
-            System.out.print(number[i] + " ");
-        }
+        int[] b = Arrays.copyOf(a, a.length - count);
+        System.out.println(Arrays.toString(b));
     }
 }

@@ -1,31 +1,33 @@
 package bai3_array_java.exercise;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AddElementToArray {
     public static void main(String[] args) {
-
-        int[] array = {3, 4, 6, 7, 8, 9};
+        int[] arrN = {3, 4, 5, 6, 7, 8, 9};
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" vị trí cần chèn vào mảng : ");
+        System.out.println("nhập phần tử muốn chèn : ");
         int x = scanner.nextInt();
-
-        System.out.println("nhập giá trị cần chèn : ");
-        int value = scanner.nextInt();
-
-        System.out.println("trước khi chèn ");
-
-        for (int element : array) {
-            System.out.print(element + " ");
+        System.out.println("nhập vị trí cần chèn :");
+        int index = scanner.nextInt();
+        //khai báo một mảng mới.
+        int[] arrayNew = new int[arrN.length + 1];
+        System.out.print("phần tử mảng mới :");
+        System.out.println(Arrays.toString(arrayNew));
+        if (index < -1 && index > arrN.length - 1) {
+            System.out.println("không chèn được phần tử vào mảng.");
+        } else {
+            for (int i = 0; i < arrayNew.length; i++) {
+                if (index == i) {
+                    arrayNew[i] = x;
+                } else if (i < index) {
+                    arrayNew[i] = arrN[i];
+                } else arrayNew[i] =arrN[i - 1];
+            }
         }
-        System.out.println(" ");
-        for (int i = array.length - 1; i > x; i--) {
-            array[i] = array[i - 1];
-        }
-        array[x] = value ;
-        System.out.println("sau khi chèn ");
-        for (int element : array) {
-            System.out.print(element + " ");
-        }
+        System.out.println("Mảng mới :");
+        System.out.println(Arrays.toString(arrayNew));
     }
 }
+
