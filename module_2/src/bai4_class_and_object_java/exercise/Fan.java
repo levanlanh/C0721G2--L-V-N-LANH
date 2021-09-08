@@ -1,10 +1,10 @@
 package bai4_class_and_object_java.exercise;
 
 public class Fan {
-    final int Slow = 1;
-    final int Medium =2;
-    final  int Fast = 3;
-    private int speed = this.Slow;
+    final int SLOW = 1;
+    final int MEDIUM =2;
+    final  int FAST = 3;
+    private int speed = this.SLOW;
     private boolean on = false;
     private int radius = 5;
     private String color = "blue";

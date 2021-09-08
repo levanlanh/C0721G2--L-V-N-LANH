@@ -37,17 +37,7 @@ public class StopWatch {
     }
 
     public static void main(String[] args) {
-        StopWatch watch = new StopWatch();
-        watch.start();
-        int[] arr = new int[100000];
-        System.out.println(" tạo mảng : ");
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) Math.floor(((Math.random() * 100000) + 1));
-        }
-        Arrays.sort(arr); //sắp xếp mảng.
-        System.out.print(Arrays.toString(arr) + "\n");
-        watch.stop();
-        System.out.println("Đã trôi qua : " + watch.getElapsedTime());
+        
 
 
     }
