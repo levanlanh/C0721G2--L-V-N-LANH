@@ -6,13 +6,14 @@ public class ClassStudent {
     private String name = "john";
     private String classes = "CO2";
 
-    ClassStudent(){
+    ClassStudent() {
     }
 
-public ClassStudent(String name, String classes){
+    public ClassStudent(String name, String classes) {
         this.name = name;
         this.classes = classes;
-}
+    }
+
     public void setName(String name) {
         this.name = name;
     }
