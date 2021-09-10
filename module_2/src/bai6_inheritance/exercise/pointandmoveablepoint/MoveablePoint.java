@@ -1,5 +1,7 @@
 package bai6_inheritance.exercise.pointandmoveablepoint;
 
+import java.util.Arrays;
+
 public class MoveablePoint extends Point{
     float xSpeed = 0.0f;
     float ySpeed = 0.0f;
@@ -16,7 +18,14 @@ public class MoveablePoint extends Point{
     }
     public MoveablePoint(){
     }
-
+public float[] getSpeed(){
+        float[] arr = {xSpeed,ySpeed};
+        return arr;
+}
+public void setSpeed(float xSpeed, float ySpeed){
+    this.xSpeed = xSpeed;
+    this.ySpeed = ySpeed;
+}
     public float getxSpeed() {
         return xSpeed;
     }
@@ -34,16 +43,19 @@ public class MoveablePoint extends Point{
     }
 
     public MoveablePoint move(){
-        this.x = x+xSpeed;
-        this.y = y+ySpeed;
+
+        setX(getX()+ xSpeed);
+        setY(getY()+ ySpeed);
         return this;
+
     }
 
     @Override
     public String toString() {
         return "MoveablePoint{" +
                 "xSpeed=" + xSpeed +
-                ", ySpeed=" + ySpeed +
+                ", ySpeed=" + ySpeed + Arrays.toString(getSpeed())+
                 '}';
     }
 }
+

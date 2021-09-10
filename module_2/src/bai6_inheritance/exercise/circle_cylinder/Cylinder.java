@@ -1,37 +1,37 @@
-package bai6_inheritance.exercise.circlecylinder;
+package bai6_inheritance.exercise.circle_cylinder;
 
-public class Cylinder  extends Circle{
-    double heigth;
-    public Cylinder(){
+public class Cylinder  extends Circle {
+    private double height;
+
+    public double getHeight() {
+        return height;
     }
 
-    public Cylinder(double heigth) {
-        this.heigth = heigth;
+    public void setHeight(double height) {
+        this.height = height;
     }
 
-    public Cylinder(double darius, String color,double heigth ) {
-        super(darius, color);
-        this.heigth = heigth;
+    public Cylinder() {
+
     }
 
-    public double getHeigth() {
-        return heigth;
+    public Cylinder(double height) {
+        this.height = height;
     }
 
-    public void setHeigth(double heigth) {
-        this.heigth = heigth;
+    public Cylinder(double radius, String color, double height) {
+        super(radius, color);
+        this.height = height;
     }
 
-    public double TheTich (){
-        return Math.PI*this.darius*this.darius*this.heigth;
-   }
+    public double getVolume() {
+        double volume;
+        return volume = super.getArea() * this.height;
+    }
 
     @Override
     public String toString() {
-        return "Cylinder{" +
-                "heigth=" + heigth +
-                ", darius=" + darius +
-                ", color='" + color + '\'' +
-                '}';
+        return super.toString();
     }
+
 }

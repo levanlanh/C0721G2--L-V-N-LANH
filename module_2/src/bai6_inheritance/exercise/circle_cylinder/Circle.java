@@ -1,22 +1,18 @@
-package bai6_inheritance.exercise.circlecylinder;
+package bai6_inheritance.exercise.circle_cylinder;
 
 public class Circle {
-    double darius ;
-    String color;
-    public Circle(){
+    private double radius;
+    private String color;
+    private double area;
+
+    public double getRadius() {
+        return radius;
     }
 
-    public Circle(double darius, String color) {
-        this.darius = darius;
-        this.color = color;
-    }
+    public void setRadius(double radius) {
+        this.radius = radius;
+        this.area = this.radius * this.radius * Math.PI;
 
-    public double getDarius() {
-        return darius;
-    }
-
-    public void setDarius(double darius) {
-        this.darius = darius;
     }
 
     public String getColor() {
@@ -27,11 +23,27 @@ public class Circle {
         this.color = color;
     }
 
+    public double getArea() {
+        return area;
+    }
+
+    public Circle() {
+
+    }
+
+    public Circle(double radius, String color) {
+        this.radius = radius;
+        this.color = color;
+        this.area = this.radius * this.radius * Math.PI;
+    }
+
     @Override
     public String toString() {
         return "Circle{" +
-                "darius=" + darius +
+                "radius=" + radius +
                 ", color='" + color + '\'' +
+                ", area=" + area +
                 '}';
     }
+
 }

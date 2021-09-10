@@ -8,7 +8,8 @@ public class TestPointMoveablePoint {
         System.out.println(Arrays.toString(point.getXY()));
 
         MoveablePoint moveablePoint = new MoveablePoint(3,4);
-        moveablePoint.move();
+       moveablePoint.move();
+        System.out.println(moveablePoint);
         System.out.println(moveablePoint.move().getX());
         System.out.println(moveablePoint.move().getY());
 
