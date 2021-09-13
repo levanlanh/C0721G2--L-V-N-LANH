@@ -1,6 +1,6 @@
 package bai7_abstract_class_interface.exercise.interface_resizeable;
 
-public class Circle extends Shape implements Resizeable {
+public class Circle extends Rectangle implements Resizeable {
     private double radius = 2.0;
 
     public Circle() {
@@ -11,7 +11,7 @@ public class Circle extends Shape implements Resizeable {
     }
 
     public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
+        super();
         this.radius = radius;
     }
 

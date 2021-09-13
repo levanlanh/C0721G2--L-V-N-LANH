@@ -18,7 +18,7 @@ public class TestResizeable {
 
         System.out.println("------------------------------");
         for (int i = 0; i < shapes.length; i++){
-            double percen = (Math.random()*100)/100 ;
+            double percen = Math.random() ;
             if (shapes[i] instanceof Circle) {
                 System.out.println(((Circle) shapes[i]).resize(percen));
             } else if (shapes[i] instanceof Rectangle) {

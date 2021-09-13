@@ -1,6 +1,6 @@
 package bai5_access_modifier_static_menthod_static_property.exercise.student;
 
-import main.main.Student;
+import bai5_access_modifier_static_menthod_static_property.exercise.student.ClassStudent;
 
 public class ClassStudent {
     private String name = "john";

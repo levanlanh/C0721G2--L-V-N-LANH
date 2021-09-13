@@ -1,7 +1,5 @@
 package bai5_access_modifier_static_menthod_static_property.practice;
 
-import main.main.Student;
-
 // xây dựng lớp phương thức.
 public class StaticMethod {
     private int rollno ;

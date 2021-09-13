@@ -1,10 +1,11 @@
 package bai7_abstract_class_interface.exercise.colorable;
 
+import bai7_abstract_class_interface.exercise.interface_resizeable.Rectangle;
 import bai7_abstract_class_interface.exercise.interface_resizeable.Resizeable;
 import bai7_abstract_class_interface.exercise.interface_resizeable.Shape;
 
-public class Square extends Shape implements Colorable {
-    private double size = 5.0 ;
+public class Square extends Rectangle implements Colorable {
+    private double size = 5.0;
 
     public Square() {
     }
@@ -21,8 +22,8 @@ public class Square extends Shape implements Colorable {
         this.size = size;
     }
 
-    public double getArea (){
-        return this.size*this.size;
+    public double getArea() {
+        return this.size * this.size;
     }
 
     @Override

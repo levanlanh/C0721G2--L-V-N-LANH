@@ -1,4 +1,4 @@
-package bai7_abstract_class_interface.practice.comparable;
+package bai7_abstract_class_interface.practice.interface_comparable;
 
 import java.util.Arrays;
 
