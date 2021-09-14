@@ -1,7 +1,7 @@
 package bai7_abstract_class_interface.exercise.interface_resizeable;
 
-public class Circle extends Rectangle implements Resizeable {
-    private double radius = 2.0;
+public class Circle extends Shape implements Resizeable{
+    private double radius = 5.0;
 
     public Circle() {
     }
@@ -11,7 +11,7 @@ public class Circle extends Rectangle implements Resizeable {
     }
 
     public Circle(double radius, String color, boolean filled) {
-        super();
+        super(color, filled);
         this.radius = radius;
     }
 
@@ -24,7 +24,8 @@ public class Circle extends Rectangle implements Resizeable {
     }
 
     public double getArea() {
-        return radius * radius * Math.PI;
+        double area = radius * radius * Math.PI;
+        return area;
     }
 
     public double getPerimeter() {
@@ -41,7 +42,7 @@ public class Circle extends Rectangle implements Resizeable {
 
     @Override
     public double resize(double percent) {
-   double area = getArea() + (getArea() * percent);
-   return area;
+        double area  = getArea() + (getArea() * percent) ;
+        return area ;
     }
 }

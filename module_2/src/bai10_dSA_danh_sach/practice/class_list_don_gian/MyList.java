@@ -18,7 +18,7 @@ public class MyList<E> {
         elements = Arrays.copyOf(elements, newSize);
     }
     //Bước 3: Cài đặt phương thức add() thêm phần tử vào cuối mảng .
-    public void add(E e) {
+    public void add(int i, E e) {
         if (size == elements.length) {
             ensureCapa();
         }

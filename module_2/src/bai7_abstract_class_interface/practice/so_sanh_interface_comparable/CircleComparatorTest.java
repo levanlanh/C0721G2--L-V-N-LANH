@@ -1,4 +1,4 @@
-package bai7_abstract_class_interface.practice.so_sanh_comparable;
+package bai7_abstract_class_interface.practice.so_sanh_interface_comparable;
 import bai7_abstract_class_interface.exercise.interface_resizeable.Circle;
 import java.util.Arrays;
 import java.util.Comparator;
