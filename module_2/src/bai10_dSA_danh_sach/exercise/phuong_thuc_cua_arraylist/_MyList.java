@@ -45,18 +45,16 @@ public class _MyList<E> {
     }
 
     public E remove(int index) {
-        ensureCapa();
-        if (index >= 0 && index < size) {
-            for (int i = index; i < elements.length - 1; i++) {
-                elements[i] = elements[i + 1];
-            }
+        if (index >= elements.length || index < 0) {
+            throw new IndexOutOfBoundsException();
         }
+        E element = (E) elements[index];
+        for (int i = index; i < size - 1; i++) {
+            elements[i] = elements[i + 1];
+        }
+        elements[size - 1] = null;
         size--;
-        return (E) elements;
-    }
-
-    public int size() {
-        return size;
+        return element;
     }
 
     public _MyList<E> clone(){

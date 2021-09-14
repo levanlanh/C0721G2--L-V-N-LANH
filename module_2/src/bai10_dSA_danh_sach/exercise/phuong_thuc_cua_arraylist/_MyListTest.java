@@ -11,6 +11,7 @@ public class _MyListTest {
         listInteger.add(4,43);
         listInteger.add(0,31);
 
+
         System.out.println("element : "+listInteger.get(0));
         System.out.println("element : "+listInteger.get(1));
         System.out.println("element : "+listInteger.get(2));
