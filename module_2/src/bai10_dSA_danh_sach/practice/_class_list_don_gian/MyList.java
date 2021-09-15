@@ -1,6 +1,6 @@
 package bai10_dSA_danh_sach.practice.class_list_don_gian;
 
-import bai10_dSA_danh_sach.practice.class_list_don_gian;
+
 
 import java.util.Arrays;
 

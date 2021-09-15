@@ -1,9 +1,9 @@
 package bai10_dSA_danh_sach.practice.class_list_don_gian;
-import bai10_dSA_danh_sach.practice.class_list_don_gian;
+
 public class MylistTest {
     public static void main(String[] args) {
 
-        bai10_dSA_danh_sach.practice.class_list_don_gian.MyList<Integer> listInteger = new MyList<Integer>();
+        bai10_dSA_danh_sach.practice.class_list_don_gian.MyList<Integer> listInteger = new bai10_dSA_danh_sach.practice.class_list_don_gian.MyList<Integer>();
         listInteger.add(1, 1);
         listInteger.add(1, 2);
         listInteger.add(1, 3);
