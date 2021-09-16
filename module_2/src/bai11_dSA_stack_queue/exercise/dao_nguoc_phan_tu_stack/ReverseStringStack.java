@@ -3,7 +3,7 @@ package bai11_dSA_stack_queue.exercise.dao_nguoc_phan_tu_stack;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Reverse_String_Stack {
+public class ReverseStringStack {
     public static void main(String[] args) {
 
         String str = " hello world!";
