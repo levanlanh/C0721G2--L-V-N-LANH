@@ -8,7 +8,6 @@ public class TreeMapCount {
 
         String str = "bốn năm sáu bảy tám bốn ba hai bảy";
         str.toLowerCase();
-        String[] str1 = str.split("");
         String[] arr = str.split(" ");
         System.out.println(Arrays.toString(arr));
         TreeMap<String,Integer> treeMap = new TreeMap<>();
@@ -21,6 +20,7 @@ public class TreeMapCount {
             }
         }
         System.out.println(treeMap);
+
     }
 
 }
