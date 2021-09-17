@@ -1,7 +1,5 @@
 package bai12_java_collection_framework.exercise.su_dung_arraylist_linkedlist;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
 import java.util.*;
 
 public class ProductManager {
@@ -74,10 +72,10 @@ public class ProductManager {
         }
     }
     public void sortUp(){
-        Collections.sort(products,new SortProductName());
+        Collections.sort(products,new SortProductPrice());
     }
 public void sortDown(){
-        Collections.sort(products,new SortProductsName1());
+        Collections.sort(products,new SortProductsPrice1());
 }
 }
 

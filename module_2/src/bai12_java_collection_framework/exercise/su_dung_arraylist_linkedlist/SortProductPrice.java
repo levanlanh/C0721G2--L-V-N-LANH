@@ -2,7 +2,7 @@ package bai12_java_collection_framework.exercise.su_dung_arraylist_linkedlist;
 
 import java.util.Comparator;
 
-public class SortProductName implements Comparator<Product> {
+public class SortProductPrice implements Comparator<Product> {
     @Override
     public int compare(Product o1, Product o2) {
 
