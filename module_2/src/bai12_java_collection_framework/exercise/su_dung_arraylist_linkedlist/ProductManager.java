@@ -71,12 +71,14 @@ public class ProductManager {
             }
         }
     }
-    public void sortUp(){
-        Collections.sort(products,new SortProductPrice());
+
+    public void sortUp() {
+        Collections.sort(products, new SortProductPrice());
     }
-public void sortDown(){
-        Collections.sort(products,new SortProductsPrice1());
-}
+
+    public void sortDown() {
+        Collections.sort(products, new SortProductsPrice1());
+    }
 }
 
 
