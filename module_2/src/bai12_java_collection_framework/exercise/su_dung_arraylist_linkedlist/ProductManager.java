@@ -21,12 +21,13 @@ public class ProductManager {
     public static void addProducts() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter id");
+
         int id = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter price");
         int price = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter name");
         String name = scanner.nextLine();
-        Product product = new Product(id, name, price);
+        Product product = new Product(id, name, price); // khởi tạo đối tượng .
         products.add(product);
 
     }
