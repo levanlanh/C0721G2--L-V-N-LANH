@@ -5,8 +5,7 @@ public class Villa extends Facility {
     private double dienTichHoBoi;
     private int soTang;
 
-    public Villa() {
-    }
+
 
     public Villa(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, int tieuChuanPhong, double dienTichHoBoi, int soTang) {
         super(nameDv, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
@@ -15,11 +14,6 @@ public class Villa extends Facility {
         this.soTang = soTang;
     }
 
-    public Villa(int tieuChuanPhong, double dienTichHoBoi, int soTang) {
-        this.tieuChuanPhong = tieuChuanPhong;
-        this.dienTichHoBoi = dienTichHoBoi;
-        this.soTang = soTang;
-    }
 
     public int getTieuChuanPhong() {
         return tieuChuanPhong;

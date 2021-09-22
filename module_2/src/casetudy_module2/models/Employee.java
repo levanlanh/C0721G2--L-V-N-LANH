@@ -8,10 +8,8 @@ public class Employee extends Person {
     protected String viTri;
     protected double luong;
 
-    public Employee() {
-    }
 
-    public Employee(String name,String ngaySinh, boolean gioiTinh, int soCMND, int soDT, String email, int maNhanVien, String trinhDo, String viTri, double luong) {
+    public Employee(String name,String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email, int maNhanVien, String trinhDo, String viTri, double luong) {
         super(name, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.maNhanVien = maNhanVien;
         this.trinhDo = trinhDo;
@@ -19,12 +17,6 @@ public class Employee extends Person {
         this.luong = luong;
     }
 
-    public Employee(int maNhanVien, String trinhDo, String viTri, double luong) {
-        this.maNhanVien = maNhanVien;
-        this.trinhDo = trinhDo;
-        this.viTri = viTri;
-        this.luong = luong;
-    }
 
     public int getMaNhanVien() {
         return maNhanVien;

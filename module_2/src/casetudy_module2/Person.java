@@ -8,7 +8,7 @@ public abstract class Person {
     protected int soDT;
     protected String email;
 
-    public Person() {
+    public Person(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email) {
     }
 
     public Person(String name, String ngaySinh, boolean gioiTinh, int soCMND, int soDT, String email) {

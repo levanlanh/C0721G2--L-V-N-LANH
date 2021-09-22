@@ -3,32 +3,24 @@ package casetudy_module2.models;
 import casetudy_module2.Person;
 
 public class Customer extends Person {
-    private int maKh;
+    private int maKH;
     private String loaiKH;
     private String diaChi;
 
-    public Customer() {
-    }
 
-    public Customer(int maKh, String loaiKH, String diaChi) {
-        this.maKh = maKh;
-        this.loaiKH = loaiKH;
-        this.diaChi = diaChi;
-    }
-
-    public Customer(String name, String ngaySinh, boolean gioiTinh, int soCMND, int soDT, String email, int maKh, String loaiKH, String diaChi) {
+    public Customer(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email, int maKH, String loaiKH, String diaChi) {
         super(name, ngaySinh, gioiTinh, soCMND, soDT, email);
-        this.maKh = maKh;
+        this.maKH = maKH;
         this.loaiKH = loaiKH;
         this.diaChi = diaChi;
     }
 
     public int getMaKh() {
-        return maKh;
+        return maKH;
     }
 
-    public void setMaKh(int maKh) {
-        this.maKh = maKh;
+    public void setMaKh(int maKH) {
+        this.maKH = maKH;
     }
 
     public String getLoaiKH() {
