@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class main {
+class Main {
     public static void main(String[] args) {
 
         BufferedReader br = null;
         try {
             String line;
-            br = new BufferedReader(new FileReader("D:\\C0721G2--L-V-N-LANH\\module_2\\src\\bai16_io_text_file\\exercise\\docfilecsv\\file_quoc_gia"));
+            br = new BufferedReader(new FileReader("D:\\C0721G2--L-V-N-LANH\\module_2\\src\\bai16_io_text_file\\exercise\\docfilecsv\\file_csv"));
 
             while ((line = br.readLine()) != null) {
                 printCountry(parseCsvLine(line));
@@ -50,3 +50,4 @@ public class main {
                         + "]");
     }
 }
+
