@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NumberPhoneValidate {
-    public static final String PHONE_REGEX = "^([\\d]{2})[-]([0][\\d]{9})$";
+    public static final String PHONE_REGEX = "^[(][\\d]{2}[)][-][(][0][\\d]{9}[)]$";
 
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile(PHONE_REGEX);
