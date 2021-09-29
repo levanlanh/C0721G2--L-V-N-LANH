@@ -7,6 +7,13 @@ public class Customer extends Person {
     private String loaiKH;
     private String diaChi;
 
+    public final static String KIMCUONG = "kimcuong";
+    public final static String BACHKIM = "bachkim";
+    public final static String VANG = "vang";
+    public final static String BAC = "bac";
+
+
+
 
     public Customer(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email, int maKH, String loaiKH, String diaChi) {
         super(name, ngaySinh, gioiTinh, soCMND, soDT, email);
@@ -38,4 +45,15 @@ public class Customer extends Person {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-}
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                super.toString() +
+                ", mã khách hàng ='" + maKH + '\'' +
+                ", loại khách hàng ='" + loaiKH + '\'' +
+                ", địa chỉ ='" + diaChi + '\'' +
+                '}';
+    }
+    }
+

@@ -5,13 +5,10 @@ public abstract class Person {
     protected String ngaySinh;
     protected boolean gioiTinh;
     protected int soCMND;
-    protected int soDT;
+    protected String soDT;
     protected String email;
 
     public Person(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email) {
-    }
-
-    public Person(String name, String ngaySinh, boolean gioiTinh, int soCMND, int soDT, String email) {
 
         this.name = name;
         this.ngaySinh = ngaySinh;
@@ -54,11 +51,11 @@ public abstract class Person {
         this.soCMND = soCMND;
     }
 
-    public int getSoDT() {
+    public String getSoDT() {
         return soDT;
     }
 
-    public void setSoDT(int soDT) {
+    public void setSoDT(String soDT) {
         this.soDT = soDT;
     }
 
@@ -70,5 +67,15 @@ public abstract class Person {
         this.email = email;
     }
 
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", ngaySinh='" + ngaySinh + '\'' +
+                ", gioiTinh=" + gioiTinh +
+                ", soCMND=" + soCMND +
+                ", soDT=" + soDT +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
