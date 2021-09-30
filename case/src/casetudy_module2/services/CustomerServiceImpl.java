@@ -56,7 +56,7 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
-    public void editCustomer() {
+    public void editCustomer(String name1) {
         Show();
         System.out.println("Nhập tên khách hàng cần chỉnh sửa : ");
         String name = sc.nextLine();
@@ -92,9 +92,11 @@ public class CustomerServiceImpl implements CustomerService {
                             case 6:
                                 System.out.println("nhập email : ");
                                 o.setEmail(sc.nextLine());
+                                break;
                             case 7:
                                 System.out.println("nhập mã khách hàng  :");
                                 o.setMaKh(Integer.parseInt(sc.nextLine()));
+                                break;
                             case 8:
                                 System.out.println("nhập loại khách hàng :");
                                 boolean flag1 = true;

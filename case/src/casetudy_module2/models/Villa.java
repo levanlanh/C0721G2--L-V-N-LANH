@@ -1,13 +1,13 @@
 package casetudy_module2.models;
 
 public class Villa extends Facility {
-    private int tieuChuanPhong;
+    private String tieuChuanPhong;
     private double dienTichHoBoi;
     private int soTang;
 
 
 
-    public Villa(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, int tieuChuanPhong, double dienTichHoBoi, int soTang) {
+    public Villa(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, String tieuChuanPhong, double dienTichHoBoi, int soTang) {
         super(nameDv, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.dienTichHoBoi = dienTichHoBoi;
@@ -15,11 +15,11 @@ public class Villa extends Facility {
     }
 
 
-    public int getTieuChuanPhong() {
+    public String getTieuChuanPhong() {
         return tieuChuanPhong;
     }
 
-    public void setTieuChuanPhong(int tieuChuanPhong) {
+    public void setTieuChuanPhong(String tieuChuanPhong) {
         this.tieuChuanPhong = tieuChuanPhong;
     }
 
@@ -41,7 +41,7 @@ public class Villa extends Facility {
 
     @Override
     public String toString() {
-        return "Villa{" +
+        return "Villa{" + super.toString() +
                 "tieuChuanPhong=" + tieuChuanPhong +
                 ", dienTichHoBoi=" + dienTichHoBoi +
                 ", soTang=" + soTang +

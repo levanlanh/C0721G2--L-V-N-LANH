@@ -1,28 +1,28 @@
 package casetudy_module2.models;
 
 public class House extends Facility {
-    private int tieuChuanPhong;
+    private String tieuChuanPhong;
     private int soTang;
 
     public House() {
     }
 
-    public House(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, int tieuChuanPhong, int soTang) {
+    public House(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, String tieuChuanPhong, int soTang) {
         super(nameDv, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
 
-    public House(int tieuChuanPhong, int soTang) {
+    public House(String tieuChuanPhong, int soTang) {
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
 
-    public int getTieuChuanPhong() {
+    public String getTieuChuanPhong() {
         return tieuChuanPhong;
     }
 
-    public void setTieuChuanPhong(int tieuChuanPhong) {
+    public void setTieuChuanPhong(String tieuChuanPhong) {
         this.tieuChuanPhong = tieuChuanPhong;
     }
 
@@ -32,6 +32,13 @@ public class House extends Facility {
 
     public void setSoTang(int soTang) {
         this.soTang = soTang;
+    }
 
+    @Override
+    public String toString() {
+        return "House{" +  super.toString() +
+                "tieuChuanPhong='" + tieuChuanPhong + '\'' +
+                ", soTang=" + soTang +
+                '}';
     }
 }

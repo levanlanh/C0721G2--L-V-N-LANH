@@ -7,6 +7,11 @@ public abstract class Facility {
     protected int soluongNguoi;
     protected String kieuThue;
 
+    public final static String HOURS = "hours";
+    public final static String DATE = "date";
+    public final static String MONTH = "month";
+    public final static String YEAR= "year";
+
     public Facility() {
     }
 
@@ -56,6 +61,17 @@ public abstract class Facility {
 
     public void setKieuThue(String kieuThue) {
         this.kieuThue = kieuThue;
+    }
+
+    @Override
+    public String toString() {
+        return "Facility{" +
+                "nameDv='" + nameDv + '\'' +
+                ", dienTichSuDung=" + dienTichSuDung +
+                ", chiPhiThue=" + chiPhiThue +
+                ", soluongNguoi=" + soluongNguoi +
+                ", kieuThue='" + kieuThue + '\'' +
+                '}';
     }
 }
 

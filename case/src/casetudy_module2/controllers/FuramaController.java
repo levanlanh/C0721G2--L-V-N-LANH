@@ -2,13 +2,17 @@ package casetudy_module2.controllers;
 
 import casetudy_module2.services.CustomerServiceImpl;
 import casetudy_module2.services.EmployeeServiceImpl;
+import casetudy_module2.services.FacilityService;
+import casetudy_module2.services.FacilityServiceImpl;
 
 import java.util.Scanner;
+
 
 public class FuramaController {
     public static void main(String[] args) {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         Scanner sc = new Scanner(System.in);
         int selection;
         do {
@@ -59,7 +63,8 @@ public class FuramaController {
                             break;
 
                         case 3:
-
+                            String name1 = sc.nextLine();
+                            customerService.editCustomer(name1);
                             break;
 
                         case 4:
@@ -76,10 +81,12 @@ public class FuramaController {
                     switch (selection1) {
                         case 1:
                             System.out.println("1 Display list facility");
+                            facilityService.show();
                             break;
 
                         case 2:
                             System.out.println("2 Add new facility");
+                            facilityService.addFacility();
                             break;
 
                         case 3:
