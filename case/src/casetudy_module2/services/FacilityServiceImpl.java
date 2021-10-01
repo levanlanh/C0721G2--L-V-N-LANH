@@ -28,9 +28,9 @@ public class FacilityServiceImpl implements FacilityService {
         }
     }
 
-    public static Facility getFacility(String serviceName) {
-        for (Map.Entry<Facility, Integer> map : facilityIntegerMap.entrySet()) { 
-            if (map.getKey().getNameDv().contains(serviceName)) {
+    public static Facility getFacility(String nameDichVu) {
+        for (Map.Entry<Facility, Integer> map : facilityIntegerMap.entrySet()) {
+            if (map.getKey().getNameDv().contains(nameDichVu)) {
                 map.setValue(map.getValue() + 1);
                 return map.getKey();
             }
@@ -118,7 +118,6 @@ public class FacilityServiceImpl implements FacilityService {
                 }
             }
         };
-
     }
 
 

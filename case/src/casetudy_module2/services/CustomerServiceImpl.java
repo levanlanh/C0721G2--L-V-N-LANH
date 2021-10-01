@@ -13,8 +13,10 @@ public class CustomerServiceImpl implements CustomerService {
     static {
         Customer customer1 = new Customer("huy", "19/03/1999", true, 230123456, "0987654321", "abc@12.com", 1, "thanhvien", "DN");
         Customer customer2 = new Customer("Hao", "23/05/1998", true, 234562234, "0123456789", "zxc@12.com", 2, "vip", "HN");
+        Customer customer3 = new Customer("huyen","23/01/1998",false,234565432,"0998989898","huyen@.com",3,"vip","HCM");
         customerList.add(customer1);
         customerList.add(customer2);
+        customerList.add(customer3);
 
     }
 

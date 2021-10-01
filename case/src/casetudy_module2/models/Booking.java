@@ -1,23 +1,21 @@
 package casetudy_module2.models;
 
+import javax.xml.crypto.Data;
+import java.util.Date;
+
 public class Booking {
     private int maBooking;
-    private String ngayBatDau;
-    private String ngayKetThuc;
-    private int maNhanVien;
-    private String tenDichVu;
-    private String loaiDichVu;
+    private Date ngayBatDauBoking;
+    private Date ngayKetThucBoking;
+    private Customer customer;
+    private Facility facility;
 
-    public Booking() {
-    }
-
-    public Booking(int maBooking, String ngayBatDau, String ngayKetThuc, int maNhanVien, String tenDichVu, String loaiDichVu) {
+    public Booking(int maBooking, Date ngayBatDauBoking, Date ngayKetThucBoking, Customer customer, Facility facility) {
         this.maBooking = maBooking;
-        this.ngayBatDau = ngayBatDau;
-        this.ngayKetThuc = ngayKetThuc;
-        this.maNhanVien = maNhanVien;
-        this.tenDichVu = tenDichVu;
-        this.loaiDichVu = loaiDichVu;
+        this.ngayBatDauBoking = ngayBatDauBoking;
+        this.ngayKetThucBoking = ngayKetThucBoking;
+        this.customer = customer;
+        this.facility = facility;
     }
 
     public int getMaBooking() {
@@ -28,43 +26,46 @@ public class Booking {
         this.maBooking = maBooking;
     }
 
-    public String getNgayBatDau() {
-        return ngayBatDau;
+    public Date getNgayBatDauBoking() {
+        return ngayBatDauBoking;
     }
 
-    public void setNgayBatDau(String ngayBatDau) {
-        this.ngayBatDau = ngayBatDau;
+    public void setNgayBatDauBoking(Date ngayBatDauBoking) {
+        this.ngayBatDauBoking = ngayBatDauBoking;
     }
 
-    public String getNgayKetThuc() {
-        return ngayKetThuc;
+    public Date getNgayKetThucBoking() {
+        return ngayKetThucBoking;
     }
 
-    public void setNgayKetThuc(String ngayKetThuc) {
-        this.ngayKetThuc = ngayKetThuc;
+    public void setNgayKetThucBoking(Date ngayKetThucBoking) {
+        this.ngayKetThucBoking = ngayKetThucBoking;
     }
 
-    public int getMaNhanVien() {
-        return maNhanVien;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setMaNhanVien(int maNhanVien) {
-        this.maNhanVien = maNhanVien;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getTenDichVu() {
-        return tenDichVu;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setTenDichVu(String tenDichVu) {
-        this.tenDichVu = tenDichVu;
+    public void setFacility(Facility facility) {
+        this.facility = facility;
     }
 
-    public String getLoaiDichVu() {
-        return loaiDichVu;
-    }
-
-    public void setLoaiDichVu(String loaiDichVu) {
-        this.loaiDichVu = loaiDichVu;
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "maBooking=" + maBooking +
+                ", ngayBatDauBoking=" + ngayBatDauBoking +
+                ", ngayKetThucBoking=" + ngayKetThucBoking +
+                ", customer=" + customer +
+                ", facility=" + facility +
+                '}';
     }
 }
