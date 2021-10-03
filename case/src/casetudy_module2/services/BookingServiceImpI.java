@@ -1,9 +1,8 @@
 package casetudy_module2.services;
 
-import casetudy_module2.Utilities;
+import casetudy_module2.utils.Utilities;
 import casetudy_module2.models.Booking;
 
-import java.util.Date;
 import java.util.Scanner;
 import java.util.TreeSet;
 

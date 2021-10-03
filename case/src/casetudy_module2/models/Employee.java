@@ -1,7 +1,5 @@
 package casetudy_module2.models;
 
-import casetudy_module2.Person;
-
 import java.io.Serializable;
 
 public class Employee extends Person implements Serializable {

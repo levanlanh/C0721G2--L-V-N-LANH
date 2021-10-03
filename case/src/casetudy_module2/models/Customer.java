@@ -1,7 +1,5 @@
 package casetudy_module2.models;
 
-import casetudy_module2.Person;
-
 public class Customer extends Person {
     private int maKH;
     private String loaiKH;

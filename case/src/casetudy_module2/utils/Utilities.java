@@ -1,4 +1,4 @@
-package casetudy_module2;
+package casetudy_module2.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

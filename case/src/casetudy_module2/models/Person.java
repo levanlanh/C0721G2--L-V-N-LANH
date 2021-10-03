@@ -1,4 +1,4 @@
-package casetudy_module2;
+package casetudy_module2.models;
 
 public abstract class Person {
     protected String name;
