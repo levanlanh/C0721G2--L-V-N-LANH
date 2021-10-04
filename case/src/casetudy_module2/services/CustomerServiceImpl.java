@@ -20,11 +20,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
-    public void Show() {
+    public static void Show() {
         for (Customer o : customerList) {
             System.out.println(o);
         }
     }
+
 
     public void addCustomer() {
         boolean flag = true;
@@ -136,5 +137,15 @@ public class CustomerServiceImpl implements CustomerService {
                 }
             }
         }
+    }
+
+    @Override
+    public void add() {
+
+    }
+
+    @Override
+    public void show() {
+
     }
 }

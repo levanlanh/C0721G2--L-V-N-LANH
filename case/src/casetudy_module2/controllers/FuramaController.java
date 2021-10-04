@@ -31,14 +31,14 @@ public class FuramaController {
                     int selection1 = sc.nextInt();
                     switch (selection1) {
                         case 1:
-                            employeeService.display();
+                            employeeService.show();
                             break;
                         case 2:
                             employeeService.add();
                             break;
                         case 3:
                             String name = sc.nextLine();
-                            employeeService.editEmployee(name);
+                            employeeService.edit(name);
                             break;
                         case 4:
                             System.out.println("return lại menu");
@@ -108,7 +108,7 @@ public class FuramaController {
                     switch (selection1) {
                         case 1:
                             System.out.println("1. Add new booking");
-
+                             bookingService.add();
                             break;
 
                         case 2:

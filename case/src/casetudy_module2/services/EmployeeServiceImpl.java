@@ -15,12 +15,18 @@ public class EmployeeServiceImpl implements EmployeeService {
       employee.add(new Employee("lanh","18/02/1999",true,231317412,"0987654321","vietnam@gmail.com",001,"COLLEGE","nhân viên",23000000));
       employee.add(new Employee("linh","23/04/1996",false,23453245,"0987654312","helo@gmail.com",002,"UNIVERSITY","trưởng phòng",34000000));
   }
-  public void display(){
+  public void show(){
       for ( Employee employee: employee) {
           System.out.println(employee);
       }
   }
-  public void add(){
+
+    @Override
+    public void edit() {
+
+    }
+
+    public void add(){
       System.out.println("nhập tên :");
       String name = scanner.nextLine();
       System.out.println("nhập ngày sinh :");
@@ -45,8 +51,11 @@ public class EmployeeServiceImpl implements EmployeeService {
       employee.add(employees);
 
   }
-  public void editEmployee(String name){
-      display();
+
+
+
+    public void edit(String name){
+      show();
       System.out.println("nhập tên nhân viên cần chỉnh sửa : ");
        name = scanner.nextLine();
       for (Employee o: employee) {
@@ -157,6 +166,6 @@ public class EmployeeServiceImpl implements EmployeeService {
           }
           }
       }
-      display();
+      show();
   }
 }

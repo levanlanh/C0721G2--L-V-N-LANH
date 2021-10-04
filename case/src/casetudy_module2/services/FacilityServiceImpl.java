@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
-    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+   protected static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
     private static Scanner sc = new Scanner(System.in);
 
 
@@ -21,7 +21,12 @@ public class FacilityServiceImpl implements FacilityService {
         facilityIntegerMap.put(new Villa("villa2", 80, 250000, 2, Villa.HOURS, "A", 10, 15), 0);
     }
 
-    public void show() {
+    @Override
+    public void add() {
+
+    }
+
+    public static void show() {
         Set<Facility> facilitySet = facilityIntegerMap.keySet();
         for (Facility o : facilitySet) {
             System.out.println(o + " : times " + facilityIntegerMap.get(o));

@@ -12,4 +12,9 @@ public class BookingComparator implements Comparator<Booking> {
        }
        return o1.getNgayKetThucBoking().compareTo(o2.getNgayBatDauBoking());
     }
+//        if (o1.getMaBooking() > o2.getMaBooking()) {
+//            return 1;
+//        }
+//        return -1;
+//    }
 }
