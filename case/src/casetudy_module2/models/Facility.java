@@ -2,6 +2,7 @@ package casetudy_module2.models;
 
 public abstract class Facility {
     protected String nameDv;
+    protected String maDichVu;
     protected double dienTichSuDung;
     protected double chiPhiThue;
     protected int soluongNguoi;
@@ -12,23 +13,20 @@ public abstract class Facility {
     public final static String MONTH = "month";
     public final static String YEAR= "year";
 
-    public Facility() {
-    }
-
-    public Facility(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue) {
-        this.nameDv = nameDv;
-        this.dienTichSuDung = dienTichSuDung;
-        this.chiPhiThue = chiPhiThue;
-        this.soluongNguoi = soluongNguoi;
-        this.kieuThue = kieuThue;
-    }
-
     public String getNameDv() {
         return nameDv;
     }
 
     public void setNameDv(String nameDv) {
         this.nameDv = nameDv;
+    }
+
+    public String getMaDichVu() {
+        return maDichVu;
+    }
+
+    public void setMaDichVu(String maDichVu) {
+        this.maDichVu = maDichVu;
     }
 
     public double getDienTichSuDung() {
@@ -63,15 +61,14 @@ public abstract class Facility {
         this.kieuThue = kieuThue;
     }
 
-    @Override
-    public String toString() {
-        return "Facility{" +
-                "nameDv='" + nameDv + '\'' +
-                ", dienTichSuDung=" + dienTichSuDung +
-                ", chiPhiThue=" + chiPhiThue +
-                ", soluongNguoi=" + soluongNguoi +
-                ", kieuThue='" + kieuThue + '\'' +
-                '}';
+    public Facility(String nameDv, String maDichVu, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue) {
+        this.nameDv = nameDv;
+        this.maDichVu = maDichVu;
+        this.dienTichSuDung = dienTichSuDung;
+        this.chiPhiThue = chiPhiThue;
+        this.soluongNguoi = soluongNguoi;
+        this.kieuThue = kieuThue;
+
     }
 }
 

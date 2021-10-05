@@ -11,6 +11,8 @@ public class FuramaController {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         BookingServiceImpI bookingService = new BookingServiceImpI();
+        ContractServiceImpI contractService = new ContractServiceImpI();
+
         Scanner sc = new Scanner(System.in);
         int selection;
         do {
@@ -53,16 +55,16 @@ public class FuramaController {
                     sc.nextLine();
                     switch (selection1) {
                         case 1:
-                            customerService.Show();
+                            customerService.show();
                             break;
 
                         case 2:
-                            customerService.addCustomer();
+                            customerService.add();
                             break;
 
                         case 3:
                             String name1 = sc.nextLine();
-                            customerService.editCustomer(name1);
+                            customerService.edit();
                             break;
 
                         case 4:
@@ -84,7 +86,7 @@ public class FuramaController {
 
                         case 2:
                             System.out.println("2 Add new facility");
-                            facilityService.addFacility();
+                            facilityService.add();
                             break;
 
                         case 3:
@@ -118,13 +120,16 @@ public class FuramaController {
 
                         case 3:
                             System.out.println("3. Create new constracts");
+                            contractService.add();
                             break;
 
                         case 4:
                             System.out.println("4. Display list contracts");
+                            contractService.show();
                             break;
                         case 5:
                             System.out.println("5. Edit contracts");
+                            contractService.edit();
                             break;
                         case 6:
                             System.out.println("6. Return main menu");

@@ -70,11 +70,11 @@ public class BookingServiceImpI implements BookingService {
         System.out.println("Ngày kết thúc booking : ");
         String ngayKetThucBooking = sc.nextLine();
         System.out.println(" nhập mã khách hàng : ");
-        CustomerServiceImpl.Show();
+        CustomerServiceImpl.show();
         int customer = Integer.parseInt(sc.nextLine());
         Customer customer1 = getCustomer(customer);
         System.out.println("Nhập tên dịch vụ : ");
-        FacilityServiceImpl.show();
+       // FacilityServiceImpl.show();
         String facility = sc.nextLine();
         Facility facility1 = getFacility(facility);
         Booking booking = new Booking(maBooking,utilities.convertDate(ngayBatDauBoking),utilities.convertDate(ngayKetThucBooking),customer1,facility1);

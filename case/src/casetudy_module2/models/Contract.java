@@ -57,4 +57,15 @@ public class Contract {
     public void setMaKH(int maKH) {
         this.maKH = maKH;
     }
+
+    @Override
+    public String toString() {
+        return "Contract{" +
+                "soHD=" + soHD +
+                ", mHD=" + mHD +
+                ", tienCocTruoc=" + tienCocTruoc +
+                ", tongTienThanhToan=" + tongTienThanhToan +
+                ", maKH=" + maKH +
+                '}';
+    }
 }

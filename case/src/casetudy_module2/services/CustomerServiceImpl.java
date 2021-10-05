@@ -20,14 +20,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     }
 
-    public static void Show() {
-        for (Customer o : customerList) {
-            System.out.println(o);
-        }
-    }
-
-
-    public void addCustomer() {
+    public void add() {
         boolean flag = true;
         while (flag) {
             flag = false;
@@ -59,8 +52,17 @@ public class CustomerServiceImpl implements CustomerService {
         }
     }
 
-    public void editCustomer(String name1) {
-        Show();
+
+
+    public static void show() {
+        for (Customer o : customerList) {
+            System.out.println(o);
+        }
+    }
+
+    @Override
+    public void edit() {
+        show();
         System.out.println("Nhập tên khách hàng cần chỉnh sửa : ");
         String name = sc.nextLine();
         for (Customer o : customerList) {
@@ -137,15 +139,5 @@ public class CustomerServiceImpl implements CustomerService {
                 }
             }
         }
-    }
-
-    @Override
-    public void add() {
-
-    }
-
-    @Override
-    public void show() {
-
     }
 }
