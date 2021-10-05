@@ -61,7 +61,8 @@ public abstract class Facility {
         this.kieuThue = kieuThue;
     }
 
-    public Facility(String nameDv, String maDichVu, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue) {
+    public Facility(String nameDv, String maDichVu, double dienTichSuDung, double chiPhiThue,
+                    int soluongNguoi, String kieuThue) {
         this.nameDv = nameDv;
         this.maDichVu = maDichVu;
         this.dienTichSuDung = dienTichSuDung;

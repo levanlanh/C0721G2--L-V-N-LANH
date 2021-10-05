@@ -17,9 +17,12 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     static {
-        facilityIntegerMap.put(new Villa("villa","1",50,230000,4,Villa.DATE,"A",15,3), 0);
-        facilityIntegerMap.put(new House("house", "2", 100,350000,4,House.DATE,"A",15), 0);
-        facilityIntegerMap.put(new Villa("villa2", "3",120,4500000,3,Villa.MONTH,"A",20,4), 0);
+        facilityIntegerMap.put(new Villa("villa","1",50,230000,
+                4,Villa.DATE,"A",15,3), 0);
+        facilityIntegerMap.put(new House("house", "2", 100,350000,4,
+                House.DATE,"A",15), 0);
+        facilityIntegerMap.put(new Villa("villa2", "3",120,4500000,3,
+                Villa.MONTH,"A",20,4), 0);
     }
 
 
