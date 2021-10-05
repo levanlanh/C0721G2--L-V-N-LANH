@@ -5,8 +5,8 @@ public class Room extends Facility {
 
 
 
-    public Room(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, String dichVuFreeDiKem) {
-        super(nameDv, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
+    public Room(String nameDv,String maDichVu, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, String dichVuFreeDiKem) {
+        super(nameDv,maDichVu, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
         this.dichVuFreeDiKem = dichVuFreeDiKem;
     }
 

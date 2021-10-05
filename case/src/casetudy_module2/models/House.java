@@ -4,19 +4,15 @@ public class House extends Facility {
     private String tieuChuanPhong;
     private int soTang;
 
-    public House() {
-    }
 
-    public House(String nameDv, double dienTichSuDung, double chiPhiThue, int soluongNguoi, String kieuThue, String tieuChuanPhong, int soTang) {
-        super(nameDv, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
+
+    public House(String nameDv,String maDichVu, double dienTichSuDung, double chiPhiThue, int soluongNguoi,
+                 String kieuThue, String tieuChuanPhong, int soTang) {
+        super(nameDv,maDichVu, dienTichSuDung, chiPhiThue, soluongNguoi, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
     }
 
-    public House(String tieuChuanPhong, int soTang) {
-        this.tieuChuanPhong = tieuChuanPhong;
-        this.soTang = soTang;
-    }
 
     public String getTieuChuanPhong() {
         return tieuChuanPhong;

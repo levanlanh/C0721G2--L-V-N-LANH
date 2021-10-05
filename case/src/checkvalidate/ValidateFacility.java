@@ -85,9 +85,5 @@ private static String maDichVuRoom() {
     }
 }
 
-//    public static void main(String[] args) {
-//        maDichVuHouse();
-//
-//    }
 
 }

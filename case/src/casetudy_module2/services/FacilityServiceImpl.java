@@ -17,9 +17,9 @@ public class FacilityServiceImpl implements FacilityService {
 
 
     static {
-        facilityIntegerMap.put(new Villa("villa", 70, 100000, 2, Villa.DATE, "A", 10, 9), 0);
-        facilityIntegerMap.put(new House("house", 100, 30000000, 4, House.DATE, "A", 15), 0);
-        facilityIntegerMap.put(new Villa("villa2", 80, 250000, 2, Villa.HOURS, "A", 10, 15), 0);
+        facilityIntegerMap.put(new Villa("villa","1",50,230000,4,Villa.DATE,"A",15,3), 0);
+        facilityIntegerMap.put(new House("house", "2", 100,350000,4,House.DATE,"A",15), 0);
+        facilityIntegerMap.put(new Villa("villa2", "3",120,4500000,3,Villa.MONTH,"A",20,4), 0);
     }
 
 
@@ -132,6 +132,8 @@ public class FacilityServiceImpl implements FacilityService {
             switch (choice) {
                 case 1:
                     String nameVilla = ValidateFacility.villa();
+                    System.out.println("mã dịch vụ ");
+                    String maDichVuVilla = sc.nextLine();
                     System.out.println(" nhập diện tích : ");
                     int dienTichSuDungVilla = Integer.parseInt(sc.nextLine());
                     System.out.println("nhập chi phí thuế : ");
@@ -146,12 +148,14 @@ public class FacilityServiceImpl implements FacilityService {
                     double dienTichHoBoi = Double.parseDouble(sc.nextLine());
                     System.out.println(" nhập số tầng : ");
                     int soTang = Integer.parseInt(sc.nextLine());
-                    Villa villa = new Villa(nameVilla, dienTichSuDungVilla, chiPhiThueVilla, soluongNguoi, kieuThue,
+                    Villa villa = new Villa(nameVilla,maDichVuVilla, dienTichSuDungVilla, chiPhiThueVilla, soluongNguoi, kieuThue,
                             tieuChuanPhong, dienTichHoBoi, soTang);
                     facilityIntegerMap.put(villa, 0);
                 case 2:
 
                     String nameHouse = ValidateFacility.house();
+                    String maDichVuHouse = sc.nextLine();
+                    System.out.println(" nhập diện tích : ");
                     System.out.println(" nhập diện tích : ");
                     int dienTichSuDung = Integer.parseInt(sc.nextLine());
                     System.out.println("nhập chi phí thuế : ");
@@ -166,12 +170,14 @@ public class FacilityServiceImpl implements FacilityService {
                     double dienTichHoBoiHouse = Double.parseDouble(sc.nextLine());
                     System.out.println(" nhập số tầng : ");
                     int soTangHouse = Integer.parseInt(sc.nextLine());
-                    Villa house = new Villa(nameHouse, dienTichSuDung, chiPhiThue, soluongNguoiHouse, kieuThueHouse,
+                    Villa house = new Villa(nameHouse,maDichVuHouse, dienTichSuDung, chiPhiThue, soluongNguoiHouse, kieuThueHouse,
                             tieuChuanPhongHouse, dienTichHoBoiHouse, soTangHouse);
                     facilityIntegerMap.put(house, 0);
                 case 3:
 
                     String nameRoom = ValidateFacility.room();
+                    String maDichVuRoom = sc.nextLine();
+                    System.out.println(" nhập diện tích : ");
                     System.out.println(" nhập diện tích : ");
                     int dienTichSuDungRoom = Integer.parseInt(sc.nextLine());
                     System.out.println("nhập chi phí thuế : ");
@@ -186,7 +192,7 @@ public class FacilityServiceImpl implements FacilityService {
                     double dienTichHoBoiHouseRoom = Double.parseDouble(sc.nextLine());
                     System.out.println(" nhập số tầng : ");
                     int soTangHouseRoom = Integer.parseInt(sc.nextLine());
-                    Villa room = new Villa(nameRoom, dienTichSuDungRoom, chiPhiThueRoom, soluongNguoiHouseRoom,
+                    Villa room = new Villa(nameRoom,maDichVuRoom, dienTichSuDungRoom, chiPhiThueRoom, soluongNguoiHouseRoom,
                             kieuThueHouseRoom, tieuChuanPhongHouseRoom, dienTichHoBoiHouseRoom, soTangHouseRoom);
                     facilityIntegerMap.put(room, 0);
             }
