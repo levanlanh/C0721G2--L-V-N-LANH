@@ -5,12 +5,13 @@ import casetudy_module2.models.Facility;
 import casetudy_module2.utils.Utilities;
 import casetudy_module2.models.Booking;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class BookingServiceImpI implements BookingService {
+    private static final String FILE_BOOKING = "src\\data\\booking.csv";
     private static final TreeSet<Booking> bookingTreeSet = new TreeSet<>(new BookingComparator());
     private static FacilityServiceImpl facilityService = new FacilityServiceImpl();
     private static CustomerServiceImpl customerService = new CustomerServiceImpl();
@@ -29,7 +30,17 @@ public class BookingServiceImpI implements BookingService {
         bookingTreeSet.add(booking2);
         bookingTreeSet.add(booking3);
 
+//        String line = null;
+//        for (Booking booking : bookingTreeSet) {
+//        line = booking.getBooking();
+//        WriteData.writeFile(FILE_BOOKING,line);
+//        }
+//        List<String> listLine = ReadData.readFIle(FILE_BOOKING);
+//        System.out.println(listLine);
     }
+
+
+
     public static Queue<Booking> setToQueue(){
         Queue<Booking> queue = new ArrayDeque<>();
         for (Booking booking : bookingTreeSet) {
@@ -57,7 +68,7 @@ public class BookingServiceImpI implements BookingService {
         System.out.println("không tìm thấy tên dịch vụ : ");
         return null;
     };
-    public void show(){
+    public  void show(){
         for (Booking o : bookingTreeSet) {
             System.out.println(o);
         }
@@ -70,11 +81,11 @@ public class BookingServiceImpI implements BookingService {
         System.out.println("Ngày kết thúc booking : ");
         String ngayKetThucBooking = sc.nextLine();
         System.out.println(" nhập mã khách hàng : ");
-        CustomerServiceImpl.show();
+        CustomerServiceImpl.showCustomer();
         int customer = Integer.parseInt(sc.nextLine());
         Customer customer1 = getCustomer(customer);
         System.out.println("Nhập tên dịch vụ : ");
-       // FacilityServiceImpl.show();
+        FacilityServiceImpl.showFaclitySet();
         String facility = sc.nextLine();
         Facility facility1 = getFacility(facility);
         Booking booking = new Booking(maBooking,utilities.convertDate(ngayBatDauBoking),utilities.convertDate(ngayKetThucBooking),customer1,facility1);

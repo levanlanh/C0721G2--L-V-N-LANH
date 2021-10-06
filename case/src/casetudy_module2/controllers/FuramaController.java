@@ -39,8 +39,8 @@ public class FuramaController {
                             employeeService.add();
                             break;
                         case 3:
-                            String name = sc.nextLine();
-                            employeeService.edit(name);
+
+                            employeeService.edit();
                             break;
                         case 4:
                             System.out.println("return lại menu");

@@ -57,7 +57,10 @@ public class Booking {
     public void setFacility(Facility facility) {
         this.facility = facility;
     }
-
+public String getBooking(){
+        return maBooking + "," + ngayBatDauBoking + "," + ngayKetThucBoking + "," + customer
+                + "," + facility;
+}
     @Override
     public String toString() {
         return "Booking{" +

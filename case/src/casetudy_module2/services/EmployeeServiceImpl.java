@@ -24,10 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
-    @Override
-    public void edit() {
 
-    }
 
     public void add() {
         System.out.println("nhập tên :");
@@ -56,12 +53,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
-    public void edit(String name) {
+    public void edit() {
         show();
-        System.out.println("nhập tên nhân viên cần chỉnh sửa : ");
-        name = scanner.nextLine();
+        System.out.println("nhập mã nhân viên cần chỉnh sửa : ");
+       int maNhanVien =scanner.nextInt();
         for (Employee o : employee) {
-            if (o.getName().equals(name)) {
+            if (o.getMaNhanVien()== maNhanVien) {
                 boolean flag = true;
                 while (flag) {
                     flag = false;

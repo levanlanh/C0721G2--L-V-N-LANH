@@ -53,8 +53,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
 
+    @Override
+    public void show() {
 
-    public static void show() {
+    }
+
+    public static void showCustomer() {
         for (Customer o : customerList) {
             System.out.println(o);
         }
@@ -71,7 +75,6 @@ public class CustomerServiceImpl implements CustomerService {
                 while (flag) {
                     flag = false;
                     try {
-
                         System.out.println("1 Edit tên" + "\n" + "2 Edit ngày sinh" + "\n" + "3 Edit giới tính" + "\n" + "4 Edit CMND" + "\n" + "5 Edit soDT" + "\n" + "6 Edit email" + "\n" + "7 Edit maKH" + "\n" + "8 Edit loaiKH" + "\n" + "9 Edit địa chỉ" + "\n" + "10 Edit Customer ID" + "\n" + "11 Finish edit");
                         int choice = Integer.parseInt(sc.nextLine());
                         switch (choice) {
@@ -136,7 +139,7 @@ public class CustomerServiceImpl implements CustomerService {
                     } catch (Exception exception) {
                         System.out.println("Đâu vao không hợp lệ");
                     }
-                }
+                    }
             }
         }
     }
