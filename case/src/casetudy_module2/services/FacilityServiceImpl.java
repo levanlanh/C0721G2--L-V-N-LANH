@@ -21,8 +21,8 @@ public class FacilityServiceImpl implements FacilityService {
     static {
         facilityIntegerMap.put(new Villa("villa", "1", 50, 230000,
                 4, Villa.DATE, "A", 15, 3), 0);
-        facilityIntegerMap.put(new House("house", "2", 100, 350000, 4,
-                House.DATE, "A", 15), 0);
+        facilityIntegerMap.put(new Villa("villa1", "2", 100, 350000, 4,
+                Villa.DATE, "A", 12,5), 0);
         facilityIntegerMap.put(new Villa("villa2", "3", 120, 4500000, 3,
                 Villa.MONTH, "A", 20, 4), 0);
     }
@@ -88,7 +88,8 @@ public class FacilityServiceImpl implements FacilityService {
 
                     String nameHouse = ValidateFacility.checkValidate(ValidateFacility.HOUSE, "nhập kiểu là House");
                     System.out.println("nhập mã dịch vụ : ");
-                    String maDichVuHouse = ValidateFacility.checkValidate(ValidateFacility.REGEX_HOUSE, ValidateFacility.mess("MÃ DỊCH VỤ LÀ SVHO THEO SAU LÀ 4 CHỮ SỐ"));
+                    String maDichVuHouse = ValidateFacility.checkValidate(ValidateFacility.REGEX_HOUSE,
+                            ValidateFacility.mess("MÃ DỊCH VỤ LÀ SVHO THEO SAU LÀ 4 CHỮ SỐ"));
                     System.out.println(" nhập diện tích : ");
                     int dienTichSuDung = Integer.parseInt(CheckFacility.dienTich());
                     System.out.println("nhập chi phí thuế : ");

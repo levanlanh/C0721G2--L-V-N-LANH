@@ -1,7 +1,10 @@
 package casetudy_module2.services;
 
+import casetudy_module2.models.Booking;
 import casetudy_module2.models.Employee;
+import casetudy_module2.utils.ReadAndWrite;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +12,9 @@ import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
     static Scanner scanner = new Scanner(System.in);
+
+
+
     private static List<Employee> employee = new ArrayList<>();
 
     static {
@@ -23,8 +29,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             System.out.println(employee);
         }
     }
-
-
 
     public void add() {
         System.out.println("nhập tên :");
@@ -56,9 +60,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void edit() {
         show();
         System.out.println("nhập mã nhân viên cần chỉnh sửa : ");
-       int maNhanVien =scanner.nextInt();
+        int maNhanVien = scanner.nextInt();
         for (Employee o : employee) {
-            if (o.getMaNhanVien()== maNhanVien) {
+            if (o.getMaNhanVien() == maNhanVien) {
                 boolean flag = true;
                 while (flag) {
                     flag = false;

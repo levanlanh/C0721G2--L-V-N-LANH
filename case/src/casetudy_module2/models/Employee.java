@@ -21,48 +21,36 @@ public class Employee extends Person implements Serializable {
     public final static String BAOVE = "baove";
 
 
-    public Employee(String name,String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email, int maNhanVien, String trinhDo, String viTri, double luong) {
+    public Employee(String name,String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email,
+                    int maNhanVien, String trinhDo, String viTri, double luong) {
         super(name, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.maNhanVien = maNhanVien;
         this.trinhDo = trinhDo;
         this.viTri = viTri;
         this.luong = luong;
     }
-
-
-    public int getMaNhanVien() {
-        return maNhanVien;
-    }
-
+    public int getMaNhanVien() { return maNhanVien; }
     public void setMaNhanVien(int maNhanVien) {
         this.maNhanVien = maNhanVien;
     }
-
     public String getTrinhDo() {
         return trinhDo;
     }
-
     public void setTrinhDo(String trinhDo) {
         this.trinhDo = trinhDo;
     }
-
     public String getViTri() {
         return viTri;
     }
-
     public void setViTri(String viTri) {
         this.viTri = viTri;
     }
-
     public double getLuong() {
         return luong;
     }
-
     public void setLuong(double luong) {
         this.luong = luong;
     }
-
-
     @Override
     public String toString() {
         return "Employee{" + super.toString()+
@@ -71,5 +59,9 @@ public class Employee extends Person implements Serializable {
                 ", vi tri =" + viTri +
                 ", luong=" + luong +
                 '}';
+    }
+    public String getEmbloyee(){
+        return name + "," + ngaySinh+","+gioiTinh+","+soCMND+","+soDT+","+email+","+maNhanVien+","+trinhDo+
+                ","+viTri+","+luong;
     }
 }

@@ -1,16 +1,16 @@
 package casetudy_module2.services;
 
-import casetudy_module2.models.Booking;
-import casetudy_module2.models.Contract;
-import casetudy_module2.models.House;
-import casetudy_module2.models.Villa;
+import casetudy_module2.models.*;
 
-import java.awt.geom.Arc2D;
+
+
 import java.util.ArrayDeque;
+
 import java.util.Queue;
 import java.util.Scanner;
 
 public class ContractServiceImpI implements ContractService {
+    private static final String FILE_CONTRACT = "src\\data\\contract.csv";
     private static Queue<Contract> queue = new ArrayDeque<>();
     static Scanner sc = new Scanner(System.in);
     private static Queue<Booking> bookingQueue = BookingServiceImpI.setToQueue();

@@ -11,9 +11,8 @@ public class Customer extends Person {
     public final static String BAC = "bac";
 
 
-
-
-    public Customer(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email, int maKH, String loaiKH, String diaChi) {
+    public Customer(String name, String ngaySinh, boolean gioiTinh, int soCMND, String soDT, String email,
+                    int maKH, String loaiKH, String diaChi) {
         super(name, ngaySinh, gioiTinh, soCMND, soDT, email);
         this.maKH = maKH;
         this.loaiKH = loaiKH;
@@ -53,5 +52,10 @@ public class Customer extends Person {
                 ", địa chỉ ='" + diaChi + '\'' +
                 '}';
     }
+
+    public String getCustomer() {
+        return name + "," + ngaySinh + "," + gioiTinh + "," + soCMND + "," + soDT + "," + email + "," + maKH
+                + "," + loaiKH + "," + diaChi;
     }
+}
 

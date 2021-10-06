@@ -9,7 +9,9 @@ public class Contract {
 
     public Contract() {
     }
-
+public String getContract(){
+        return soHD +","+mHD+","+tienCocTruoc+","+tongTienThanhToan+","+maKH;
+}
     public Contract(int soHD, int mHD, double tienCocTruoc, double tongTienThanhToan, int maKH) {
         this.soHD = soHD;
         this.mHD = mHD;

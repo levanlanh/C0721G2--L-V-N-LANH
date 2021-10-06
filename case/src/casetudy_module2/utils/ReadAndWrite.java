@@ -1,18 +1,18 @@
 package casetudy_module2.utils;
 
+import casetudy_module2.models.Employee;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
-    public static void writeFile(List<String> list, String pathFile, boolean append) {
+    public static void writeFile( String pathFile, String line) {
         try {
-            FileWriter fileWriter = new FileWriter(pathFile,append );
+            FileWriter fileWriter = new FileWriter(pathFile,true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (String line : list) {
-                bufferedWriter.write(line);
-                bufferedWriter.newLine();
-            }
+            bufferedWriter.write(line);
+            bufferedWriter.newLine();
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -22,11 +22,10 @@ public class ReadAndWrite {
     public static List<String> readFIle(String pathFile) {
         List<String> listLine = new ArrayList<>();
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(pathFile));
+            FileReader fileReader = new FileReader(pathFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = " ";
-            String[]array = null;
             while ((line = bufferedReader.readLine()) != null) {
-                array = line.split(",");
                 listLine.add(line);
             }
             bufferedReader.close();
@@ -37,5 +36,6 @@ public class ReadAndWrite {
         }
         return listLine;
     }
+
 
 }
