@@ -2,7 +2,7 @@ import java.util.*;
 
 public class ThongTinManager {
     Scanner sc = new Scanner(System.in);
-    public static List<ThongTin> thongTins = new ArrayList<>();
+    private static List<ThongTin> thongTins = new ArrayList<>();
 
 //    static {
 //        thongTins.add(new ThongTin("BC-1234", "văn", "1.1", "dễ", "130"));
@@ -18,13 +18,13 @@ public class ThongTinManager {
 
     public void add() {
         System.out.println("Nhập mã môn học ");
-        String maMonHoc = Validate.maMonHoc();
+        String maMonHoc = Validate.regex(Validate.REGEX_MAMONHOC,"BC-XXXX");
         System.out.println("Tên môn học ");
-        String tenMonHoc = Validate.tenMonHoc();
+        String tenMonHoc = Validate.regex(Validate.REGEX_TENMONHOC,"VIẾT BẰNG CHỮ");
         System.out.println("Phiên bản ");
-        String phienBan = sc.nextLine();
+        String phienBan = Validate.regex(Validate.REGEX_PHIENBAN,"x.x");
         System.out.println("độ khó ");
-        String doKho = sc.nextLine();
+        String doKho = Validate.regex(Validate.REGEX_DOKHO,Validate.msg());
         System.out.println("thời lượng học ");
         String thoiLuongHoc = sc.nextLine();
         thongTins.add(new ThongTin(maMonHoc, tenMonHoc, phienBan, doKho, thoiLuongHoc));
@@ -48,18 +48,23 @@ public class ThongTinManager {
                 thongtin.setPhienBan(phienBan);
                 thongtin.setDoKho(doKho);
                 thongtin.setThoiLuongHoc(thoiLuongHoc);
+
             }
         }
     }
 
-    public void delete() {
-        show();
-        System.out.println("nhập tên môn học cần xóa : ");
-        String tenMonHoc = sc.nextLine();
+    public void delete(String ten) {
+        thongTins = ReadAndWriteFile.read();
+//        show();
+//        System.out.println("nhập tên môn học cần xóa : ");
+//        String tenMonHoc = sc.nextLine();
         for (ThongTin o : thongTins) {
-            if (o.getTenMonHoc().equals(tenMonHoc)) {
+            if (o.getMaMonHoc().contains(ten)) {
                 thongTins.remove(o);
+                break;
             }
         }
+        ReadAndWriteFile.write(thongTins);
     }
+
 }

@@ -64,6 +64,6 @@ public class ThongTin {
                 '}';
     }
 public String getThongTin(){
-        return maMonHoc +","+tenMonHoc+","+phienBan+","+doKho+","+thoiLuongHoc;
+        return getMaMonHoc() +","+getTenMonHoc()+","+getPhienBan()+","+getDoKho()+","+getThoiLuongHoc();
 }
 }
