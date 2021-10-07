@@ -71,5 +71,8 @@ public abstract class Facility {
         this.kieuThue = kieuThue;
 
     }
+    public String getFacility(){
+        return nameDv +","+ maDichVu +","+ dienTichSuDung+","+chiPhiThue+","+soluongNguoi+","+kieuThue;
+    }
 }
 

@@ -7,22 +7,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWrite {
-    public static void writeFile( String pathFile, String line) {
+    public static void writeFile( List<String> list, String path,boolean append) {
+        File file = new File(path);
         try {
-            FileWriter fileWriter = new FileWriter(pathFile,true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(line);
-            bufferedWriter.newLine();
+            FileWriter writer = new FileWriter(path,append);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            for (String string : list) {
+              bufferedWriter.write(string);
+              bufferedWriter.newLine();
+            }
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static List<String> readFIle(String pathFile) {
+    public static List<String> readFIle(String path) {
         List<String> listLine = new ArrayList<>();
         try {
-            FileReader fileReader = new FileReader(pathFile);
+            FileReader fileReader = new FileReader(path);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line = " ";
             while ((line = bufferedReader.readLine()) != null) {
