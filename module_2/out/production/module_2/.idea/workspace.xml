@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f482a30-70b4-4044-8148-6b19e4213abe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/Utilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/BookingComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/controllers/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/controllers/FuramaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/models/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/models/Booking.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/BookingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/BookingServiceImpI.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/BookingServiceImpI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/FacilityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/out/production/case/casetudy_module2/services/FacilityServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/controllers/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/controllers/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/models/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/BookingServiceImpI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/BookingServiceImpI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/FacilityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case/src/casetudy_module2/services/FacilityServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1yuJvzhfWdGNb4Vuyqj9MkqZC18" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f482a30-70b4-4044-8148-6b19e4213abe" name="Default Changelist" comment="" />
+      <created>1633095773337</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633095773337</updated>
+      <workItem from="1633095774816" duration="66000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="460" y="119" key="FileChooserDialogImpl" timestamp="1633095838812">
+      <screen x="0" y="0" width="1360" height="728" />
+    </state>
+    <state x="460" y="119" key="FileChooserDialogImpl/0.0.1360.728@0.0.1360.728" timestamp="1633095838812" />
+  </component>
+</project>

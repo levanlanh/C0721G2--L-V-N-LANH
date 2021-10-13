@@ -4,7 +4,7 @@ import bai7_abstract_class_interface.exercise.interface_resizeable.Rectangle;
 import bai7_abstract_class_interface.exercise.interface_resizeable.Resizeable;
 import bai7_abstract_class_interface.exercise.interface_resizeable.Shape;
 
-public class Square extends Rectangle implements Colorable {
+public class Square extends Rectangle implements Colorable{
     private double size = 5.0;
 
     public Square() {

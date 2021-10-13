@@ -27,9 +27,7 @@ public class Menu {
                     break;
                 case 3:
                     System.out.println("3. Xoá môn học bất kì theo Mã môn học, nếu không có Mã môn học thì thực hiện throw Exception.");
-                    thongTinManager.show();
-                    String ten = sc.nextLine();
-                    thongTinManager.delete(ten);
+                    thongTinManager.delete();
                     break;
                 case 4:
                     System.out.println("4. Thoát.");

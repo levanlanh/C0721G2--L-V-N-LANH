@@ -53,13 +53,13 @@ public class ThongTinManager {
         }
     }
 
-    public void delete(String ten) {
+    public void delete() {
         thongTins = ReadAndWriteFile.read();
-//        show();
-//        System.out.println("nhập tên môn học cần xóa : ");
-//        String tenMonHoc = sc.nextLine();
+        show();
+        System.out.println("nhập tên môn học cần xóa : ");
+        String tenMonHoc = sc.nextLine();
         for (ThongTin o : thongTins) {
-            if (o.getMaMonHoc().contains(ten)) {
+            if (o.getMaMonHoc().contains(tenMonHoc)) {
                 thongTins.remove(o);
                 break;
             }
