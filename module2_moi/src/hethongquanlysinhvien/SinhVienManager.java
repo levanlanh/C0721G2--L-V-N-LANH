@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class SinhVienManager {
+public class SinhVienManager implements SinhVienDS {
     Scanner sc = new Scanner(System.in);
     List<SinhVien> sinhVienList = new ArrayList<>();
 
