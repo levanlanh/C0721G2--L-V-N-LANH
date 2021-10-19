@@ -11,10 +11,6 @@ public class MyList <E>{
         elements = new Object[DEFAULT_CAPACITY];
     }
 
-    public MyList(int capacity) {
-        elements = new Object[capacity];
-    }
-
     public E get(int i) {
         if (i >= size || i < 0) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i);
