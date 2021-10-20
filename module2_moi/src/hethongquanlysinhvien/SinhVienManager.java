@@ -80,6 +80,7 @@ public class SinhVienManager implements SinhVienDS {
     }
 
     public SinhVien search(String maNhanVien) {
+        show();
         for (SinhVien o : sinhVienList) {
             if (o.getMaSinhVien().equals(maNhanVien)) {
                 return o;
