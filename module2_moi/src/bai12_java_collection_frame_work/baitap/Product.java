@@ -1,6 +1,6 @@
 package bai12_java_collection_frame_work.baitap;
 
-public class Product implements Comparable<Product>{
+public class Product implements Comparable<Product> {
     private int maSanPham;
     private double giaSanPham;
     private String tenSanPham;
@@ -44,9 +44,19 @@ public class Product implements Comparable<Product>{
                 '}';
     }
 
+    public String thongTinProduct() {
+        return maSanPham + "," + giaSanPham + "," + tenSanPham;
+    }
+
     @Override
     public int compareTo(Product o) {
 
-        return (int) (this.getGiaSanPham() - o.getGiaSanPham());
+        if(this.getGiaSanPham() > o.getGiaSanPham()){
+            return 1;
+        }else if(this.getGiaSanPham() < o.getGiaSanPham()){
+            return -1;
+        }else {
+            return 0;
+        }
     }
 }

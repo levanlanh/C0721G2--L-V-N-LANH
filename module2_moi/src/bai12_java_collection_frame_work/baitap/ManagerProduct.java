@@ -25,9 +25,11 @@ public class ManagerProduct {
         Product product = new Product(maSanPham, giaSanPham, tenSanPham);
         list.add(product);
         Collections.sort(list);
+        ReadAndWriteFile.write(list);
     }
 
     public void edit() {
+        ReadAndWriteFile.read();
         show();
         System.out.println(" nhập mã cần sửa đổi : ");
         int maSanPham = Integer.parseInt(sc.nextLine());
@@ -39,11 +41,13 @@ public class ManagerProduct {
                 String tenSanPham = sc.nextLine();
                 o.setGiaSanPham(giaSanPham);
                 o.setTenSanPham(tenSanPham);
+                ReadAndWriteFile.write(list);
             }
         }
     }
 
     public void delete() {
+        ReadAndWriteFile.read();
         show();
         System.out.println("nhập mã sản phẩm cần xóa : ");
         int maSanPham = Integer.parseInt(sc.nextLine());
@@ -57,6 +61,7 @@ public class ManagerProduct {
             }
             break;
         }
+        ReadAndWriteFile.write(list);
     }
 
     public Product search(String ten) {

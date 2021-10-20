@@ -1,18 +1,18 @@
-package hethongquanlysinhvien;
+package bai12_java_collection_frame_work.baitap;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReadAndWriteFile {
-    static File file = new File("src\\hethongquanlysinhvien\\thongtin");
+    static File file = new File("src\\bai12_java_collection_frame_work\\baitap\\thongtin");
 
-    public static void write(List<SinhVien> sinhViens) {
+    public static void write(List<Product> productList) {
         try {
             FileWriter fileWriter = new FileWriter(file);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            for (SinhVien o : sinhViens) {
-                bufferedWriter.write(o.thongTinSinhVien());
+            for (Product o : productList) {
+                bufferedWriter.write(o.thongTinProduct());
                 bufferedWriter.newLine();
             }
             bufferedWriter.close();
@@ -21,8 +21,8 @@ public class ReadAndWriteFile {
         }
     }
 
-    public static List<SinhVien> read() {
-        List<SinhVien> sinhViens = new ArrayList<>();
+    public static List<Product> read() {
+        List<Product> productList = new ArrayList<>();
         try {
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -33,17 +33,16 @@ public class ReadAndWriteFile {
                     break;
                 }
                 String[] doc = line.split(",");
-                String maSinhVien = doc[0];
-                String ten = doc[1];
-                String diaChi = doc[2];
-                Double diemSo = Double.parseDouble(doc[3]);
-                SinhVien sinhVien = new SinhVien(maSinhVien, ten, diaChi, diemSo);
-                sinhViens.add(sinhVien);
+                int maSanPham = Integer.parseInt(doc[0]);
+                double giaSanPham = Double.parseDouble(doc[1]);
+                String tenSanPham = doc[2];
+                Product product = new Product(maSanPham, giaSanPham, tenSanPham);
+                productList.add(product);
             }
         } catch (IOException e) {
-            System.out.println("bạn nhập không đúng yêu cầu nhập lại");
+            System.err.println("bạn nhập không đúng yêu cầu nhập lại");
             e.printStackTrace();
         }
-        return sinhViens;
+        return productList;
     }
 }
