@@ -20,6 +20,6 @@ public class Validate {
             } else {
                 System.out.println("mời bạn nhập lại ");
             }
-        }
+       }
     }
 }
