@@ -1,4 +1,4 @@
-package bai16_io_text_file.practice.timgiatrilonnhat;
+package bai16_io_text_file.thuchanh.timgiatrilonnhat;
 
 import java.util.List;
 
@@ -15,8 +15,8 @@ public class FindMaxValue {
 
     public static void main(String[] args) {
         ReadAndWriteFile readAndWriteFile = new ReadAndWriteFile();
-        List<Integer> numbers = readAndWriteFile.readFile("numbers.txt");
+        List<Integer> numbers = readAndWriteFile.readFile("D:\\C0721G2--L-V-N-LANH\\module2_moi\\src\\bai16_io_text_file\\thuchanh\\timgiatrilonnhat\\numbers_text");
         int maxValue = findMax(numbers);
-        readAndWriteFile.writeFile("result.txt", maxValue);
+        readAndWriteFile.writeFile("D:\\C0721G2--L-V-N-LANH\\module2_moi\\src\\bai16_io_text_file\\thuchanh\\timgiatrilonnhat\\result_text", maxValue);
     }
 }

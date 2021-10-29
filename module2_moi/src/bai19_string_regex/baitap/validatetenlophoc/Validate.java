@@ -1,16 +1,11 @@
-package hethongquanlyungvien;
+package bai19_string_regex.baitap.validatetenlophoc;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Validate {
+    public static final String TENLOPHOC = "^[C][A][P]\\d{4}[GHIKLM]$";
     static Scanner sc = new Scanner(System.in);
-    public static final String REGEX_HOVATEN = "^[a-z]+[ ]+[a-z]+[ ]+[a-z]+$";
-    public static final String REGEX_NGAYSINH = "^[0-9]{4}$";
-    public static final String REGEX_SODIENTHOAI = "^[0-9][0-9]{9}$";
-    public static final String REGEX_NAMKINHNGHIEM = "^[0-9]?[0-9]?$";
-    public static final String REGEX_EMAIL = "^.+@.+\\..+$";
-
 
     public static String regex(String regex, String msg) {
         while (true) {
@@ -21,6 +16,11 @@ public class Validate {
             } else {
                 System.out.println("mời bạn nhập lại ");
             }
-       }
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("nhập tên lớp học :");
+        String tenLopHoc = Validate.regex(Validate.TENLOPHOC,"bắt đầu bằng CAP theo sau 4 số và kí tự [GHIKLM]");
     }
 }

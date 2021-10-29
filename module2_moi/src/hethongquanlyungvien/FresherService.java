@@ -13,7 +13,7 @@ public class FresherService implements InterfaceService {
         System.out.println("Nhập id :");
         int id = Integer.parseInt(sc.nextLine());
         System.out.println("Nhập họ và tên : ");
-        String hoVaTen = sc.nextLine();
+        String hoVaTen = Validate.regex(Validate.REGEX_HOVATEN,"nhập dấu space cách giữa  ");
         System.out.println("Nhập ngày sinh :");
         String ngaySinh = Validate.regex(Validate.REGEX_NGAYSINH, "số có độ dài 4 kí tự ");
         System.out.println("Nhập địa chỉ : ");

@@ -1,16 +1,11 @@
-package hethongquanlyungvien;
+package bai19_string_regex.baitap.sodienthoai;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class Validate {
+    public static final String SODIENTHOAI = "^[(][8][4][)][-][(][0]\\d{9}[)]$";
     static Scanner sc = new Scanner(System.in);
-    public static final String REGEX_HOVATEN = "^[a-z]+[ ]+[a-z]+[ ]+[a-z]+$";
-    public static final String REGEX_NGAYSINH = "^[0-9]{4}$";
-    public static final String REGEX_SODIENTHOAI = "^[0-9][0-9]{9}$";
-    public static final String REGEX_NAMKINHNGHIEM = "^[0-9]?[0-9]?$";
-    public static final String REGEX_EMAIL = "^.+@.+\\..+$";
-
 
     public static String regex(String regex, String msg) {
         while (true) {
@@ -21,6 +16,11 @@ public class Validate {
             } else {
                 System.out.println("mời bạn nhập lại ");
             }
-       }
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("nhập vào số điện thoại: ");
+        String soDienThoai = Validate.regex(Validate.SODIENTHOAI,"(84)-(0xxxxxxxxx)");
     }
 }
