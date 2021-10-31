@@ -1,6 +1,6 @@
 package models;
 
-public abstract class ThongTinDichVu {
+public abstract class Facility {
     private String tenDichVu;
     private double dienTichSuDung;
     private double chiPhiThue;
@@ -12,7 +12,7 @@ public abstract class ThongTinDichVu {
     public static final String THANG = "thang";
     public static final String NAM = "nam";
 
-    public ThongTinDichVu(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
+    public Facility(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue) {
         this.tenDichVu = tenDichVu;
         this.dienTichSuDung = dienTichSuDung;
         this.chiPhiThue = chiPhiThue;

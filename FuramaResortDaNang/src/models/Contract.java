@@ -1,14 +1,16 @@
-package services;
+package models;
 
-public class HopDongThue {
+import models.Booking;
+
+public class Contract {
     private int soHopDong;
     private Booking maBooking;
     private double soTienCocTruoc;
     private double tongTienThanhToan;
 
 
-    public HopDongThue(int soHopDong, Booking maBooking, double soTienCocTruoc, double tongTienThanhToan,
-                       String maKhachHang) {
+    public Contract(int soHopDong, Booking maBooking, double soTienCocTruoc, double tongTienThanhToan,
+                    String maKhachHang) {
         this.soHopDong = soHopDong;
         this.maBooking = maBooking;
         this.soTienCocTruoc = soTienCocTruoc;
@@ -49,7 +51,6 @@ public class HopDongThue {
     }
 
 
-
     @Override
     public String toString() {
         return "HopDongThue{" +
@@ -57,7 +58,7 @@ public class HopDongThue {
                 ", maBooking=" + maBooking +
                 ", soTienCocTruoc=" + soTienCocTruoc +
                 ", tongTienThanhToan=" + tongTienThanhToan +
-                 +
-                '}';
+                +
+                        '}';
     }
 }

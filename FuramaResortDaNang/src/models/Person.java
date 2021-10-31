@@ -1,4 +1,4 @@
-package services;
+package models;
 
 public abstract class Person {
     private String hoVaTen;
@@ -67,8 +67,7 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "hoVaTen='" + hoVaTen + '\'' +
+        return "hoVaTen='" + hoVaTen + '\'' +
                 ", ngaySinh='" + ngaySinh + '\'' +
                 ", gioiTinh='" + gioiTinh + '\'' +
                 ", soCMND=" + soCMND +

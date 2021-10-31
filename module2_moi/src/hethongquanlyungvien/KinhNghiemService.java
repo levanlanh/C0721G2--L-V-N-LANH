@@ -29,6 +29,7 @@ public class KinhNghiemService implements InterfaceService {
         String kyNangChuyenMon = sc.nextLine();
         KinhNghiem kinhNghiem = new KinhNghiem(id, hoVaTen, ngaySinh, diaChi, soDienThoai, email, loaiUngVien, 20, kyNangChuyenMon);
         kinhNghiems.add(kinhNghiem);
+        ReadAndWriteFileKinhNghiem.write(kinhNghiems);
     }
 
     public void show() {
@@ -38,6 +39,7 @@ public class KinhNghiemService implements InterfaceService {
     }
 
     public void edit() {
+        ReadAndWriteFileKinhNghiem.read();
         show();
         System.out.println("nhập id nhân viên cần chỉnh sửa : ");
         int id = Integer.parseInt(sc.nextLine());
@@ -67,6 +69,7 @@ public class KinhNghiemService implements InterfaceService {
                 o.setLoaiUngVien(loaiUngVien);
                 o.setNamKinhNghiem(namKinhNghiem);
                 o.setKyNangChuyenMon(kyNangChuyenMon);
+                ReadAndWriteFileKinhNghiem.write(kinhNghiems);
             }
         }
     }
@@ -81,6 +84,7 @@ public class KinhNghiemService implements InterfaceService {
     }
 
     public void delete() {
+        ReadAndWriteFileKinhNghiem.read();
         show();
         System.out.println("nhập id bạn muốn xóa : ");
         int id = Integer.parseInt(sc.nextLine());

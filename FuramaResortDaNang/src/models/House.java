@@ -1,6 +1,6 @@
 package models;
 
-public class House extends ThongTinDichVu {
+public class House extends Facility {
     private String tieuChuanPhong;
     private int soTang;
 

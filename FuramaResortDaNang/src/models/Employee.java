@@ -1,4 +1,4 @@
-package services;
+package models;
 
 public class Employee extends Person {
     private String maNhanVien;

@@ -1,6 +1,6 @@
 package models;
 
-public class Room extends ThongTinDichVu {
+public class Room extends Facility {
     private String dichVuMienPhi;
 
     public Room(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa,

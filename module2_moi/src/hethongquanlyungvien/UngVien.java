@@ -1,6 +1,6 @@
 package hethongquanlyungvien;
 
-public abstract class UngVien {
+public class UngVien {
     private int id;
     private String hoVaTen;
     private String ngaySinh;
@@ -18,6 +18,9 @@ public abstract class UngVien {
         this.soDienThoai = soDienThoai;
         this.email = email;
         this.loaiUngVien = loaiUngVien;
+    }
+
+    public UngVien(int id, String hoVaTen, String ngaySinh, String diaChi, int soDienThoai, String email, String loaiUngVien, String ngayTotNghiep, String xepHangTotNghiep, String truongDaiHoc) {
     }
 
     public int getId() {
@@ -87,5 +90,8 @@ public abstract class UngVien {
                 ", email='" + email + '\'' +
                 ", loaiUngVien='" + loaiUngVien + '\'' +
                 '}';
+    }
+    public String ungVien(){
+        return id +","+ hoVaTen+","+diaChi+","+soDienThoai+","+email+","+loaiUngVien;
     }
 }

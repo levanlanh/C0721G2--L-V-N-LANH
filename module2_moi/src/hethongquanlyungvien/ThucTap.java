@@ -45,4 +45,8 @@ public class ThucTap extends UngVien {
                 ", tenTruongDaiHoc='" + tenTruongDaiHoc + '\'' +
                 '}';
     }
+
+    public String thucTap() {
+        return ungVien() + "," + chuyenNganh + "," + hocKy + "," + tenTruongDaiHoc;
+    }
 }

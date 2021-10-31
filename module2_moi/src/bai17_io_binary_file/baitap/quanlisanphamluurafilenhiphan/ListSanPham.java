@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ListSanPham {
     public static List<SanPham> sanPhams = new ArrayList<>();
-    public static File file = new File("D:\\C0721G2--L-V-N-LANH\\module2_moi\\src\\bai17_io_binary_file\\baitap\\quanlisanphamluurafilenhiphan\\file.csv");
+    public static File file = new File("D:\\C0721G2--L-V-N-LANH\\module2_moi\\src\\bai17_io_binary_file\\baitap\\quanlisanphamluurafilenhiphan\\fileFresher.csv");
 
     public static void writeToObject(File file, List<SanPham> sanPhams) {
         try {

@@ -26,4 +26,8 @@ public class KinhNghiem extends UngVien {
     public void setKyNangChuyenMon(String kyNangChuyenMon) {
         this.kyNangChuyenMon = kyNangChuyenMon;
     }
+
+    public String kinhNghiem() {
+        return ungVien()+ "," + namKinhNghiem+ "," +kyNangChuyenMon;
+    }
 }

@@ -33,6 +33,7 @@ public class ThucTapService implements InterfaceService {
         ThucTap thucTap = new ThucTap(id, hoVaTen, ngaySinh, diaChi, soDienThoai, email, loaiUngVien
                 , chuyenNganh, hocKy, tenTruongDaiHoc);
         thucTaps.add(thucTap);
+        ReadAndWriteFileThucTap.write(thucTaps);
     }
 
     @Override
@@ -44,6 +45,7 @@ public class ThucTapService implements InterfaceService {
 
     @Override
     public void edit() {
+        ReadAndWriteFileThucTap.read();
         show();
         System.out.println("nhập id bạn cần chỉnh sửa : ");
         int id = Integer.parseInt(sc.nextLine());
@@ -76,12 +78,14 @@ public class ThucTapService implements InterfaceService {
                 o.setChuyenNganh(chuyenNganh);
                 o.setHocKy(hocKy);
                 o.setTenTruongDaiHoc(tenTruongDaiHoc);
+                ReadAndWriteFileThucTap.write(thucTaps);
             }
         }
     }
 
     @Override
     public void delete() {
+        ReadAndWriteFileThucTap.read();
         show();
         System.out.println("nhập id bạn muốn xóa : ");
         int id = Integer.parseInt(sc.nextLine());

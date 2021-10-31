@@ -1,4 +1,4 @@
-package services;
+package models;
 
 public class Booking {
     private String maBooking;

@@ -49,4 +49,8 @@ public class Fresher extends UngVien {
                 ", truongDaiHoc='" + truongDaiHoc + '\'' +
                 '}';
     }
+
+    public String fresher() {
+        return ungVien()+ "," +ngayTotNghiep+ "," +xepHangTotNghiep+ "," +truongDaiHoc;
+    }
 }

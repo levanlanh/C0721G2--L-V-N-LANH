@@ -33,10 +33,12 @@ public class FresherService implements InterfaceService {
         Fresher fresher = new Fresher(id, hoVaTen, ngaySinh, diaChi, soDienThoai, email, loaiUngVien,
                 ngayTotNghiep, xepHangTotNghiep, truongDaiHoc);
         freshers.add(fresher);
+        ReadAndWriteFileFresher.write(freshers);
     }
 
     @Override
     public void edit() {
+        ReadAndWriteFileFresher.read();
         show();
         System.out.println("nhập id bạn cần chỉnh sửa : ");
         int id = Integer.parseInt(sc.nextLine());
@@ -83,12 +85,14 @@ public class FresherService implements InterfaceService {
                 o.setLoaiUngVien(loaiUngVien);
                 o.setNgayTotNghiep(ngayTotNghiep);
                 o.setTruongDaiHoc(truongDaiHoc);
+                ReadAndWriteFileFresher.write(freshers);
             }
         }
     }
 
     @Override
     public void delete() {
+        ReadAndWriteFileFresher.read();
         show();
         System.out.println("nhập id bạn muốn xóa : ");
         int id = Integer.parseInt(sc.nextLine());

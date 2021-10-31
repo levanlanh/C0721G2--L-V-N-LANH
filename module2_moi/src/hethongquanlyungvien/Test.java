@@ -18,7 +18,7 @@ public class Test {
                 case 1: {
                     boolean flag1 = true;
                     while (flag1) {
-                        System.out.println("1. kinh nghiệm" + "\n" + "1.add danh sách" + "\n" + "2.show danh sách" +
+                        System.out.println("1.kinh nghiệm" + "\n" + "1.add danh sách" + "\n" + "2.show danh sách" +
                                 "\n" + "3.Edit danh sách" + "\n" + "4.Delete danh sách" + "\n" + "5.Search danh sách"
                                 + "\n" + "6.Return lại menu");
                         int choice1 = Integer.parseInt(sc.nextLine());
