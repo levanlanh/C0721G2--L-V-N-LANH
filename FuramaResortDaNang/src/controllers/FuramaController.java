@@ -1,9 +1,6 @@
 package controllers;
 
-import services.CustomerServiceImpl;
-import services.EmployeeService;
-import services.EmployeeServiceImpl;
-import services.FacilityServiceImpl;
+import services.*;
 
 import java.util.Scanner;
 
@@ -13,6 +10,7 @@ public class FuramaController {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        BookingServiceImpl bookingService = new BookingServiceImpl();
         Scanner sc = new Scanner(System.in);
         boolean flagMain = true;
         while (flagMain) {
@@ -78,8 +76,10 @@ public class FuramaController {
                                 facilityService.show();
                                 break;
                             case 2:
+                                facilityService.add();
                                 break;
                             case 3:
+                                facilityService.showFacility();
                                 break;
                             case 4:
                                 flag = false;
@@ -97,8 +97,10 @@ public class FuramaController {
                         int choice4 = Integer.parseInt(sc.nextLine());
                         switch (choice4) {
                             case 1:
+                                bookingService.add();
                                 break;
                             case 2:
+                                bookingService.show();
                                 break;
                             case 3:
                                 break;

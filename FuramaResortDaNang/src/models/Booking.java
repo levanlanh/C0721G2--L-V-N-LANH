@@ -1,27 +1,25 @@
 package models;
 
 public class Booking {
-    private String maBooking;
+    private int maBooking;
     private String ngayBatDau;
     private String ngayKetThuc;
-    private String maKhachHang;
-    private String tenDichVu;
-    private String loaiDichVu;
+    private Customer customer;
+    private Facility facility;
 
-    public Booking(String maBooking, String ngayBatDau, String ngayKetThuc, String maKhachHang, String tenDichVu, String loaiDichVu) {
+    public Booking(int maBooking, String ngayBatDau, String ngayKetThuc, Customer customer, Facility facility) {
         this.maBooking = maBooking;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
-        this.maKhachHang = maKhachHang;
-        this.tenDichVu = tenDichVu;
-        this.loaiDichVu = loaiDichVu;
+        this.customer = customer;
+        this.facility = facility;
     }
 
-    public String getMaBooking() {
+    public int getMaBooking() {
         return maBooking;
     }
 
-    public void setMaBooking(String maBooking) {
+    public void setMaBooking(int maBooking) {
         this.maBooking = maBooking;
     }
 
@@ -41,28 +39,20 @@ public class Booking {
         this.ngayKetThuc = ngayKetThuc;
     }
 
-    public String getMaKhachHang() {
-        return maKhachHang;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setMaKhachHang(String maKhachHang) {
-        this.maKhachHang = maKhachHang;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getTenDichVu() {
-        return tenDichVu;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setTenDichVu(String tenDichVu) {
-        this.tenDichVu = tenDichVu;
-    }
-
-    public String getLoaiDichVu() {
-        return loaiDichVu;
-    }
-
-    public void setLoaiDichVu(String loaiDichVu) {
-        this.loaiDichVu = loaiDichVu;
+    public void setFacility(Facility facility) {
+        this.facility = facility;
     }
 
     @Override
@@ -71,9 +61,8 @@ public class Booking {
                 "maBooking='" + maBooking + '\'' +
                 ", ngayBatDau='" + ngayBatDau + '\'' +
                 ", ngayKetThuc='" + ngayKetThuc + '\'' +
-                ", maKhachHang='" + maKhachHang + '\'' +
-                ", tenDichVu='" + tenDichVu + '\'' +
-                ", loaiDichVu='" + loaiDichVu + '\'' +
+                ", customer=" + customer +
+                ", facility=" + facility +
                 '}';
     }
 }
