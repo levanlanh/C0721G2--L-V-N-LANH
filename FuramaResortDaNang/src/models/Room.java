@@ -23,4 +23,8 @@ public class Room extends Facility {
                 "dichVuMienPhi='" + dichVuMienPhi + '\'' +
                 '}';
     }
+    public String facility(){
+        return getTenDichVu() +","+ getDienTichSuDung()+","+getChiPhiThue()+","+getSoLuongNguoiToiDa()+","+getKieuThue()
+                +","+ dichVuMienPhi;
+    }
 }

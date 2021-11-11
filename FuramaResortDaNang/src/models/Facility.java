@@ -70,4 +70,7 @@ public abstract class Facility {
                 ", kieuThue='" + kieuThue + '\'' +
                 '}';
     }
+    public String facility(){
+        return tenDichVu +","+ dienTichSuDung+","+chiPhiThue+","+soLuongNguoiToiDa+","+kieuThue;
+    }
 }

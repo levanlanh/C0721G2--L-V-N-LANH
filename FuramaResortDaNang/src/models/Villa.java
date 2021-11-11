@@ -45,4 +45,8 @@ public class Villa extends Facility {
                 ", soTang=" + soTang +
                 '}';
     }
+    public String facility(){
+        return getTenDichVu() +","+ getDienTichSuDung()+","+getChiPhiThue()+","+getSoLuongNguoiToiDa()+","+getKieuThue()
+                +","+ tieuChuanPhong+","+dienTichHoBoi+","+soTang;
+    }
 }

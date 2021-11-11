@@ -51,4 +51,7 @@ public class Customer extends Person {
                 ", diaChi='" + diaChi + '\'' +
                 '}';
     }
+    public String customer(){
+        return person() +","+ maKhachHang +","+loaiKhachHang+","+diaChi;
+    }
 }

@@ -9,8 +9,7 @@ public class Contract {
     private double tongTienThanhToan;
 
 
-    public Contract(int soHopDong, Booking maBooking, double soTienCocTruoc, double tongTienThanhToan,
-                    String maKhachHang) {
+    public Contract(int soHopDong, Booking maBooking, double soTienCocTruoc, double tongTienThanhToan) {
         this.soHopDong = soHopDong;
         this.maBooking = maBooking;
         this.soTienCocTruoc = soTienCocTruoc;

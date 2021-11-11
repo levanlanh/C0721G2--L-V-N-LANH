@@ -1,12 +1,12 @@
 package models;
 
 public abstract class Person {
-    private String hoVaTen;
-    private String ngaySinh;
-    private String gioiTinh;
-    private int soCMND;
-    private int soDienThoai;
-    private String email;
+    public String hoVaTen;
+    public String ngaySinh;
+    public String gioiTinh;
+    public int soCMND;
+    public int soDienThoai;
+    public String email;
 
     public Person(String hoVaTen, String ngaySinh, String gioiTinh, int soCMND, int soDienThoai, String email) {
         this.hoVaTen = hoVaTen;
@@ -63,6 +63,9 @@ public abstract class Person {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String person(){
+        return hoVaTen +","+ngaySinh+","+gioiTinh+","+soCMND+","+soDienThoai+","+email;
     }
 
     @Override

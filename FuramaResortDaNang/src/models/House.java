@@ -4,7 +4,8 @@ public class House extends Facility {
     private String tieuChuanPhong;
     private int soTang;
 
-    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue, String tieuChuanPhong, int soTang) {
+    public House(String tenDichVu, double dienTichSuDung, double chiPhiThue, int soLuongNguoiToiDa, String kieuThue,
+                 String tieuChuanPhong, int soTang) {
         super(tenDichVu, dienTichSuDung, chiPhiThue, soLuongNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.soTang = soTang;
@@ -32,5 +33,9 @@ public class House extends Facility {
                 "tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", soTang=" + soTang +
                 '}';
+    }
+    public String facility(){
+        return getTenDichVu() +","+ getDienTichSuDung()+","+getChiPhiThue()+","+getSoLuongNguoiToiDa()+","+getKieuThue()
+                +","+ tieuChuanPhong +","+ soTang;
     }
 }

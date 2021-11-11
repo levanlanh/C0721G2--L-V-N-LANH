@@ -1,5 +1,6 @@
 package services;
 
+import interface_services.EmployeeService;
 import models.Employee;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
     public void show() {
+       employees = ReadAndWriteEmployee.read();
         for (Employee e : employees) {
             System.out.println(e);
         }
@@ -38,16 +40,18 @@ public class EmployeeServiceImpl implements EmployeeService {
         String viTri = sc.nextLine();
         System.out.println("Nhập lương :");
         double luong = Double.parseDouble(sc.nextLine());
-        Employee employee = new Employee(hoTen,ngaySinh,gioiTinh,soCMND,soDienThoai,email,maNhanVien,trinhDo,viTri,luong);
+        Employee employee = new Employee(hoTen, ngaySinh, gioiTinh, soCMND, soDienThoai, email, maNhanVien, trinhDo, viTri, luong);
         employees.add(employee);
+        ReadAndWriteEmployee.write(employees);
     }
 
     public void edit() {
+        ReadAndWriteEmployee.read();
         show();
         System.out.println("Nhập mã nhân viên cần chỉnh sửa : ");
         String maNhanVien = sc.nextLine();
         for (Employee e : employees) {
-            if(e.getMaNhanVien().equals(maNhanVien)){
+            if (e.getMaNhanVien().equals(maNhanVien)) {
                 System.out.println("Nhập họ tên :");
                 String hoTen = sc.nextLine();
                 System.out.println("Nhập ngày sinh :");
@@ -75,6 +79,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 e.setTrinhDo(trinhDo);
                 e.setViTri(viTri);
                 e.setLuong(luong);
+                ReadAndWriteEmployee.write(employees);
             }
         }
     }

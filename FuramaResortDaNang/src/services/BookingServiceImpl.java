@@ -1,21 +1,23 @@
 package services;
 
+import interface_services.BookingService;
 import models.Booking;
 import models.Customer;
 import models.Facility;
+import models.Villa;
 
-import java.util.Scanner;
-import java.util.TreeSet;
+
+import java.util.*;
 
 public class BookingServiceImpl implements BookingService {
     public static CustomerServiceImpl customerService = new CustomerServiceImpl();
-    public static FacilityServiceImpl facilityService = new FacilityServiceImpl();
-    public static TreeSet<Booking> bookings = new TreeSet<>();
+    public static Set<Booking> bookings = new TreeSet<>(new BookingComparator());
     static Scanner sc = new Scanner(System.in);
 
 
     public static Customer getmaKhachHang(String maKhachHang) { // lấy mã khách hàng.
-        for (Customer o : customerService.customers) {
+        List<Customer> customers = ReadAndWriteCustomer.read();
+        for (Customer o : customers) {
             if (o.getMaKhachHang().equals(maKhachHang)) {
                 return o;
             }
@@ -25,13 +27,22 @@ public class BookingServiceImpl implements BookingService {
     }
 
     public static Facility getFacility(String tenDichVu) { // lấy tên dịch vụ house,villa,room
-        for (Facility o : FacilityServiceImpl.list.keySet()) {
-            if (o.getTenDichVu().equals(tenDichVu)) {
-                return o;
+
+        for (Facility villa: ReadAndWriteVilla.read().keySet()) {
+             if(villa.getTenDichVu().equals(tenDichVu)){
+                 return villa;
+             }
+        }
+        for (Facility house : ReadAndWriteHouse.read().keySet()) {
+            if(house.getTenDichVu().equals(tenDichVu)){
+                return house;
             }
         }
-        System.out.println("không tìm thấy tên dịch vụ :");
-        return null;
+        for (Facility room: ReadAndWriteRoom.read().keySet()) {
+            if(room.getTenDichVu().equals(tenDichVu)){
+                return room;
+            }
+        }return null;
     }
 
     public void show() {
@@ -48,14 +59,16 @@ public class BookingServiceImpl implements BookingService {
         System.out.println("nhập ngày kết thúc :");
         String ngayKetThuc = sc.nextLine();
         System.out.println("nhập mã khách hàng :");
+        customerService.show();
         String maKhachHang = sc.nextLine();
         Customer customer = getmaKhachHang(maKhachHang);
-        FacilityServiceImpl.showFacility();
         System.out.println("nhập tên dịch vụ");
+        FacilityServiceImpl.showFacility();
         String tenDichVu = sc.nextLine();
         Facility facility = getFacility(tenDichVu);
         Booking booking = new Booking(maBooking, ngayBatDau, ngayKetThuc, customer, facility);
         bookings.add(booking);
+       // ReadAndWriteBooking.write(bookings);
     }
 }
 

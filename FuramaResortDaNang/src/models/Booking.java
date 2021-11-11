@@ -7,7 +7,7 @@ public class Booking {
     private Customer customer;
     private Facility facility;
 
-    public Booking(int maBooking, String ngayBatDau, String ngayKetThuc, Customer customer, Facility facility) {
+        public Booking(int maBooking, String ngayBatDau, String ngayKetThuc, Customer customer, Facility facility) {
         this.maBooking = maBooking;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
@@ -64,5 +64,8 @@ public class Booking {
                 ", customer=" + customer +
                 ", facility=" + facility +
                 '}';
+    }
+    public String booking(){
+        return maBooking+","+ngayBatDau+","+ngayKetThuc+","+customer.customer()+","+facility.facility();
     }
 }
