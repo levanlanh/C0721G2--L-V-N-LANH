@@ -72,6 +72,44 @@ trang_thai varchar(45),
 primary key ( ma_dich_vu_di_kem)
 
 );
+
+create table vi_tri(
+ma_vi_tri int,
+ten_vi_tri varchar(45),
+primary key (ma_vi_tri)
+);
+
+create table trinh_do(
+ma_trinh_do int,
+ten_trinh_do varchar(45),
+primary key (ma_trinh_do)
+);
+
+create table bo_phan(
+ma_bo_phan int,
+ten_trinh_do varchar(45),
+primary key(ma_bo_phan)
+);
+
+create table nhan_vien(
+ma_nhan_vien int,
+ho_ten varchar(45),
+ngay_sinh date,
+so_cmnd varchar(45),
+luong double,
+so_dien_thoai varchar(45),
+email varchar(45),
+dia_chi varchar(45),
+ma_vi_tri int,
+ma_trinh_do int,
+ma_bo_phan int,
+primary key (ma_nhan_vien),
+FOREIGN KEY (ma_vi_tri) REFERENCES vi_tri(ma_vi_tri),
+FOREIGN KEY (ma_trinh_do) REFERENCES trinh_do(ma_trinh_do),
+FOREIGN KEY (ma_bo_phan) REFERENCES bo_phan(ma_bo_phan)
+);
+
+
 create table hop_dong_chi_tiet(
 ma_hop_dong_chi_tiet int,
 ma_hop_dong int,
