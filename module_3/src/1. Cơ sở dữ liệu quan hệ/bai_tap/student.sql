@@ -1,17 +1,17 @@
 drop database if exists student_management;
 create database student_management;
 use student_management;
-CREATE TABLE Student(
+CREATE TABLE student(
 id INT NOT NULL,
 name VARCHAR(45)NULL,
 age INT NULL,
 country VARCHAR(45)NULL,
 PRIMARY KEY(id));
-CREATE TABLE Class(
+CREATE TABLE class(
 id INT NOT NULL,
 name VARCHAR(45)NULL,
 PRIMARY KEY(id));
-CREATE TABLE Teacher(
+CREATE TABLE teacher(
 id INT NOT NULL,
 name VARCHAR(45)NULL,
 age INT NULL,
