@@ -1,188 +1,255 @@
-drop database if exists furama_database;
-create database furama_database;
-use furama_database;
-
-create table vi_tri(
-id_vi_tri int primary key auto_increment,
+drop database if exists furama;
+create database furama;
+use furama;
+SET SQL_SAFE_UPDATES = 0;
+create table vitri(
+id_vitri int auto_increment primary key,
 ten_vi_tri varchar(45)
 );
-
+insert into vitri values
+(1,'GM'),(2,'Manager'),(3,'Supervisor'),(4,'Employee'), (5,'Sever'),(6, 'Receptionist');
 create table trinh_do(
-id_trinh_do int primary key auto_increment,
-ten_trinh_do varchar(45)
+id_trinh_do int auto_increment primary key,
+trinh_do varchar(45)
 );
-
+insert into trinh_do  values
+(1,'DH'),(2,'CD'),(3,'TC');
 create table bo_phan(
-id_bo_phan int primary key auto_increment,
+id_bo_phan int auto_increment primary key,
 ten_bo_phan varchar(45)
 );
+insert into bo_phan values
+(1,'operation'),(2,'kitchen'),(3,'restaurant');
+create table loai_khach(
+id_loai_khach int auto_increment primary key,
+ten_loai_khach varchar(45)
+);
+insert into loai_khach values
+(1,'Diamond'),(2,'Platium'),(3,'Gold'),(4,'Sliver'),(5,'Member');
+create table kieu_thue(
+id_kieu_thue int auto_increment primary key,
+ten_kieu_thue varchar(45),
+gia int
+);
+insert into kieu_thue values (1,'Day',1000),(2,'Week',5000),(3,'Month',1500);
+create table loai_dich_vu(
+id_loai_dich_vu int auto_increment primary key,
+ten_loai_dich_vu varchar(45)
+);
+insert into loai_dich_vu(id_loai_dich_vu,ten_loai_dich_vu) values
+(1,'Villa'),(2,'House'),(3,'Room');
 create table nhan_vien(
-id_nhan_vien int primary key auto_increment,
-ho_ten varchar(45) not null,
-id_vi_tri int not null,
-id_trinh_do int not null,
-id_bo_phan int not null,
-ngay_sinh date not null,
-so_cmnd int not null,
-luong int not null,
-sdt int not null,
-email varchar(45)not null,
-dia_chi varchar(45)not null,
-foreign key(id_vi_tri) references vi_tri(id_vi_tri),
+id_nhan_vien int auto_increment primary key,
+ho_ten varchar(45),
+id_vitri int,
+id_trinh_do int,
+id_bo_phan int,
+ngay_sinh date,
+so_CMTND varchar(45),
+luong varchar(45),
+sdt varchar(45),
+email varchar(45),
+dia_chi varchar(45),
+foreign key(id_vitri) references vitri(id_vitri),
 foreign key(id_trinh_do) references trinh_do(id_trinh_do),
 foreign key(id_bo_phan) references bo_phan(id_bo_phan)
 );
-
-create table loai_khach(
-id_loai_khach int primary key auto_increment,
-ten_loai_khach varchar(45)
-);
-
+insert into nhan_vien (id_nhan_vien, ho_ten,id_vitri,id_trinh_do, id_bo_phan, ngay_sinh, so_CMTND, luong, sdt, email, dia_chi) values
+(1001,'Truong Hung',1,2,3,'1989-09-09', 'A123456', 10, 0905112112, 'TruongHung@gmail.com', 'Hải Châu'),
+(1002,'Nguyen Thao',2,3,3,'1990-09-08', 'A123457', 20, 0863159875, 'NguyenThao@gmail.com', 'Liên Chiểu'),
+(1003,'Hoang Khoi',3,3,2,'1989-08-08', 'A123458', 30, 0121589789, 'HoangKhoi@gmail.com', 'Hải Châu'),
+(1004,'Nguyen Hung',3,2,3,'1986-08-08', 'A123459', 30, 0987154698, 'NguyenHung@gmail.com', 'Hòa phú'),
+(1005,'Nguyen Hoang',3,2,3,'1988-01-01', 'A123489', 30, 0121458987, 'NguyenHoang@gmail.com', 'Hòa Vang');
 create table khach_hang(
-id_khach_hang int primary key auto_increment,
-id_loai_khach int not null,
-ho_ten varchar(45) not null,
+id_khach_hang int auto_increment primary key,
+id_loai_khach int,
+ho_ten varchar(45),
 ngay_sinh date,
-so_cmnd int,
-sdt int,
+so_cmtnd varchar(45),
+sdt varchar(45),
 email varchar(45),
 dia_chi varchar(45),
 foreign key(id_loai_khach) references loai_khach(id_loai_khach)
 );
-
-create table kieu_thue(
-id_kieu_thue int primary key auto_increment,
-ten_kieu_thue varchar(45),
-gia int
-);
-
-create table loai_dich_vu(
-id_loai_dich_vu int primary key auto_increment,
-ten_loai_dich_vu varchar(45)
-);
-
+insert into khach_hang(id_khach_hang, id_loai_khach, ho_ten, ngay_sinh, dia_chi) values
+(101,5,'Nguyen Anh', '1981-10-20', 'Da Nang'),
+(102,1,'Nguyen Binh', '1988-11-20', 'Quang Ngai'),
+(103,2,'Nguyen An', '1963-10-20', 'Quang Nam'),
+(104,1,'Nguyen Trai', '1982-09-20', 'Quang Ngai'),
+(105,4,'Doan Truong', '1983-11-20', 'Hue'),
+(106,2,'Nguyen Anh', '1981-10-20', 'Da Nang'),
+(107,5,'Dinh Thang', '1985-06-20', 'Ho Chi Minh');
 create table dich_vu(
-id_dich_vu int primary key auto_increment,
+id_dich_vu int auto_increment primary key,
 ten_dich_vu varchar(45),
 dien_tich int,
 so_tang int,
-so_nguoi_toi_da varchar(45),
-chi_phi_thue varchar(45),
+dien_tich_ho_boi int,
+so_nguoi_toi_da int,
+chi_phi_thue int,
 id_kieu_thue int,
 id_loai_dich_vu int,
-trang_thai varchar(45),
-foreign key (id_kieu_thue) references kieu_thue (id_kieu_thue),
-foreign key (id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu)
+trang_thai bit,
+foreign key(id_kieu_thue) references kieu_thue(id_kieu_thue),
+foreign key(id_loai_dich_vu) references loai_dich_vu(id_loai_dich_vu)
 );
-
-
+insert dich_vu(id_dich_vu,ten_dich_vu,dien_tich,chi_phi_thue,so_nguoi_toi_da,id_kieu_thue,dien_tich_ho_boi,so_tang,id_loai_dich_vu,trang_thai)
+values
+(1,'Villa',500,500,6,1,30,2,1,1);
+insert dich_vu(id_dich_vu,ten_dich_vu,dien_tich,chi_phi_thue,so_nguoi_toi_da,id_kieu_thue,so_tang,id_loai_dich_vu,trang_thai)
+values
+(2,'House',300,300,5,2,3,2,1);
+insert dich_vu(id_dich_vu,ten_dich_vu,dien_tich,chi_phi_thue,so_nguoi_toi_da,id_kieu_thue,id_loai_dich_vu,trang_thai)
+values
+(3,'Room',200,200,2,3,3,1);
 create table hop_dong(
-id_hop_dong int primary key auto_increment,
-id_nhan_vien int,
+id_hop_dong int auto_increment primary key,
+id_nhan_vien int ,
 id_khach_hang int,
 id_dich_vu int,
-ngay_lam_hop_dong date,
+ngay_lam_hd date ,
 ngay_ket_thuc date,
 tien_dat_coc int,
-foreign key(id_nhan_vien) references nhan_vien(id_nhan_vien) ,
-foreign key(id_khach_hang) references khach_hang(id_khach_hang) ,
-foreign key(id_dich_vu) references dich_vu(id_dich_vu)
+tong_tien int,
+foreign key(id_nhan_vien) references nhan_vien(id_nhan_vien) on delete set null,
+foreign key(id_khach_hang) references khach_hang(id_khach_hang) on delete set null,
+foreign key(id_dich_vu) references dich_vu(id_dich_vu) on delete set null
 );
-
-
+insert into hop_dong(id_hop_dong,id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hd,ngay_ket_thuc,tien_dat_coc,tong_tien)
+values (1,1004,101,1,'2018-08-11','2016-12-16',20,12000),
+       (2,1002,101,2,'2018-07-21','2018-10-10',30,300),
+	   (3,1003,103,3,'2021-05-01','2021-08-12',5,50),
+	   (4,1003,107,3,'2019-12-12','2019-2-19',10,1000),
+	   (5,1003,107,2,'2019-10-10','2019-1-11',50,5000),
+	   (6,1003,107,3,'2019-12-12','2019-12-15',50,11000);
 create table dich_vu_di_kem(
-id_dich_vu_di_kem int primary key auto_increment,
+id_dich_vu_di_kem int auto_increment primary key,
 ten_dich_vu_di_kem varchar(45),
 gia int,
 don_vi int,
-trang_thai_kha_dung varchar(45)
+trang_thai_kha_dung bit default 0
 );
-
+insert into dich_vu_di_kem (id_dich_vu_di_kem, ten_dich_vu_di_kem, gia,don_vi,trang_thai_kha_dung) values
+(1,'Freepool',50,3,1),(2,'Free Breakfast',20,5,1);
 create table hop_dong_chi_tiet(
+id_hop_dong_chi_tiet int auto_increment primary key,
 id_hop_dong int,
 id_dich_vu_di_kem int,
 so_luong int,
-primary key (id_hop_dong,id_dich_vu_di_kem),
- foreign key (id_hop_dong) references hop_dong(id_hop_dong),
- foreign key (id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem)
+-- unique(id_hopdong,id_dich_vu_di_kem),
+foreign key(id_hop_dong) references hop_dong(id_hop_dong) on delete set null,
+foreign key(id_dich_vu_di_kem) references dich_vu_di_kem(id_dich_vu_di_kem) on delete set null
 );
+insert into hop_dong_chi_tiet(id_hop_dong_chi_tiet,id_hop_dong,id_dich_vu_di_kem,so_luong)
+values (1,1,2,3),
+       (2,2,1,4),
+       (3,3,2,9),
+       (4,5,1,25),
+       (5,4,2,25),
+       (6,6,2,5)
+       ;
+-------------------------------------------------------------- task2 -----------------------------------------------------------
+-- Hiển thị thông tin của tất cả nhân viên có trong hệ thống có tên bắt đầu t, k ,h
+-- là một trong các ký tự  và có tối đa 15 ký tự
+  select * from nhan_vien 
+  where (ho_ten  like 'k%' or ho_ten like't%'
+  or ho_ten like 'h%') and char_length(ho_ten) < 15;
+--  -------------------------------------------------------------- task3 -----------------------------------------------------------
+  -- Hiển thị thông tin của tất cả khách hàng có độ tuổi từ 18 đến 50 tuổi 
+  -- và có địa chỉ ở “Đà Nẵng” hoặc “Quảng Trị”.
+  select * 
+  from khach_hang
+  where timestampdiff(year,ngay_sinh,curdate()) between 18 and 50 and 
+  dia_chi in('đà nẵng' ,'quãng trị');
+--   
+-- ------------------------------------------------------------ task4 -----------------------------------------------------------
+-- -- Đếm xem tương ứng với mỗi khách hàng đã từng đặt phòng bao nhiêu lần.
+-- -- Kết quả hiển thị được sắp xếp tăng dần theo số lần đặt phòng của khách hàng.
+-- -- Chỉ đếm những khách hàng nào có Tên loại khách hàng là “Diamond”.
 
--- task1
--- thêm mới vị trí nhân viên
-insert into vi_tri(ten_vi_tri)
-values('le tan'),('phuc vu'),('chuyen vien'),('giam sat'),('quan ly'),('giam doc');
+select lk.ten_loai_khach,kh.ho_ten,hd.id_hop_dong,count(kh.id_khach_hang) as solanthue
+from loai_khach lk
+	join khach_hang kh
+		on lk.id_loai_khach = kh.id_loai_khach
+	join hop_dong hd
+		on kh.id_khach_hang = hd.id_khach_hang
+where lk.id_loai_khach = 2
+group by kh.id_khach_hang
+	order by kh.id_khach_hang;
 
--- thêm mới bộ phận nhân viên
-insert into bo_phan(ten_bo_phan)
-values ('quản lí'),('phục vụ'),('bảo vệ'),('vệ sinh');
-
--- thêm mới bộ phận trình độ 
-insert into trinh_do(ten_trinh_do)
-values ('trung cấp'),('cao đẳng'),('đại học'),('cấp 3');
-
--- thêm mới nhân viên
-insert into nhan_vien(ho_ten,id_vi_tri,id_trinh_do,id_bo_phan,ngay_sinh,so_cmnd,luong,sdt,email,dia_chi)
-value('văn lanh',1,1,1,'1999-02-18',2343234,19000000,0987654321,'abc@gmail.com','gialai'),
-('văn bảo',2,2,2,'1987-02-28',2876234,30000000,0987676321,'xxxyy@gmail.com','hanoi'),
-('văn kiên',1,1,1,'1995-08-18',238888884,34500000,0909999991,'baoyen@gmail.com','danang');
-
--- thêm mới loại khách 
-insert into loai_khach(ten_loai_khach)
-values('Vàng'),('Bạc'),('Bạch kim'),('Kim Cương'),('Đồng');
-
--- Thêm mới khách hàng
-insert into khach_hang(id_loai_khach,ho_ten,ngay_sinh,so_cmnd,sdt,email,dia_chi)
-values(1,'Hải Truong','1995-10-09',102021,09021231,'Truong@gmail.com','Quãng ngãi'),
-(2,'Nam Cừ','1992-05-09',102021,09021231,'Hoa@gmail.com','Vinh'),
-(3,'Ly Chiến','1995-10-09',102021,09021231,'LY@gmail.com','Quãng ngãi');
-
--- Thêm mới dịch vụ đi kèm
-insert into dich_vu_di_kem(ten_dich_vu_di_kem,gia,don_vi,trang_thai_kha_dung)
-values ('Massage',10000,1,'San Sang'), 
-('Karaoke',20000,1,'San Sang'), 
-('Thức ăn',50000,1,'San Sang'),
- ('Nước uống',5000,1,'San Sang'),
- ('Xe tham quan',100000,1,'San Sang');
+-- -- ----------------------------------- task5 ------------------------------------------------------------
+-- -- Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong,
+--  -- ngay_ket_thuc, tong_tien (Với tổng tiền được tính theo công thức như sau: ChiPhiThue + SoLuong*Gia,
+--  -- với SoLuong và Giá là từ bảng dich_vu_di_kem, hop_dong_chi_tiet) cho tất cả các khách hàng
+--  -- đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra)
+--  
+ select kh.id_khach_hang,kh.ho_ten,lk.ten_loai_khach,hd.id_hop_dong,dv.ten_dich_vu,hd.ngay_lam_hd,
+        hd.ngay_ket_thuc,sum(dv.chi_phi_thue + hdct.so_luong * dvdk.gia ) as 'tổng tiền'
+        from khach_hang kh 
+        left join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
+        left join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
+        left join dich_vu dv on hd.id_dich_vu = dv.id_dich_vu
+        left join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
+        left join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+        group by kh.ho_ten;
+        
+        --------------------------------------- task6 ---------------------------------------
+ -- Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, ten_loai_dich_vu của 
+ -- tất cả các loại dịch vụ chưa từng được khách hàng thực hiện đặt
+ -- từ quý 1 của năm 2019 (Quý 1 là tháng 1, 2, 3).
  
- -- Thêm mới kiểu thuê
-insert into kieu_thue(ten_kieu_thue,gia)
-values('Thuê Năm',100000),('Thuê Tháng',50000),('Thuê Ngày',1500),('Thuê Giờ',200);
+ select dv.id_dich_vu, dv.ten_dich_vu,dv.chi_phi_thue,dv.dien_tich,ldv.id_loai_dich_vu
+from dich_vu dv 
+join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
+join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
+where (year(hd.ngay_lam_hd) = '2019') and (month(hd.ngay_lam_hd ) <> 1 and 3);
 
--- Thêm mới loại dich vụ
-insert into loai_dich_vu(ten_loai_dich_vu)
-values('Villa'),('House'),('Room');
+------------------------------------------------------ task7 -------------------------------------------------
+-- Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue,
+-- ten_loai_dich_vu của tất cả các loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2018
+-- nhưng chưa từng được khách hàng đặt phòng trong năm 2019.
 
--- Thêm mới dịch vụ
-insert into dich_vu(ten_dich_vu,dien_tich,so_tang,so_nguoi_toi_da,chi_phi_thue,id_kieu_thue,id_loai_dich_vu,trang_thai)
-values('Villa',50,4,3,10000,1,1,'Ready'),
-('House',40,5,2,5000,2,2,'Ready'),
-('Room',20,4,3,600,4,3,'Ready');
+select dv.id_dich_vu, dv.ten_dich_vu , dv.dien_tich,dv.chi_phi_thue,ldv.id_loai_dich_vu
+from dich_vu dv
+join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
+join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
+where (year(hd.ngay_lam_hd) = 2018) and not (year(hd.ngay_lam_hd) = 2019)  ;
+ 
+ ------------------------------------------------------ task8 ----------------------------------------------------
+-- Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
+-- cách 1
+select distinct kh.ho_ten
+from khach_hang kh ;
 
--- Thêm mới hợp đồng
-insert into hop_dong(id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc)
-values
-(1,2,1,'2018-2-18','2020-10-10',2000000),
-(2,3,2,'2019-3-12','2021-10-10',4000000),
-(3,1,1,'2020-1-2','2019-5-30',7000000),
-(2,3,2,'2019-6-12','2021-10-10',4000000),
-(1,2,2,'2020-9-16','2020-10-10',2000000),
-(1,2,1,'2019-2-18','2020-10-10',2000000),
-(2,3,2,'2019-6-12','2021-10-10',4000000),
-(3,1,1,'2020-1-2','2019-5-30',7000000),
-(1,2,2,'2019-12-12','2020-10-10',2000000),
-(2,2,2,'2020-9-16','2020-10-10',2000000),
-(1,2,2,'2019-9-16','2020-10-10',2000000);
+-- cách 2
+select kh.ho_ten
+from khach_hang kh
+union
+select kh.ho_ten
+from khach_hang kh;
 
--- Thêm mới hợp đồng chi tiết 
-insert into hop_dong_chi_tiet(id_hop_dong,id_dich_vu_di_kem,so_luong)
-values 
-(4,2,2),
-(1,2,3),
-(2,1,6),
-(2,3,1),
-(3,5,4),
-(5,3,2),
-(6,4,1),
-(9,1,4),
-(8,1,3),
-(7,5,5);
+-- cách 3
+select kh.ho_ten
+from khach_hang kh
+group by kh.ho_ten;
+-------------------------------------------------------- task9 ---------------------------------------------------------
+
+-- Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+select month(hd.ngay_lam_hd) as 'tháng' ,kh.id_khach_hang,count(kh.id_khach_hang) as ' số lần '
+from khach_hang kh
+join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
+where year(hd.ngay_lam_hd) = 2019 
+ group by kh.id_khach_hang , tháng
+ order by hd.ngay_lam_hd;
+
+----------------------------------------------------------- task10 -------------------------------------------------
+-- Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm.
+-- Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc,
+-- so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
+
+select hd.id_hop_dong,hd.ngay_lam_hd,hd.ngay_ket_thuc,hd.tien_dat_coc, hdct.so_luong,sum(dvdk.id_dich_vu_di_kem) as 'số lần'
+from hop_dong hd 
+join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
+join dich_vu_di_kem dvdk on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+group by hd.id_hop_dong
+order by hd.id_hop_dong;

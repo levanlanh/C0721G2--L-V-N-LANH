@@ -11,7 +11,7 @@ customer_age int,
 primary key(customer_id) 
 );
 
-create table _order(
+create table `order`(
 order_id int primary key, 
 oder_date date, 
 oder_toltal_price float,
@@ -30,7 +30,7 @@ order_id_detail int ,
 product_id_detail int ,
 oder_qty  int ,
 primary key(order_id_detail,product_id_detail),
-foreign key (order_id_detail) references _order(order_id),
+foreign key (order_id_detail) references `order`(order_id),
 foreign key (product_id_detail) references product(product_id)
 );
 
