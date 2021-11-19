@@ -71,14 +71,14 @@ email varchar(45),
 dia_chi varchar(45),
 foreign key(id_loai_khach) references loai_khach(id_loai_khach)
 );
-insert into khach_hang(id_khach_hang, id_loai_khach, ho_ten, ngay_sinh, dia_chi) values
-(101,5,'Nguyen Anh', '1981-10-20', 'Da Nang'),
-(102,1,'Nguyen Binh', '1988-11-20', 'Quang Ngai'),
-(103,2,'Nguyen An', '1963-10-20', 'Quang Nam'),
-(104,1,'Nguyen Trai', '1982-09-20', 'Quang Ngai'),
-(105,4,'Doan Truong', '1983-11-20', 'Hue'),
-(106,2,'Nguyen Anh', '1981-10-20', 'Da Nang'),
-(107,5,'Dinh Thang', '1985-06-20', 'Ho Chi Minh');
+insert into khach_hang(id_khach_hang, id_loai_khach, ho_ten, ngay_sinh,sdt, dia_chi) values
+(101,5,'Nguyen Anh', '1981-10-20',0987654321, 'Da Nang'),
+(102,1,'Nguyen Binh', '1988-11-20',098989898, 'Quang Ngai'),
+(103,2,'Nguyen An', '1963-10-20',098765678, 'Quang Nam'),
+(104,1,'Nguyen Trai', '1982-09-20',09876877, 'Quang Ngai'),
+(105,4,'Doan Truong', '1983-11-20',0987677677, 'Hue'),
+(106,2,'Nguyen Anh', '1981-10-20',09877884, 'Da Nang'),
+(107,5,'Dinh Thang', '1985-06-20',098777788, 'Ho Chi Minh');
 create table dich_vu(
 id_dich_vu int auto_increment primary key,
 ten_dich_vu varchar(45),
@@ -116,11 +116,11 @@ foreign key(id_khach_hang) references khach_hang(id_khach_hang) on delete set nu
 foreign key(id_dich_vu) references dich_vu(id_dich_vu) on delete set null
 );
 insert into hop_dong(id_hop_dong,id_nhan_vien,id_khach_hang,id_dich_vu,ngay_lam_hd,ngay_ket_thuc,tien_dat_coc,tong_tien)
-values (1,1004,101,1,'2018-08-11','2016-12-16',20,12000),
-       (2,1002,101,2,'2018-07-21','2018-10-10',30,300),
+values (1,1004,101,1,'2015-08-11','2016-12-16',20,12000),
+       (2,1002,102,2,'2018-07-21','2018-10-10',30,300),
 	   (3,1003,103,3,'2021-05-01','2021-08-12',5,50),
-	   (4,1003,107,3,'2019-12-12','2019-2-19',10,1000),
-	   (5,1003,107,2,'2019-10-10','2019-1-11',50,5000),
+	   (4,1003,104,3,'2019-12-12','2019-12-19',10,1000),
+	   (5,1005,107,2,'2019-10-10','2019-10-11',50,5000),
 	   (6,1003,107,3,'2019-12-12','2019-12-15',50,11000);
 create table dich_vu_di_kem(
 id_dich_vu_di_kem int auto_increment primary key,
@@ -202,7 +202,7 @@ group by kh.id_khach_hang
 from dich_vu dv 
 join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
 join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
-where (year(hd.ngay_lam_hd) = '2019') and (month(hd.ngay_lam_hd ) <> 1 and 3);
+where (year(hd.ngay_lam_hd) > '2019') or (month(hd.ngay_lam_hd ) > 3 ) or (year(hd.ngay_lam_hd ) < '2019')  ;
 
 ------------------------------------------------------ task7 -------------------------------------------------
 -- Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue,
@@ -213,7 +213,7 @@ select dv.id_dich_vu, dv.ten_dich_vu , dv.dien_tich,dv.chi_phi_thue,ldv.id_loai_
 from dich_vu dv
 join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
 join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
-where (year(hd.ngay_lam_hd) = 2018) and not (year(hd.ngay_lam_hd) = 2019)  ;
+where (year(hd.ngay_lam_hd) = 2018)  and not (year(hd.ngay_lam_hd) = 2019)  ;
  
  ------------------------------------------------------ task8 ----------------------------------------------------
 -- Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
@@ -234,12 +234,13 @@ from khach_hang kh
 group by kh.ho_ten;
 -------------------------------------------------------- task9 ---------------------------------------------------------
 
--- Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+-- Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 
+-- thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 select month(hd.ngay_lam_hd) as 'tháng' ,kh.id_khach_hang,count(kh.id_khach_hang) as ' số lần '
 from khach_hang kh
 join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
 where year(hd.ngay_lam_hd) = 2019 
- group by kh.id_khach_hang , tháng
+ group by tháng 
  order by hd.ngay_lam_hd;
 
 ----------------------------------------------------------- task10 -------------------------------------------------
@@ -253,3 +254,76 @@ join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
 join dich_vu_di_kem dvdk on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 group by hd.id_hop_dong
 order by hd.id_hop_dong;
+------------------------------------------------------- task11 ------------------------------------------------------------
+-- 	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond”
+--  và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
+select  dvdk.id_dich_vu_di_kem,dvdk.ten_dich_vu_di_kem,dvdk.gia,dvdk.don_vi,dvdk.trang_thai_kha_dung
+from dich_vu_di_kem dvdk 
+join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
+join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
+join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
+where lk.ten_loai_khach = 'Diamond' and (kh.dia_chi = 'vinh' or kh.dia_chi = 'Quang Ngai');
+
+--------------------------------------------------------- task12 ---------------------------------------------------------------
+-- Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng),
+ -- ten_dich_vu, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem),
+ -- tien_dat_coc của tất cả các dịch vụ đã từng được khách hàng đặt vào 3 tháng cuối năm 2019
+ -- nhưng chưa từng được khách hàng đặt vào 6 tháng đầu năm 2019.
+ 
+ select hd.id_hop_dong,nv.ho_ten,kh.ho_ten,kh.sdt,dv.ten_dich_vu,count(hdct.so_luong) as 'số lượng dịch vụ đi kèm', hd.tien_dat_coc
+ from hop_dong hd 
+ join nhan_vien nv on hd.id_nhan_vien = nv.id_nhan_vien
+ join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
+ join dich_vu dv on hd.id_dich_vu = dv.id_dich_vu
+ join hop_dong_chi_tiet hdct on hd.id_hop_dong = hdct.id_hop_dong
+ join dich_vu_di_kem dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+ where (hd.ngay_lam_hd between '2019-10-01' and '2019-12-31'  ) and not (year(hd.ngay_lam_hd) = 2019 and month(hd.ngay_lam_hd) = 6) 
+ group by hd.id_hop_dong;
+ 
+ --------------------------------------------------- task13 ----------------------------------------------------------------
+ -- Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
+ -- (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
+ select   dvdk.id_dich_vu_di_kem,dvdk.ten_dich_vu_di_kem,dvdk.gia,dvdk.don_vi,dvdk.trang_thai_kha_dung ,
+ count(dvdk.id_dich_vu_di_kem) 
+from dich_vu_di_kem dvdk 
+join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
+join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
+ group by  dvdk.id_dich_vu_di_kem
+ having count(dvdk.id_dich_vu_di_kem) = (select count(dvdk.id_dich_vu_di_kem) as 'dịch vụ đi kèm nhiều nhất'
+ from dich_vu_di_kem dvdk 
+ join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
+join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
+ group by  dvdk.id_dich_vu_di_kem
+limit 1);
+--------------------------------------------------------- task14 ------------------------------------------------------------
+-- Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
+ -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem,
+ -- so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).
+ select * -- hd.id_hop_dong,ldv.ten_loai_dich_vu,ldv.ten_loai_dich_vu, sum(dvdk.id_dich_vu_di_kem) as 'số lần sử dụng'
+  from dich_vu_di_kem dvdk 
+ join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
+join dich_vu dv on hd.id_dich_vu = dv.id_dich_vu
+join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
+group by hd.id_hop_dong;
+
+------------------------------------------------------------ task15 -----------------------------------------------------------
+-- Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, trinh_do, ten_bo_phan,
+ -- so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
+ select nv.id_nhan_vien,nv.ho_ten,nv.id_trinh_do,nv.id_bo_phan,nv.sdt,nv.dia_chi 
+ from nhan_vien nv
+ join hop_dong hd on hd.id_nhan_vien = nv.id_nhan_vien
+ where year(hd.ngay_lam_hd) between 2018 and 2019 
+ limit 3;
+ ------------------------------------------------------------- task16 ---------------------------------------------------------------
+ SET SQL_SAFE_UPDATES = 0;
+ delete 
+ from  nhan_vien nv
+ where nv.id_nhan_vien not in ( 
+ select hd.id_nhan_vien
+ from hop_dong hd
+ where hd.ngay_lam_hd is null  or (hd.id_nhan_vien = nv.id_nhan_vien and year(hd.ngay_lam_hd) between 2017 and 2019 ))
+ ;
