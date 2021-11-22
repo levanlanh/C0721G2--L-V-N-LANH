@@ -78,7 +78,7 @@ insert into khach_hang(id_khach_hang, id_loai_khach, ho_ten, ngay_sinh,sdt, dia_
 (104,1,'Nguyen Trai', '1982-09-20',09876877, 'Quang Ngai'),
 (105,4,'Doan Truong', '1983-11-20',0987677677, 'Hue'),
 (106,2,'Nguyen Anh', '1981-10-20',09877884, 'Da Nang'),
-(107,5,'Dinh Thang', '1985-06-20',098777788, 'Ho Chi Minh');
+(107,2,'Dinh Thang', '1985-06-20',098777788, 'Ho Chi Minh');
 create table dich_vu(
 id_dich_vu int auto_increment primary key,
 ten_dich_vu varchar(45),
@@ -302,22 +302,25 @@ limit 1);
 -- Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
  -- Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem,
  -- so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).
- select * -- hd.id_hop_dong,ldv.ten_loai_dich_vu,ldv.ten_loai_dich_vu, sum(dvdk.id_dich_vu_di_kem) as 'số lần sử dụng'
+ select  hd.id_hop_dong,ldv.ten_loai_dich_vu,ldv.ten_loai_dich_vu, sum(dvdk.id_dich_vu_di_kem) as 'số lần sử dụng'
   from dich_vu_di_kem dvdk 
  join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 join hop_dong hd on hdct.id_hop_dong = hd.id_hop_dong
 join dich_vu dv on hd.id_dich_vu = dv.id_dich_vu
 join loai_dich_vu ldv on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
-group by hd.id_hop_dong;
+group by hd.id_hop_dong
+having sum(dvdk.id_dich_vu_di_kem) = 1;
 
 ------------------------------------------------------------ task15 -----------------------------------------------------------
 -- Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, trinh_do, ten_bo_phan,
  -- so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2018 đến 2019.
- select nv.id_nhan_vien,nv.ho_ten,nv.id_trinh_do,nv.id_bo_phan,nv.sdt,nv.dia_chi 
+ select nv.id_nhan_vien,nv.ho_ten,nv.id_trinh_do,nv.id_bo_phan,nv.sdt,nv.dia_chi,count( year(hd.ngay_lam_hd) = 2018
++ year(hd.ngay_lam_hd) = 2019) as 'Số lần làm hợp đồng'
  from nhan_vien nv
  join hop_dong hd on hd.id_nhan_vien = nv.id_nhan_vien
  where year(hd.ngay_lam_hd) between 2018 and 2019 
- limit 3;
+ group by nv.id_nhan_vien
+ having 'Số lần làm hợp đồng' <= 3;
  ------------------------------------------------------------- task16 ---------------------------------------------------------------
  SET SQL_SAFE_UPDATES = 0;
  delete 
@@ -327,3 +330,51 @@ group by hd.id_hop_dong;
  from hop_dong hd
  where hd.ngay_lam_hd is null  or (hd.id_nhan_vien = nv.id_nhan_vien and year(hd.ngay_lam_hd) between 2017 and 2019 ))
  ;
+ ------------------------------------------------------------------- task 17 ------------------------------------------------------
+ -- Cập nhật thông tin những khách hàng có ten_loai_khach từ Platinum lên Diamond,
+ -- chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2019 là lớn hơn 10.000.000 VNĐ.
+ set SQL_SAFE_UPDATES = 0;
+ update khach_hang kh
+ set id_loai_khach = '1'
+ where kh.id_loai_khach in (
+ select * from ( select kh.id_loai_khach from loai_khach lk 
+ join khach_hang kh on lk.id_loai_khach = kh.id_loai_khach 
+ join hop_dong hd on kh.id_khach_hang = hd.id_khach_hang
+ where year(hd.ngay_lam_hd) = '2019' and kh.id_loai_khach = '2' and hd.tong_tien > 10000
+ group by kh.id_khach_hang) as loai_khach );
+select * from khach_hang;
+
+------------------------------------------------------------------ task18 ----------------------------------------------------------------------------
+-- Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng).
+delete from khach_hang kh 
+where kh.id_khach_hang in (
+ select * from (select kh.id_khach_hang 
+ from hop_dong hd  
+ join khach_hang kh on kh.id_khach_hang = hd.id_khach_hang
+ where year(hd.ngay_lam_hd) < 2016
+ group by kh.id_khach_hang ) as kh
+ );
+select * from khach_hang ;
+
+---------------------------------------------------------------- task 19 -------------------------------------------------------------------------
+-- Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2019 lên gấp đôi.
+
+update dich_vu_di_kem dvdk 
+set dvdk.gia = dvdk.gia*2 
+where id_dich_vu_di_kem in (
+select * from ( select dvdk.id_dich_vu_di_kem 
+from dich_vu_di_kem dvdk
+join hop_dong_chi_tiet hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+where hdct.so_luong > 10 ) as hd 
+group by dvdk.id_dich_vu_di_kem
+);
+select * from dich_vu_di_kem;
+
+--------------------------------------------------------------------- task 20 -----------------------------------------------------------------
+-- Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống,
+-- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
+ select nv.id_nhan_vien as id,nv.ho_ten,nv.email,nv.sdt,nv.ngay_sinh,nv.dia_chi
+ from nhan_vien nv
+ union all
+ select kh.id_khach_hang as id ,kh.ho_ten ,kh.email,kh.sdt,kh.ngay_sinh,kh.dia_chi
+ from khach_hang kh
