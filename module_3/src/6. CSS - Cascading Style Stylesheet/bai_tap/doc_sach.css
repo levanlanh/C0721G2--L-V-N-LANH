@@ -1,0 +1,56 @@
+body {
+    font-family: Arial;
+    font-size: 40px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+#menu {
+    background: purple;
+    height: 150px;
+}
+
+#banner {
+    height: 600px;
+    width: 100%;
+}
+
+#left {
+    width: 80%;
+    /*background: blue;*/
+    float: left;
+    min-height: 50px;
+}
+
+#right {
+    width: 20%;
+    /*background: aqua;*/
+    float: left;
+    min-height: 50px;
+}
+
+ul {
+    margin: 0px;
+}
+
+li {
+    line-height: 100px;
+    padding: 0px 10px 0px 100px;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+}
+
+ul li a {
+    line-height: 140px;
+    padding: 0px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+img {
+    height: 500px;
+    width: 100%;
+}
