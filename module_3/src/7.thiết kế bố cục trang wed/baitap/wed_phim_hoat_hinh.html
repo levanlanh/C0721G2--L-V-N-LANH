@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phim hoạt hình</title>
+    <style>
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+
+        [class*="col-"] {
+            float: left;
+            padding: 5px;
+        }
+
+        .row::after {
+            clear: both;
+            content: "";
+            display: block;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .cartoon-text {
+            background-color: red;
+            color: white;
+        }
+
+        .header {
+            font-size: 40px;
+            background-color: darkgrey;
+            margin-bottom: 5px;
+        }
+
+        .menu {
+            text-align: center;
+            background-color: darkgrey;
+        }
+        .chu{
+            color: gainsboro;
+        }
+        @media only screen and (max-width: 768px){
+        [class *="col-"]{
+            width: 100%;
+        }
+        }
+        .cuoi{
+            background-color: gainsboro;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="row-12 header">
+        Phim <span class="cartoon-text"> hoạt hình  </span>
+    </div>
+
+</div>
+<div class="row">
+    <div class="row-12 menu ">
+        Phim hoạt hình | Phim hoạt hình yêu thích | Nhân vật hoạt hình | góp ý
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <span>Welcom đến với khách sạn nobi</span>
+                <p> Channel Funl</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <span>Welcom đến với khách sạn nobi</span>
+                <p> Channel Funl</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <span>Welcom đến với khách sạn nobi</span>
+                <p> Channel Funl</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <span>Welcom đến với khách sạn nobi</span>
+                <p> Channel Funl</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="row">
+            <div class="col-12">
+                <video width="100%" height="100%" controls>
+                    <source src="movie.mp4" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <span>Tớ là maria</span>
+                <br>
+                <div class="chu">
+                <span>tác giả</span>
+                <p>Xa xa, sau làn sương mờ, dãy Non Nước hiện lên đẹp như một bức tranh phong cảnh. Chúng em đều cảm
+                    thấy hồi hộp vì tuy nghe tiếng đã lâu nhưng chưa ai được đặt chân tới mảnh đất quê hương cờ lau dẹp
+                    loạn này bao giờ. Tiếng cười nói trong xe tạm lắng xuống, nhường chỗ cho những ánh mắt háo hức, chờ
+                    đợi.</p>
+                <p>Hoa Lư đây rồi! Kinh đô đầu tiên của nước Đại Việt chính là đây. Toàn bộ khu di tích nằm trong một
+                    vùng đất trũng lòng chảo, xung quanh bao bọc bởi những ngọn núi trùng điệp. Thiên nhiên đã khéo sắp
+                    đặt cho nơi này một cảnh quan hùng vĩ, vừa có sông nước vừa có núi non. Phong cảnh hữu tình biết
+                    mấy!</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 cuoi ">
+            @ 2017 - thiết kế wed bởi trang hoathinhvn.net
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
