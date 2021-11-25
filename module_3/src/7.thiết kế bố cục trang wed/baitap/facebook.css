@@ -68,10 +68,23 @@
 }
 .body{
     background-color: aliceblue;
+    font-family: Arial;
+    width: 100%;
 }
 .header{
-    font-size: 70px;
+    height: 70px;
+    line-height: 150px;
+    font-size: 50px;
     color: blue;
+    margin: 20px 20px 20px 80px;
+}
+h3{
+    font-size: 30px;
+    margin: 20px 20px 20px 80px;
+}
+#chuthich{
+    margin: 20px 20px 20px 80px;
+    color: darkolivegreen;
 }
 .khoangcach1{
     text-align: center;
@@ -87,4 +100,17 @@
 }
 .khoangcach5{
     text-align: center;
+}
+span{
+    width: 100%;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.khoangcach{
+    width: 200px;
+    margin-top: 100px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+    margin-left: 0px;
 }
