@@ -31,9 +31,38 @@ public class UserServlet extends HttpServlet {
             case "update" :
                 upDateUser(request,response);
                 break;
+            case "sort":
+                sortUser(request,response);
+                break;
+            case "search":
+                searchUser(request,response);
+                break;
             default:
                 showListUser(request, response);
                 break;
+        }
+    }
+
+    private void searchUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String country = request.getParameter("countryName");
+        List<User> userList = iUserService.selectByCountry(country);
+        if(userList==null){
+            request.getRequestDispatcher("error-404.jsp").forward(request,response);
+        }else {
+            request.setAttribute("userList",userList);
+            request.getRequestDispatcher("search.jsp").forward(request,response);
+        }
+    }
+
+    private void sortUser(HttpServletRequest request, HttpServletResponse response) {
+        List<User> userList = iUserService.orderByName();
+        request.setAttribute("userList",userList);
+        try {
+            request.getRequestDispatcher("sort.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

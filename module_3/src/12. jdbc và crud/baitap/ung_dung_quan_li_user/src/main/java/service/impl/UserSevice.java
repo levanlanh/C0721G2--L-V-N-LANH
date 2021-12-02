@@ -37,11 +37,11 @@ public class UserSevice implements IUserService {
 
     @Override
     public List<User> orderByName() {
-        return null;
+        return iUserRepository.orderByName();
     }
 
     @Override
     public List<User> selectByCountry(String countryName) {
-        return null;
+        return iUserRepository.selectByCountry(countryName);
     }
 }
