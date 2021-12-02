@@ -14,8 +14,8 @@
 <body>
 <h1>Create new user</h1>
 <p>
-    <c:if test='${["message"] != null}'>
-        <span class="message">${["message"]}</span>
+    <c:if test='${requestScope["message"]!= null}'>
+        <span class="message">${requestScope["message"]}</span>
     </c:if>
 </p>
 <p>

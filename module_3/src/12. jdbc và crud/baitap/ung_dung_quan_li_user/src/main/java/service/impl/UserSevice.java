@@ -26,12 +26,13 @@ public class UserSevice implements IUserService {
 
     @Override
     public void updateUser(User user) {
+    iUserRepository.updateUser(user);
 
     }
 
     @Override
     public void deleteUser(int id) {
-
+     iUserRepository.deleteUser(id);
     }
 
     @Override

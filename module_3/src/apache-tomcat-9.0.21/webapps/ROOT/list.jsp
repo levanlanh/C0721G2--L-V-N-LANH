@@ -61,8 +61,9 @@
                 <td>${user.name}</td>
                 <td>${user.email}</td>
                 <td>${user.country}</td>
-                <td><a href="/user?notice=edit&id=${user.id}">Edit</a></td>
-                <td><a href="/user?notice=delete&id=${user.id}">Delete</a></td>
+                <td><a href="/user?notice=update&id=${user.id}" onclick="return confirm('Do you want to edit ${user.getName()} ?')">Edit</a></td>
+                <td><a href="/user?notice=delete&id=${user.id}" onclick="return confirm('Do you want to delete ${user.name} ?')"> Delete</a></td>
+
             </tr>
         </c:forEach>
         </tbody>
