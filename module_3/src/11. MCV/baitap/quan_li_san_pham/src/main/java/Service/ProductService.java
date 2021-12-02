@@ -5,6 +5,7 @@ import repository.IProductRepository;
 import repository.ProductRepository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductService implements IProductService {
     private static IProductRepository  iProductRepository = new ProductRepository();
@@ -36,6 +37,11 @@ public class ProductService implements IProductService {
 
     @Override
     public void delete(Integer id) {
+    iProductRepository.delete(id);
+    }
 
+    @Override
+    public List<Product> searchByName(String name) {
+        return iProductRepository.searchByName(name);
     }
 }

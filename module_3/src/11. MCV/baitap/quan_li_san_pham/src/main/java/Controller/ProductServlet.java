@@ -27,9 +27,46 @@ public class ProductServlet extends HttpServlet {
                   break;
             case "edit" :
                 upDateProduct(request,response);
+                break;
+            case "delete" :
+                deleteProduct(request,response);
+                break;
+            case "search" :
+                showSearch(request,response);
 
         }
 
+    }
+
+    private void showSearch(HttpServletRequest request, HttpServletResponse response) {
+        String search = request.getParameter("search");
+        List<Product> searchList = iProductService.searchByName(search);
+        RequestDispatcher dispatcher ;
+        if(searchList == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else {
+            request.setAttribute("productList",searchList);
+            dispatcher = request.getRequestDispatcher("index.jsp");
+            try {
+                dispatcher.forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("productId"));
+        Product product = this.iProductService.findById(id);
+        RequestDispatcher dispatcher;
+        if (product == null) {
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        } else {
+            this.iProductService.delete(id);
+            response.sendRedirect("/product");
+       }
     }
 
     private void upDateProduct(HttpServletRequest request, HttpServletResponse response) {
@@ -70,11 +107,36 @@ public class ProductServlet extends HttpServlet {
           case "edit" :
               showEdit(request,response);
               break;
+          case "delete" :
+              showDelete(request,response);
+              break;
 
           default:
               listProducts(request,response);
               break;
       }
+    }
+
+
+
+    private void showDelete(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("productId"));
+        Product product = this.iProductService.findById(id);
+        RequestDispatcher dispatcher ;
+        if(product == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else {
+            request.setAttribute("productList",product);
+            dispatcher = request.getRequestDispatcher("delete.jsp");
+        }
+        try {
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private void showEdit(HttpServletRequest request, HttpServletResponse response) {

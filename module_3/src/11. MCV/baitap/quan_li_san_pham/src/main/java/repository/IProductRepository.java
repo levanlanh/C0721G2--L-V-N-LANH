@@ -3,6 +3,7 @@ package repository;
 import Model.Product;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IProductRepository {
     ArrayList<Product> findAll();
@@ -11,4 +12,5 @@ public interface IProductRepository {
     void save (Product product);
     void update (Integer id, Product product);
     void delete (Integer id);
+    List<Product> searchByName(String name);
 }

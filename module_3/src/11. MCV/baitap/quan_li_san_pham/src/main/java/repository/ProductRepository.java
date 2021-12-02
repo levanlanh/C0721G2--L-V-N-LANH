@@ -2,10 +2,7 @@ package repository;
 
 import Model.Product;
 
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 public class ProductRepository implements IProductRepository {
     static Map<Integer, Product> productMap = new TreeMap<>();
@@ -52,6 +49,18 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public void delete(Integer id) {
+     productMap.remove(id);
+    }
 
+    @Override
+    public List<Product> searchByName(String name) {
+        List<Product> list = findAll();
+        List<Product> searchList = new ArrayList<>();
+        for ( Product p : list) {
+            if(p.getProductName().toLowerCase().contains(name)){
+                searchList.add(p);
+            }
+        }
+        return searchList ;
     }
 }
