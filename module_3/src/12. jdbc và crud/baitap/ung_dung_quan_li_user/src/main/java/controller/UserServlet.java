@@ -50,7 +50,7 @@ public class UserServlet extends HttpServlet {
             request.getRequestDispatcher("error-404.jsp").forward(request,response);
         }else {
             request.setAttribute("userList",userList);
-            request.getRequestDispatcher("search.jsp").forward(request,response);
+            request.getRequestDispatcher("list.jsp").forward(request,response);
         }
     }
 
