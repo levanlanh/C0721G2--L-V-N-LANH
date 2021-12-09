@@ -19,8 +19,6 @@
             <tr>
                 <td ><c:out value="${usernameinfo}"/></td>
             </tr>
-            <%--            <input type="text" disabled value="${usernameinfo}" name="username">--%>
-            <%--            <h5> Nguyễn Văn A </h5>--%>
 
         </div>
     </div>
@@ -47,7 +45,7 @@
                     <a class="nav-link active" href="/contract">Contract</a>
                 </li>
             </ul>
-            <form class="d-flex" action="/customer?userAction=search" method="post">
+            <form class="d-flex" action="/customer?action=search" method="post">
                 <input class="form-control me-2" name="searchName" type="text" placeholder="Search Customer Name" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
@@ -60,7 +58,7 @@
     <div class="row ">
         <div class="col-lg-12 text-left">
             <button type="button" class="btn btn-light">
-                <a href="/customer?userAction=create" class="text-decoration-none">Create Customer</a>
+                <a href="/customer?action=create" class="text-decoration-none">Create Customer</a>
             </button>
         </div>
     </div>
@@ -87,6 +85,7 @@
         <c:forEach var="customer" items="${customerList}">
             <tr>
                 <td>${customer.customerId}</td>
+                <td>${customer.customerTypeId}</td>
                 <td>${customer.customerName}</td>
                 <td>${customer.birthday}</td>
                 <td>${customer.gender}</td>
@@ -94,21 +93,21 @@
                 <td>${customer.phone}</td>
                 <td>${customer.email}</td>
                 <td>${customer.address}</td>
-                <td>${customer.customerType.customerTypeId}</td>
-<%--                <td>--%>
-<%--                    <button type="button" class="btn btn-light">--%>
-<%--                        <a href="/customer?userAction=edit&id=${customer.getCustomer_id()}"--%>
-<%--                           class="text-decoration-none" onclick="return confirm('Do you want to edit ${customer.getName()} ?')">Edit</a>--%>
-<%--                    </button>--%>
 
-<%--                </td>--%>
-<%--                <td>--%>
-<%--                    <button type="button" class="btn btn-light">--%>
-<%--                        <a href="/customer?userAction=delete&id=${customer.getId()}"--%>
-<%--                           class="text-decoration-none"  onclick="return confirm('Do you want to delete ${customer.getName()} ?')">Delete</a>--%>
-<%--                    </button>--%>
+                <td>
+                    <button type="button" class="btn btn-light">
+                        <a href="/customer?action=edit&id=${customer.customerId}"
+                           class="text-decoration-none" onclick="return confirm('Do you want to edit ${customer.customerName} ?')">Edit</a>
+                    </button>
 
-<%--                </td>--%>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-light">
+                        <a href="/customer?action=delete&id=${customer.customerId}"
+                           class="text-decoration-none"  onclick="return confirm('Do you want to delete ${customer.customerName} ?')">Delete</a>
+                    </button>
+
+                </td>
             </tr>
         </c:forEach>
         </tbody>

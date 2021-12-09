@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Customer {
     private int customerId;
-    private CustomerType customerType;
+    private int customerTypeId;
     private String customerName;
     private String birthday;
     private String gender;
@@ -13,13 +13,8 @@ public class Customer {
     private String email;
     private String address;
 
-    public Customer() {
-    }
-
-    public Customer(int customerId, CustomerType customerType, String customerName, String birthday, String gender,
-                    String idCard, String phone, String email, String address) {
-        this.customerId = customerId;
-        this.customerType = customerType;
+    public Customer(int customerTypeId, String customerName, String birthday, String gender, String idCard, String phone, String email, String address) {
+        this.customerTypeId = customerTypeId;
         this.customerName = customerName;
         this.birthday = birthday;
         this.gender = gender;
@@ -27,6 +22,23 @@ public class Customer {
         this.phone = phone;
         this.email = email;
         this.address = address;
+    }
+
+    public Customer(int customerId, int customerTypeId, String customerName, String birthday, String gender,
+                    String idCard, String phone, String email, String address) {
+        this.customerId = customerId;
+        this.customerTypeId = customerTypeId;
+        this.customerName = customerName;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer() {
+
     }
 
     public int getCustomerId() {
@@ -37,12 +49,12 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public CustomerType getCustomerType() {
-        return customerType;
+    public int getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
+    public void setCustomerTypeId(int customerTypeId) {
+        this.customerTypeId = customerTypeId;
     }
 
     public String getCustomerName() {

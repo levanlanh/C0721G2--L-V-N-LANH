@@ -10,5 +10,5 @@ public interface ICustomerService {
     void remove(int id);
     Customer findById(int id);
     void update(Customer employee);
-    List<Customer> findByName(String name);
+    List<Customer> orderByName();
 }
