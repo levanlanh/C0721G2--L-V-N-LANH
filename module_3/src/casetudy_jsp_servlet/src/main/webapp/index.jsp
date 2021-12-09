@@ -21,19 +21,15 @@
         .menu_top {
             height: 100px;
         }
-
         .menu {
             background: cornflowerblue;
         }
-
         .row {
             height: 700px;
         }
-
         .col-3 {
             background: aliceblue;
         }
-
         .footer {
             background: lightskyblue;
             height: 100px;
@@ -42,7 +38,6 @@
             font-family: "Bauhaus 93";
             font-size: 30px;
         }
-
         .container-fluid {
         }
     </style>
@@ -52,7 +47,7 @@
     <div class="menu_top">
 
         <div><img style="width: 100px;height: 100% ;padding: 15px 10px 10px 10px ;margin-left:50px "
-                  src="EF1BBB1C183F473F9164_45059222.jpg"> <a style="margin-left: 1000px ; font-size: 20px;font-family: VnArabia"> lê văn lanh</a>
+                  src="customer/EF1BBB1C183F473F9164_45059222.jpg"> <a style="margin-left: 1000px ; font-size: 20px;font-family: VnArabia"> lê văn lanh</a>
 
         </div>
 
@@ -96,7 +91,7 @@
                         The current link item
                     </a>
                     <a href="/customer" class="list-group-item list-group-item-action">Customer</a>
-                    <a href="#" class="list-group-item list-group-item-action">Employee</a>
+                    <a href="/employee" class="list-group-item list-group-item-action">Employee</a>
                     <a href="/service" class="list-group-item list-group-item-action">Service</a>
                     <a class="list-group-item list-group-item-action disabled">Contract</a>
                 </div>
@@ -108,6 +103,7 @@
             CodeGym Da Nang - Nguyen Tat Thanh Street
             Mọi thông tin xin liên hệ SDT : 070356631
         </div>
+    </div>
     </div>
 </body>
 </html>

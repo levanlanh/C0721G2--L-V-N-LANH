@@ -3,87 +3,91 @@ package model;
 import java.util.Date;
 
 public class Employee {
-    private int employee_id;
-    private String employee_name;
-    private int position_id;
-    private int degree_id;
-    private int division_id;
-    private Date birthday;
-    private int id_card;
+    private int employeeId;
+    private String employeeName;
+    private int positionId;
+    private int degreeId;
+    private int divisionId;
+    private String birthday;
+    private String idCard;
     private String salary;
-    private int phone;
+    private String phone;
     private String email;
     private String address;
 
-    public Employee(int employee_id, String employee_name, int position_id, int degree_id, int division_id,
-                    Date birthday, int id_card, String salary, int phone, String email, String address) {
-        this.employee_id = employee_id;
-        this.employee_name = employee_name;
-        this.position_id = position_id;
-        this.degree_id = degree_id;
-        this.division_id = division_id;
+    public Employee(int employeeId, String employeeName, int positionId, int degreeId, int divisionId, String birthday
+            , String idCard, String salary, String phone, String email, String address) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.positionId = positionId;
+        this.degreeId = degreeId;
+        this.divisionId = divisionId;
         this.birthday = birthday;
-        this.id_card = id_card;
+        this.idCard = idCard;
         this.salary = salary;
         this.phone = phone;
         this.email = email;
         this.address = address;
     }
 
-    public int getEmployee_id() {
-        return employee_id;
+    public Employee() {
+
     }
 
-    public void setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public String getEmployee_name() {
-        return employee_name;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public void setEmployee_name(String employee_name) {
-        this.employee_name = employee_name;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public int getPosition_id() {
-        return position_id;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
 
-    public void setPosition_id(int position_id) {
-        this.position_id = position_id;
+    public int getPositionId() {
+        return positionId;
     }
 
-    public int getDegree_id() {
-        return degree_id;
+    public void setPositionId(int positionId) {
+        this.positionId = positionId;
     }
 
-    public void setDegree_id(int degree_id) {
-        this.degree_id = degree_id;
+    public int getDegreeId() {
+        return degreeId;
     }
 
-    public int getDivision_id() {
-        return division_id;
+    public void setDegreeId(int degreeId) {
+        this.degreeId = degreeId;
     }
 
-    public void setDivision_id(int division_id) {
-        this.division_id = division_id;
+    public int getDivisionId() {
+        return divisionId;
     }
 
-    public Date getBirthday() {
+    public void setDivisionId(int divisionId) {
+        this.divisionId = divisionId;
+    }
+
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
-    public int getId_card() {
-        return id_card;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setId_card(int id_card) {
-        this.id_card = id_card;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public String getSalary() {
@@ -94,11 +98,11 @@ public class Employee {
         this.salary = salary;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
