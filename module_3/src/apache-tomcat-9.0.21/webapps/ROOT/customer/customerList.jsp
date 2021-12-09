@@ -47,12 +47,21 @@
             </ul>
             <form class="d-flex" action="/customer?action=search" method="post">
                 <input class="form-control me-2" name="searchName" type="text" placeholder="Search Customer Name" aria-label="Search">
+                <input class="form-control me-2" name="searchId" type="text" placeholder="Search Customer Id" aria-label="Search">
+                <input class="form-control me-2" name="searchAddress" type="text" placeholder="Search Customer Address" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </div>
 </nav>
 <br>
+<div>
+    <button type="button" class="btn btn-light">
+        <a href="/customer?action=sort"
+           class="text-decoration-none" >Sort</a>
+    </button>
+</div>
+
 
 <div class="container-fluid ">
     <div class="row ">
@@ -69,6 +78,7 @@
         <thead>
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Customer Type</th>
             <th scope="col">Name</th>
             <th scope="col">Birth Day</th>
             <th scope="col">Gender</th>
@@ -76,7 +86,6 @@
             <th scope="col">Phone</th>
             <th scope="col">Email</th>
             <th scope="col">Address</th>
-            <th scope="col">Customer Type</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -96,7 +105,7 @@
 
                 <td>
                     <button type="button" class="btn btn-light">
-                        <a href="/customer?action=edit&id=${customer.customerId}"
+                        <a href="/customer?action=edit&id=${customer.getCustomerId()}"
                            class="text-decoration-none" onclick="return confirm('Do you want to edit ${customer.customerName} ?')">Edit</a>
                     </button>
 

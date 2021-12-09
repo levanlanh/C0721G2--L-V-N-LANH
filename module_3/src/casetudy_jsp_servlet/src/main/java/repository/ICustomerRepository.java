@@ -11,4 +11,6 @@ public interface ICustomerRepository {
     Customer findById(int id);
     void update(Customer customer);
     List<Customer> orderByName();
+    List<Customer> search(String name, int id,String address );
+
 }

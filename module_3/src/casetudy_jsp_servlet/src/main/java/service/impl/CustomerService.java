@@ -40,4 +40,12 @@ public class CustomerService implements ICustomerService {
     public List<Customer> orderByName() {
         return this.iCustomerRepository.orderByName();
     }
+
+    @Override
+    public List<Customer> search(String name,int id,String address) {
+        return this.iCustomerRepository.search(name,id,address);
+    }
+
+
+
 }

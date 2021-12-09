@@ -11,4 +11,6 @@ public interface ICustomerService {
     Customer findById(int id);
     void update(Customer employee);
     List<Customer> orderByName();
+    List<Customer> search(String name,int id, String address );
+
 }
