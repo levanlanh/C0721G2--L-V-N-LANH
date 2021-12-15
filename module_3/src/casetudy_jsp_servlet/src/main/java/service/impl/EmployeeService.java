@@ -2,10 +2,15 @@ package service.impl;
 
 import model.Customer;
 import model.Employee;
+import repository.impl.BaseRepository;
 import repository.impl.EmployeeRepository;
 import service.ICustomerService;
 import service.IEmployeeService;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeService implements IEmployeeService {
@@ -18,7 +23,7 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public void save(Employee employee) {
-    this.employeeRepository.save(employee);
+        this.employeeRepository.save(employee);
     }
 
     @Override
@@ -27,22 +32,22 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Customer findById(int id) {
-        return null;
+    public Employee findById(int id) {
+        return this.employeeRepository.findById(id);
     }
 
     @Override
     public void update(Employee employee) {
-
+        this.employeeRepository.update(employee);
     }
 
     @Override
     public List<Employee> orderByName() {
-        return null;
+        return this.employeeRepository.orderByName();
     }
 
     @Override
-    public List<Employee> search(String name, int id, String address) {
-        return null;
+    public List<Employee> search(String name) {
+        return this.employeeRepository.search(name);
     }
 }

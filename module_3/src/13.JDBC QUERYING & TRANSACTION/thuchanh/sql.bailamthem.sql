@@ -1,15 +1,25 @@
-drop database if exists sinhVien;
-create database sinhVien;
-USE sinhVien;
-
-create table sinhVien(
-id int primary key not null,
-hoTen varchar(15),
-gioiTinh varchar(5),
-tuoi int ,
-diemTrungBinh float
+drop database if exists student_data_base;
+create database student_data_base;
+use student_data_base;
+create table class (
+id_class int primary key auto_increment,
+class_name varchar(50)
 );
-insert into sinhVien(id,hoTen,gioiTinh,tuoi,diemTrungBinh) values(1,"lanh","nam",13,7);
-insert into sinhVien(id,hoTen,gioiTinh,tuoi,diemTrungBinh) values(2,"hieu","nam",33,9);
-insert into sinhVien(id,hoTen,gioiTinh,tuoi,diemTrungBinh) values(3,"an","nam",23,5);
-insert into sinhVien(id,hoTen,gioiTinh,tuoi,diemTrungBinh) values(4,"týn","nam",26,5);
+-- SET SQL_SAFE_UPDATES = 0;
+create table student (
+id int primary key auto_increment,
+name varchar(60),
+gender varchar(60),
+age int,
+average double ,
+id_class int,
+foreign key (id_class) references class(id_class)
+);
+insert into class (id_class,class_name) values (1,'ClassDay' );
+insert into class (id_class,class_name) values (2,'ClassNight');
+insert into class (id_class,class_name) values (3,'Part Time');
+insert into student (name,gender,age,average,id_class) values ('Nam', 'male', 18, 6,1);
+insert into student (name,gender,age,average,id_class) values ('Anh', 'male', 20, 7,2);
+insert into student (name,gender,age,average,id_class) values ('Mai', 'female', 26, 8,2);
+insert into student (name,gender,age,average,id_class) values ('Hoa', 'female', 21, 9,3);
+

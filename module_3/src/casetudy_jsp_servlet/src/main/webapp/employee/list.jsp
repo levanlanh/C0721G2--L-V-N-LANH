@@ -6,13 +6,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
           crossorigin="anonymous">
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/458/458625.png" type="image/i-icon"/>
 </head>
 <body>
 
 <div class="container-fluid bg-light">
     <div class="row bg-light">
         <div class="col-lg-6 text-left">
-            <img src="../../image/logo.jpg" alt="" width="15%" height="100%">
+            <img src="Review-Furama-Resort-Da-Nang-13.jpg" alt="" width="15%" height="100%">
             <h6>Fumara Resort</h6>
         </div>
         <div class="col-lg-6 text-end pt-4">
@@ -47,16 +48,14 @@
             </ul>
             <form class="d-flex" action="/employee?action=search" method="post">
                 <input class="form-control me-2" name="searchName" type="text" placeholder="Search Customer Name" aria-label="Search">
-                <input class="form-control me-2" name="searchId" type="text" placeholder="Search Customer Id" aria-label="Search">
-                <input class="form-control me-2" name="searchAddress" type="text" placeholder="Search Customer Address" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
     </div>
 </nav>
 <br>
-<div>
-    <button type="button" class="btn btn-light">
+<div >
+    <button style="margin-left: 20px ; background: aqua ; color: aliceblue " type="button" class="btn btn-light">
         <a href="/employee?action=sort"
            class="text-decoration-none" >Sort</a>
     </button>
@@ -66,7 +65,7 @@
 <div class="container-fluid ">
     <div class="row ">
         <div class="col-lg-12 text-left">
-            <button type="button" class="btn btn-light">
+            <button style="margin-left: 20px ; background: aqua ; color: aliceblue " type="button" class="btn btn-light">
                 <a href="/employee?action=create" class="text-decoration-none">Create Customer</a>
             </button>
         </div>

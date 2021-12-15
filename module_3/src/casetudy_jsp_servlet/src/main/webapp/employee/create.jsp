@@ -3,14 +3,15 @@
 <html>
 <head>
     <title>Create</title>
+    <link rel="icon" href="https://image.flaticon.com/icons/png/512/458/458625.png" type="image/i-icon"/>
 </head>
 <body>
-<h1>Create Customer</h1>
-<h3>Edit Customer</h3>
+<h1>Create Employee</h1>
+<h3>Edit Employee</h3>
 
 <form method="post">
     <fieldset>
-        <legend>Information Customer</legend>
+        <legend>Information Employee</legend>
         <table>
             <tr>
                 <td>Id:</td>
@@ -80,7 +81,7 @@
         </table>
     </fieldset>
 </form>
-<div><a href="/employee">Back to List of customer</a></div>
+<div><a href="/employee">Back to List of Employee</a></div>
 
 </body>
 </html>
