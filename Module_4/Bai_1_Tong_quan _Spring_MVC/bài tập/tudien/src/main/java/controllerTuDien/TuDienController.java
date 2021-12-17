@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 @Controller
-public class TuDien {
+public class TuDienController {
     @GetMapping("")
     public String showGet() {
         return "index";

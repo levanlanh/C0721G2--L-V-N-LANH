@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class Sandwich {
+public class SandwichController {
     @GetMapping("")
     public String show() {
         return "sandwich";
