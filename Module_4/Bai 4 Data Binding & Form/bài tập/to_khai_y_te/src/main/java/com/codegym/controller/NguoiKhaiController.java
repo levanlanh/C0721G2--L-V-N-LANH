@@ -4,6 +4,8 @@ import com.codegym.model.NguoiKhai;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.text.SimpleDateFormat;
 
@@ -26,5 +28,10 @@ public class NguoiKhaiController {
         model.addAttribute("phuong",phuong);
         model.addAttribute("nguoiKhai",new NguoiKhai());
         return "form";
+    }
+    @PostMapping("/result")
+    public String info(@ModelAttribute("nguoiKhai") NguoiKhai nguoiKhai,Model model){
+        model.addAttribute("nguoiKhai",nguoiKhai);
+        return "info";
     }
 }
