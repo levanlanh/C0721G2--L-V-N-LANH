@@ -1,6 +1,12 @@
 package com.codegym.model;
 
-public class SanPham {
+import javax.persistence.*;
+
+@Entity
+@Table
+public class SanPham implements Cloneable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id ;
     private String name;
     private double price;
@@ -56,5 +62,26 @@ public class SanPham {
 
     public void setProducer(String producer) {
         this.producer = producer;
+    }
+    @Override
+    public SanPham clone(){
+        SanPham sanPham = new SanPham();
+        sanPham.setId(id);
+        sanPham.setName(name);
+        sanPham.setPrice(price);
+        sanPham.setDescription(description);
+        sanPham.setProducer(producer);
+        return sanPham;
+    }
+
+    @Override
+    public String toString() {
+        return "SanPham{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", producer='" + producer + '\'' +
+                '}';
     }
 }

@@ -2,7 +2,8 @@ package com.codegym.controller;
 
 import com.codegym.model.SanPham;
 import com.codegym.service.ISanPhamService;
-import com.codegym.service.impl.SanPhamService;
+import com.codegym.service.SanPhamServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +14,8 @@ import java.util.List;
 @Controller
 @RequestMapping("/sanPham")
 public class SanPhamController {
-    private final ISanPhamService sanPhamService = new SanPhamService();
+@Autowired
+    private ISanPhamService sanPhamService ;
 
     @GetMapping("")
     public String index(Model model){
