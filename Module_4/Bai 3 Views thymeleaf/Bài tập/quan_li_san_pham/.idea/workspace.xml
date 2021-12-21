@@ -20,34 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72eeadf7-7894-4469-8074-205393b17bdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/controller/SanPhamController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/controller/SanPhamController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/repository/ISanPhamRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/repository/impl/SanPhamRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codegym/service/impl/SanPhamService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/codegym/service/impl/SanPhamService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/classes/com/codegym/controller/CustomerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/classes/com/codegym/model/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/classes/com/codegym/service/CustomerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/classes/com/codegym/service/ICustomerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../module_3/src/apache-tomcat-9.0.21/webapps/ROOT/WEB-INF/views/view.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Bai 4 Views thymeleaf/thực hành/demo/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +62,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/customer-management" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -191,6 +164,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639988299085</updated>
       <workItem from="1639988302325" duration="10144000" />
+      <workItem from="1640058004827" duration="31000" />
     </task>
     <servers />
   </component>
@@ -207,6 +181,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1639988618640">
@@ -221,6 +196,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="229" y="288" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1639988579717" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1640058033741">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1640058033741" />
     <state width="1099" height="146" key="GridCell.Tab.0.bottom" timestamp="1640000102685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
