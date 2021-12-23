@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head"></head>
+<title th:replace="/layout:: title"></title>
 <body>
-<h3>Remove Customer</h3>
+<h3>Remove Product</h3>
 <p>
-    <a th:href="@{/sanPham}">
-        Back to SanPham list
+    <a th:href="@{/product}">
+        Back to product list
     </a>
 </p>
+<div class="notify">
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
 <div id="form">
-    <form action="#" th:action="@{/sanPham/delete}" th:object="${sanPham}"
+    <form action="#" th:action="@{/product/delete}" th:object="${product}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
@@ -17,7 +24,7 @@
             <input type="text" th:field="*{name}"/>
         </div>
         <div>
-            <label>Email</label>
+            <label>Price</label>
             <input type="email" th:field="*{price}"/>
         </div>
         <div>

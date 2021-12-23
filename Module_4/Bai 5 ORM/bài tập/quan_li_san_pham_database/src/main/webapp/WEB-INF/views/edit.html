@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head"></head>
+<title th:replace="/layout:: title"></title>
 <body>
-<h3>Edit Customer</h3>
+<h3>Edit Product</h3>
 <p>
-    <a th:href="@{/sanPham}">
-        Back to SanPham list
+    <a th:href="@{/product}">
+        Back to customer list
     </a>
 </p>
+<div class="notify">
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
 <div id="form">
-    <form action="#" th:action="@{/sanPham/update}" th:object="${sanPham}"
+    <form action="#" th:action="@{/product/edit}" th:object="${product}"
           method="POST" novalidate="novalidate">
-        <input type="hidden" th:field="*{id}"/>
+        <input type="text" readonly th:field="*{id}"/>
         <div>
             <label>Name</label>
             <input type="text" th:field="*{name}"/>
         </div>
         <div>
-            <label>Email</label>
+            <label>Price</label>
             <input type="email" th:field="*{price}"/>
         </div>
         <div>
-            <label>Address</label>
+            <label>Description</label>
             <input type="text" th:field="*{description}"/>
         </div>
         <div>

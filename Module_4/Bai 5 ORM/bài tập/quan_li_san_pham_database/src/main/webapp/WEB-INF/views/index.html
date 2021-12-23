@@ -1,55 +1,58 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="/layout :: head">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<head th:replace="/layout::head">
+    <title th:replace="/layout::title"></title>
 </head>
 <body>
-
-<h3>Sản Phẩm</h3>
+<h3>Product</h3>
 <p>
-    <a th:href="@{/sanPham/create}">
-        Add new sản phẩm
-    </a>
+    <a th:href="@{/product/create}" style="text-decoration: none">add new product</a>
 </p>
 
-<div class="notify">
-    <div th:if="${success}">
-        <!--/*@thymesVar id="success" type=""*/-->
-        <span th:text="${success}"></span>
+<!--/*@thymesVar id="product" type=""*/-->
+<form action="#" th:action="@{/product/search}" method="get">
+    <input type="text" name="search" placeholder="input product name">
+    <button type="submit">search</button>
+</form>
+
+<div>
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
     </div>
 </div>
 
 <table border="1px">
     <thead>
     <tr>
-        <th>ID</th>
+        <th>Id</th>
         <th>Name</th>
         <th>Price</th>
         <th>Description</th>
         <th>Producer</th>
-        <th>Edit</th>
+        <th>Edit param</th>
+        <th>Edit path variable</th>
         <th>Delete</th>
         <th>View</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="row : ${sanPham}">
-        <td th:text="${row.getId()}"></td>
-        <td th:text="${row.getName()}"></td>
-        <td th:text="${row.getPrice()}"></td>
-        <td th:text="${row.getDescription()}"></td>
-        <td th:text="${row.getProducer()}"></td>
-        <td><a th:href="@{/sanPham/edit(id=${row.getId()})}">edit</a></td>
-        <td><a th:href="@{/sanPham/delete(id=${row.getId()})}">delete</a></td>
-        <td><a th:href="@{/sanPham/{id}/view(id=${row.getId()})}">view</a></td>
+    <tr th:each="product,rowstat : ${productList}" >
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.getName()}"></td>
+        <td th:text="${product.getPrice()}"></td>
+        <td th:text="${product.getDescription()}"></td>
+        <td th:text="${product.getProducer()}"></td>
+        <!--        request param-->
+        <td><a th:href="@{/product/edit_param/(id = ${product.id})}">Edit</a></td>
+        <!--         path variable-->
+        <td ><a th:href="@{/product/{id}/edit(id=${product.getId()})}">Edit</a></td>
+        <td ><a th:href="@{/product/{id}/delete(id=${product.getId()})}">Delete</a></td>
+        <td ><a th:href="@{/product/{id}/view(id=${product.getId()})}">View</a></td>
     </tr>
     </tbody>
 </table>
-<footer th:replace="/layout :: footer"></footer>
 
+<footer th:replace="/layout::footer"></footer>
 </body>
-
 </html>

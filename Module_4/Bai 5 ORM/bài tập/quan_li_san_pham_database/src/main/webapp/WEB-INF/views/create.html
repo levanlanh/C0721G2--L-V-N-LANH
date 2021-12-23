@@ -2,14 +2,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head"></head>
 <body>
-<h3>Add Customer</h3>
+<h3>Add product</h3>
+<div class="notify">
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+
 <p>
-    <a th:href="@{/sanPham}">
+    <a th:href="@{/product}">
         Back to customer list
     </a>
 </p>
 <div id="form">
-    <form th:action="@{/sanPham/save}" th:object="${sanPham}"
+    <form th:action="@{/product/save}" th:object="${product}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
@@ -18,7 +25,7 @@
         </div>
         <div>
             <label>Price</label>
-            <input type="email" th:field="*{price}"/>
+            <input type="text" th:field="*{price}"/>
         </div>
         <div>
             <label>Description</label>
@@ -28,7 +35,7 @@
             <label>Producer</label>
             <input type="text" th:field="*{producer}"/>
         </div>
-        <input type="submit" value="Save"/>
+        <button type="submit">save</button>
     </form>
 </div>
 <footer th:replace="/layout :: footer"></footer>
