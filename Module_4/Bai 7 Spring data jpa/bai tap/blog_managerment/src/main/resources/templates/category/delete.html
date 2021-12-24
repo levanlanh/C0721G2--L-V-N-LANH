@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head ></head>
+<title></title>
+<body>
+<h3>Remove Blog</h3>
+<p>
+    <a th:href="@{/category}">
+        Back to category list
+    </a>
+</p>
+<div class="notify">
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+<div id="form">
+    <form action="#" th:action="@{/category/delete}" th:object="${category}"
+          method="POST" novalidate="novalidate">
+        <div>
+            <label>Id</label>
+        </div>
+        <div>
+            <input type="text" th:field="${category.id}"/>
+        </div>
+
+        <div>
+            <label>Name</label>
+        </div>
+        <div>
+
+            <input type="text" th:field="${category.name}"/>
+        </div>
+
+        <input type="submit" value="Remove"/>
+    </form>
+</div>
+</body>
+</html>
