@@ -2,22 +2,25 @@ package com.codegym.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name="blogs")
+@Entity(name = "blog")
 public class Blog {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id ;
-    private String content;
-    private String description;
-
-    public Blog(Integer id, String content, String description) {
-        this.id = id;
-        this.content = content;
-        this.description = description;
-    }
+    @Column(name = "id")
+    private Integer id;
+    @Column(name = "title")
+    String title;
+    @Column(name = "content")
+    String content;
 
     public Blog() {
+    }
+
+    public Blog(Integer id, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
     }
 
     public Integer getId() {
@@ -28,19 +31,19 @@ public class Blog {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

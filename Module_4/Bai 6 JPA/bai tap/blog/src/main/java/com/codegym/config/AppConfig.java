@@ -1,10 +1,6 @@
 package com.codegym.config;
 
 
-import com.codegym.repository.BlogRepository;
-import com.codegym.repository.IBlogRepository;
-import com.codegym.service.BlogService;
-import com.codegym.service.IBlogService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -21,9 +17,10 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.thymeleaf.spring5.SpringTemplateEngine;
-import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
-import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
+import org.thymeleaf.spring4.SpringTemplateEngine;
+import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templatemode.TemplateMode;
 
 import javax.persistence.EntityManager;
@@ -94,7 +91,7 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/blog");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/blog_app?createDatabaseIfNotExist=true");
         dataSource.setUsername("root");
         dataSource.setPassword("levanlanh180299");
         return dataSource;
@@ -114,13 +111,5 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         return properties;
     }
 
-    @Bean
-    public IBlogRepository iBlogRepository() {
-        return new BlogRepository();
-    }
 
-    @Bean
-    public IBlogService iBlogService() {
-        return new BlogService();
-    }
 }
