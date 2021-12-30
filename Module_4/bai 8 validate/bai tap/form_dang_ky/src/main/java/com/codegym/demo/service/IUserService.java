@@ -1,7 +1,8 @@
 package com.codegym.demo.service;
 
-import com.codegym.demo.model.User;
+import com.codegym.demo.dto.FormDto;
+
 
 public interface IUserService {
-    void save(User user);
+    void save(FormDto formDto);
 }

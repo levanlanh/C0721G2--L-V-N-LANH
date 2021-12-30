@@ -1,5 +1,6 @@
 package com.codegym.demo.controller;
 
+import com.codegym.demo.dto.FormDto;
 import com.codegym.demo.model.User;
 import com.codegym.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,18 +24,18 @@ public class UserController {
     @GetMapping("/create")
     public ModelAndView showRegisterForm(){
         ModelAndView modelAndView = new ModelAndView("/create");
-        modelAndView.addObject("user", new User());
+        modelAndView.addObject("user", new FormDto());
         return modelAndView;
     }
 
     @PostMapping("/create")
-    public String saveUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult, Model model){
-        new User().validate(user,bindingResult);
+    public String saveUser(@Valid @ModelAttribute("user") FormDto formDto, BindingResult bindingResult, Model model){
+        new FormDto().validate(formDto,bindingResult);
         if(bindingResult.hasFieldErrors()){
-            model.addAttribute("user",user);
+            model.addAttribute("user",formDto);
             return "/create";
         }else {
-            iUserService.save(user);
+            iUserService.save(formDto);
             model.addAttribute("message","Register successfully!");
             return "index";
         }

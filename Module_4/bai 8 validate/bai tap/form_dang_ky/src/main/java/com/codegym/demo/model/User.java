@@ -1,8 +1,5 @@
 package com.codegym.demo.model;
 
-import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
-import org.springframework.validation.Validator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,7 +9,7 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 @Entity
-public class User implements Validator {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -85,32 +82,5 @@ public class User implements Validator {
         this.email = email;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return false;
-    }
 
-    @Override
-    public void validate(Object target, Errors errors) {
-        User user = (User) target;
-        String phoneNumber = user.getPhoneNumber();
-        ValidationUtils.rejectIfEmpty(errors, "phoneNumber", "phoneNumber.empty");
-        if (phoneNumber.length() != 10) {
-            errors.rejectValue("phoneNumber", "phoneNumber.length");
-        }
-        if (!phoneNumber.startsWith("0")) {
-            errors.rejectValue("phoneNumber", "phoneNumber.startsWith");
-        }
-        if (!phoneNumber.matches("(^$|[0-9]*$)")) {
-            errors.rejectValue("phoneNumber", "phoneNumber.format");
-        }
-
-        String email = user.getEmail();
-        String regex = "[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)";
-        ValidationUtils.rejectIfEmpty(errors,"email","email.empty");
-
-        if (!email.matches(regex)){
-            errors.rejectValue("email","email.format");
-        }
-    }
 }
