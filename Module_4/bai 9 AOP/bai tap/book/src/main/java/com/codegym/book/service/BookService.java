@@ -1,8 +1,8 @@
 package com.codegym.book.service;
 
 
-
 import com.codegym.book.model.Book;
+import com.codegym.book.model.CardBorrow;
 import com.codegym.book.repository.IBookRepository;
 import com.codegym.book.repository.ICardBorrowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,31 +31,42 @@ public class BookService implements IBookService {
 
     @Override
     public void save(Book book) {
-   bookRepository.save(book);
+        bookRepository.save(book);
     }
 
     @Override
     public List<Book> findByName(String name) {
-        return null;
+        return bookRepository.getByName("%" + name + "%");
     }
 
     @Override
     public void remove(Integer id) {
-
+        bookRepository.deleteById(id);
     }
 
     @Override
     public Book findByIdDecrease(Integer id) {
-        return null;
+        Book book = bookRepository.findById(id).orElse(null);
+        book.setNumber(book.getNumber()-1);
+        return book;
     }
 
     @Override
     public Book findByIdIncrease(Integer id) {
-        return null;
+        Book book = bookRepository.findById(id).orElse(null);
+        book.setNumber(book.getNumber()+1);
+        return book;
     }
 
     @Override
     public Book returnBook(Book book, Integer id, Integer codeBorrow) {
+        for (CardBorrow cardBorrow : cardBorrowRepository.findAll()){
+            if(cardBorrow.getCode() == codeBorrow){
+                book = findByIdIncrease(id);
+                bookRepository.save(book);
+                return book;
+            }
+        }
         return null;
     }
 }

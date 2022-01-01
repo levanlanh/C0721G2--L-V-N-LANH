@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Book</title>
+</head>
+<body>
+<h2>View Book</h2>
+<p>
+    <a th:href="@{/book}">
+        Back to book list
+    </a>
+</p>
+<div>
+    <label style="font-weight: bolder"> ID: </label>
+    <h3 th:text="${book.getId()}"></h3>
+</div>
+<div>
+    <label style="font-weight: bolder"> TÊN TRUYỆN: </label>
+    <h3 th:text="${book.getName()}"></h3>
+</div>
+<div>
+    <label style="font-weight: bolder"> TÁC GIẢ: </label>
+    <h3 th:text="${book.getAuthor()}"></h3>
+</div>
+<div>
+    <label style="font-weight: bolder"> SỐ LƯỢNG: </label>
+    <h3 th:text="${book.getNumber()}">  </h3>
+</div>
+</body>
+</html>

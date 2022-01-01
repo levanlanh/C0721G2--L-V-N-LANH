@@ -2,18 +2,31 @@ package com.codegym.book.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
-@Entity
+@Entity(name = "book")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "author")
     private String author;
+    @Column(name = "number")
     private Integer number;
 
-    @OneToMany(targetEntity = CardBorrow.class,mappedBy = "book")
-    List<CardBorrow> cardBorrowList;
+    @OneToMany( mappedBy = "book",cascade = CascadeType.REMOVE)
+   private Set<CardBorrow> cardBorrowList;
+
+    public Book(Integer id, String name, String author, Integer number, Set<CardBorrow> cardBorrowList) {
+        this.id = id;
+        this.name = name;
+        this.author = author;
+        this.number = number;
+        this.cardBorrowList = cardBorrowList;
+    }
 
     public Book() {
     }
@@ -57,11 +70,11 @@ public class Book {
         this.number = number;
     }
 
-    public List<CardBorrow> getCardBorrowList() {
+    public Set<CardBorrow> getCardBorrowList() {
         return cardBorrowList;
     }
 
-    public void setCardBorrowList(List<CardBorrow> cardBorrowList) {
+    public void setCardBorrowList(Set<CardBorrow> cardBorrowList) {
         this.cardBorrowList = cardBorrowList;
     }
 }

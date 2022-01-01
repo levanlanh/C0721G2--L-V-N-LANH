@@ -39,12 +39,12 @@ public class ProductController {
             cart.addProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
-        if (action.equals("abc")) {
-            cart.addProducts(productOptional.get());
+        if (action.equals("decrease")) {
+            cart.decreaseProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
-
-        cart.addProduct(productOptional.get());
+        if (action.equals("list"))
+            cart.addProduct(productOptional.get());
         return "redirect:/shop";
     }
 }

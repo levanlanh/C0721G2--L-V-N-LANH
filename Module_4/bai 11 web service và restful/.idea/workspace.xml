@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="afec04d0-0058-4db0-aa25-9c0f2d049b45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/exception.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/give_book_back.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/controller/ShoppingCartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/controller/ShoppingCartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/model/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/java/com/codegym/gio_hang/model/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 10 cookie &amp; session/bai tap/gio_hang/src/main/resources/templates/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/aspec/BookAspec.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/aspec/BookAspec.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/controller/BookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/model/CardBorrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/model/CardBorrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/repository/IBookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/repository/IBookRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/service/CardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/java/com/codegym/book/service/CardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/bai tap/book/src/main/resources/templates/book/return.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai 9 AOP/thuc hanh/customer" beforeDir="false" afterPath="$PROJECT_DIR$/../bai 9 AOP/thuc hanh/customer" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="232xIS56V0q4PHURCipkfiuOaEj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/thuc hanh/customer" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="afec04d0-0058-4db0-aa25-9c0f2d049b45" name="Default Changelist" comment="" />
+      <created>1640945902449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640945902449</updated>
+      <workItem from="1640945903744" duration="52000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1640945953521">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1280.680@0.0.1366.728" timestamp="1640945953521" />
+  </component>
+</project>

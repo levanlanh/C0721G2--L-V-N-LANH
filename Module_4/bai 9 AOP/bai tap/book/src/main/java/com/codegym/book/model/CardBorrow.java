@@ -4,18 +4,26 @@ package com.codegym.book.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "card_borrow")
 public class CardBorrow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_card")
     private Integer id;
+    @Column(name = "code")
     private Integer code;
 
-    @ManyToOne(targetEntity = Book.class)
+    @ManyToOne()
+    @JoinColumn(name = "id")
     private Book book;
 
 
     public CardBorrow() {
+    }
+
+    public CardBorrow(Integer id, Integer code) {
+        this.id = id;
+        this.code = code;
     }
 
     public CardBorrow(Integer id, Integer code, Book book) {

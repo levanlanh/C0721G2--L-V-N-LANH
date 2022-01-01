@@ -38,7 +38,6 @@ public class CardService implements ICardService {
         int ramDom = (int) (Math.random()*10000);
         cardBorrow.setCode(ramDom);
         cardBorrow.setId(book.getId());
-        cardBorrow.setBook(book);
         CardBorrow cardBorrow1 = cardBorrowRepository.save(cardBorrow);
         return cardBorrow1;
     }
