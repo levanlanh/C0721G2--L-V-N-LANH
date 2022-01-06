@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>Add Blog</h3>
+<div class="notify">
+    <!--/*@thymesVar id="message" type=""*/-->
+    <div th:if="${message}">
+        <span th:text="${message}"></span>
+    </div>
+</div>
+
+<p>
+    <a th:href="@{/blog}">
+        Back to customer list
+    </a>
+</p>
+<p id="result"></p>
+
+        <input type="hidden" id="id"/>
+        <div>
+            <label>Title</label>
+        </div>
+        <div>
+            <input type="text" id="title"/>
+        </div>
+        <div>
+            <label>Content</label>
+        </div>
+        <div>
+            <input type="text" id="content"/>
+        </div>
+        <div>
+            <label>Date Create</label>
+        </div>
+        <div>
+            <input type="date" id="dateCreate"/>
+        </div>
+        <div>
+            <select id="category">
+                <option th:each="cate : ${categoryList}" th:value="${cate.id}" th:text="${cate.name}">
+
+                </option>
+            </select>
+        </div>
+        <input type="button" value="Create new" id="btnClick">save</input>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        $('#btnClick').click(function (event) {
+            var id = document.getElementById("id").value;
+            var title = document.getElementById("title").value;
+            var content = document.getElementById("content").value;
+            var dateCreate = document.getElementById("dateCreate").value;
+            var category = document.getElementById("category").value;
+            var objectJson = {
+                "id": id,
+                "title": title,
+                "content": content,
+                "dateCreate": dateCreate,
+                "category": category
+            }
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "post",
+                url: "/blog/save",
+                data: JSON.stringify(objectJson),
+                success: function (blog) {
+                    var content = "";
+                    content += "<spam>Blog was create</spam>";
+                    content += "" + blog.name;
+                    document.getElementById("result").innerHTML = content;
+                },
+                error: function () {
+
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
