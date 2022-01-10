@@ -31,4 +31,12 @@ public class Division {
     public void setDivisionName(String divisionName) {
         this.divisionName = divisionName;
     }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }

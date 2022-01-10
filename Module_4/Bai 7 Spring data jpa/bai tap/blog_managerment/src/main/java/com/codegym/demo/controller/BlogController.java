@@ -77,7 +77,6 @@ public class BlogController {
     @GetMapping("{ab}/edit")
     public String showEdit(@PathVariable(name = "ab") int id, Model model) {
         model.addAttribute("blog", iBlogService.findById(id));
-//        model.addAttribute("categoryList",iCategoryService.findAll());
         return "blog/edit";
     }
 
@@ -90,7 +89,7 @@ public class BlogController {
     }
 
     @PostMapping("/edit")
-    public String edit(@ModelAttribute("blog") Blog blog, Model model, RedirectAttributes redirectAttributes) {
+    public String edit(@ModelAttribute("blog") Blog blog, RedirectAttributes redirectAttributes) {
         iBlogService.save(blog);
         redirectAttributes.addFlashAttribute("message", "Edit success");
         return "redirect:/blog/list";

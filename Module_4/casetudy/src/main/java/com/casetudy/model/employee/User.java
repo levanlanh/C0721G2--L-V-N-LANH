@@ -5,13 +5,13 @@ import java.util.List;
 
 @Entity
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;
     private String password;
 
-    @OneToMany(targetEntity = Employee.class, mappedBy = "username")
-    private List<Employee> employees;
+    @OneToOne(mappedBy = "user")
+    private Employee employee;
 
     public User() {
     }
@@ -30,5 +30,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 }

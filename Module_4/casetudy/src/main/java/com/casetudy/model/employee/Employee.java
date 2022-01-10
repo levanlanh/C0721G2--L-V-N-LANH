@@ -26,9 +26,9 @@ public class Employee {
     @JoinColumn(name = "division_id")
     private Division division;
 
-    @ManyToOne
-    @JoinColumn(name = "user_name")
-    private User username;
+    @OneToOne
+    @JoinColumn(name = "username",referencedColumnName = "username")
+    private User user;
 
     public Employee() {
     }
@@ -87,5 +87,37 @@ public class Employee {
 
     public void setEmployeeAddress(String employeeAddress) {
         this.employeeAddress = employeeAddress;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public EducationDegree getEducationDegree() {
+        return educationDegree;
+    }
+
+    public void setEducationDegree(EducationDegree educationDegree) {
+        this.educationDegree = educationDegree;
+    }
+
+    public Division getDivision() {
+        return division;
+    }
+
+    public void setDivision(Division division) {
+        this.division = division;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User username) {
+        this.user = username;
     }
 }
