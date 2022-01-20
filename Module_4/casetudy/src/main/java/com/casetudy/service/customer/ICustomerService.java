@@ -19,4 +19,5 @@ public interface ICustomerService {
     void remove(Integer id);
 
 
+    List<Customer> findByName(String name);
 }

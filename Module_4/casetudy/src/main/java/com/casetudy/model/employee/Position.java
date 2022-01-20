@@ -7,14 +7,23 @@ import java.util.List;
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "position_id")
     private Integer positionId;
+    @Column(name = "position_name")
     private String positionName;
 
-    @OneToMany(targetEntity = Employee.class,mappedBy = "position")
+    @OneToMany(targetEntity = Employee.class, mappedBy = "position")
     private List<Employee> employees;
 
     public Position() {
     }
+
+    public Position(Integer positionId, String positionName, List<Employee> employees) {
+        this.positionId = positionId;
+        this.positionName = positionName;
+        this.employees = employees;
+    }
+
 
     public Integer getPositionId() {
         return positionId;

@@ -7,13 +7,21 @@ import java.util.List;
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "division_id")
     private Integer divisionId;
+    @Column(name = "division_name")
     private String divisionName;
 
     @OneToMany(targetEntity = Employee.class, mappedBy = "division")
     private List<Employee> employees;
 
     public Division() {
+    }
+
+    public Division(Integer divisionId, String divisionName, List<Employee> employees) {
+        this.divisionId = divisionId;
+        this.divisionName = divisionName;
+        this.employees = employees;
     }
 
     public Integer getDivisionId() {

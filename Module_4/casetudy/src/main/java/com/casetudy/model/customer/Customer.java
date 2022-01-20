@@ -1,7 +1,9 @@
 package com.casetudy.model.customer;
 
-
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Customer {
@@ -9,24 +11,39 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "customer_id")
     private Integer id;
+
     @Column(name = "customer_name")
+    @NotBlank(message = "input your name")
     private String customerName;
+
     @Column(name = "customer_birthday")
+    @NotBlank(message = "input your birth day")
     private String customerBirthday;
+
     @Column(name = "customer_gender")
     private String customerGender;
+
     @Column(name = "customer_id_card")
+    @NotBlank(message = "input your id card")
+    @Pattern(regexp = "(^\\d{9}$)||(^\\d{12}$)", message = "Not valid ex: xxxxxxxxx or xxxxxxxxxxxx with x is a number")
     private String customerIdCard;
+
     @Column(name = "customer_phone")
+    @NotBlank(message = "input your phone")
+    @Pattern(regexp = "(^09[01]\\d{7}$)")
     private String customerPhone;
+
     @Column(name = "customer_email")
+    @NotBlank(message = "input your email")
+    @Pattern(regexp = "[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)")
     private String customerEmail;
     @Column(name = "customer_address")
+    @NotBlank(message = "input your address")
     private String customerAddress;
 
 
     @ManyToOne
-    @JoinColumn(name="customer_type_id" )
+    @JoinColumn(name = "customer_type_id")
     private CustomerType customerType;
 
     public Customer() {
@@ -117,19 +134,6 @@ public class Customer {
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
 
-}
+    }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", customerBirthday='" + customerBirthday + '\'' +
-                ", customerGender='" + customerGender + '\'' +
-                ", customerIdCard='" + customerIdCard + '\'' +
-                ", customerPhone='" + customerPhone + '\'' +
-                ", customerEmail='" + customerEmail + '\'' +
-                ", customerAddress='" + customerAddress + '\'' +
-                ", customerType=" + customerType +
-                '}';
-    }}
+}

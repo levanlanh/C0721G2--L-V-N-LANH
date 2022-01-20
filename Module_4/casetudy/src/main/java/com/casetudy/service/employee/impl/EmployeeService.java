@@ -6,20 +6,16 @@ import com.casetudy.service.employee.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
+
 @Service
 public class EmployeeService implements IEmployeeService {
     @Autowired
     private IEmployeeRepository employeeRepository;
 
     @Override
-    public Iterable<Employee> findAll() {
+    public List<Employee> findAll() {
         return employeeRepository.findAll();
-    }
-
-    @Override
-    public Optional<Employee> findById(Integer id) {
-        return employeeRepository.findById(id);
     }
 
     @Override
@@ -28,7 +24,17 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void remove(Integer id) {
-        employeeRepository.deleteById(id);
+    public Employee findById(Integer id) {
+        return employeeRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void remove(Integer employeeId) {
+        employeeRepository.deleteById(employeeId);
+    }
+
+    @Override
+    public List<Employee> findByName(String name) {
+        return employeeRepository.findByName(name);
     }
 }

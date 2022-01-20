@@ -9,7 +9,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 
 @Controller
@@ -28,7 +32,7 @@ public class CustomerController {
 
     @GetMapping("")
     public String showListPage(Model model, @RequestParam(value = "page", defaultValue = "0") int page) {
-        Page<Customer> customerPage = customerService.findAll(PageRequest.of(page, 5));
+        Page<Customer> customerPage = customerService.findAll(PageRequest.of(page, 3));
         model.addAttribute("customers", customerPage);
         return "customer/list";
     }
@@ -43,7 +47,13 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public String createCustomer(@ModelAttribute("customer") Customer customer) {
+    public String createCustomer(@Valid  @ModelAttribute("customer") Customer customer, BindingResult bindingResult,Model model) {
+        if(bindingResult.hasErrors()){
+            String[]genderList={"Male", "Female"};
+            model.addAttribute("genderList", genderList);
+            model.addAttribute("customerTypeList", customerTypeService.findAll());
+            return "customer/create";
+        }
         this.customerService.save(customer);
         return "redirect:/customer/";
     }
@@ -59,21 +69,20 @@ public class CustomerController {
     }
 
     @PostMapping("/edit")
-    public String edit(@ModelAttribute("customer") Customer customer) {
+    public String edit(@Valid @ModelAttribute("customer") Customer customer,BindingResult bindingResult,Model model) {
+        if(bindingResult.hasErrors()){
+            String[]genderList={"Male", "Female"};
+            model.addAttribute("genderList", genderList);
+            model.addAttribute("customerTypeList", customerTypeService.findAll());
+            return "customer/edit";
+        }
         this.customerService.save(customer);
         return "redirect:/customer/";
     }
 
-    @GetMapping("/{id}/delete")
-    public String delete(@PathVariable Integer id, Model model) {
-        model.addAttribute("customer", customerService.findById(id));
-        return "customer/delete";
-    }
-
-    @PostMapping("/delete")
-    public String deleteCustomer(@ModelAttribute("customer") Customer customer) {
-        System.out.println(customer.getId());
-        customerService.remove(customer.getId());
+    @GetMapping("/delete")
+    public String delete(@RequestParam Integer id) {
+       customerService.remove(id);
         return "redirect:/customer/";
     }
 
@@ -83,6 +92,11 @@ public class CustomerController {
         model.addAttribute("customer", customer);
         return "customer/view";
     }
-
+    @GetMapping("/search")
+    public String search(@RequestParam(name = "search") String name, Model model){
+        List<Customer> customerList = customerService.findByName(name);
+        model.addAttribute("customerList",customerList);
+        return "customer/search";
+    }
 
 }

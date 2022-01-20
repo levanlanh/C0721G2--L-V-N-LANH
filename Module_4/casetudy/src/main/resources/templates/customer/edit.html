@@ -84,6 +84,7 @@
             <label  class="col-sm-2 col-form-label">Name</label>
             <div class="col-sm-10">
                 <input type="text" th:field="*{customerName}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></p>
             </div>
         </div>
 
@@ -93,6 +94,7 @@
             <label  class="col-sm-2 col-form-label">BirthDay</label>
             <div class="col-sm-10">
                 <input type="date" th:field="*{customerBirthday}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></p>
             </div>
         </div>
 
@@ -111,6 +113,7 @@
             <label  class="col-sm-2 col-form-label">IdCard</label>
             <div class="col-sm-10">
                 <input type="text" th:field="*{customerIdCard}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></p>
             </div>
         </div>
 
@@ -119,6 +122,8 @@
             <label  class="col-sm-2 col-form-label">Phone</label>
             <div class="col-sm-10">
                 <input type="text" th:field="*{customerPhone}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></p>
+
             </div>
         </div>
 
@@ -126,6 +131,8 @@
             <label  class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
                 <input type="text" th:field="*{customerEmail}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></p>
+
             </div>
         </div>
 
@@ -133,6 +140,8 @@
             <label  class="col-sm-2 col-form-label">Address</label>
             <div class="col-sm-10">
                 <input type="text" th:field="*{customerAddress}"/>
+                <p style="color: red" th:if="${#fields.hasErrors('customerAddress')}" th:errors="*{customerAddress}"></p>
+                 
             </div>
         </div>
 
